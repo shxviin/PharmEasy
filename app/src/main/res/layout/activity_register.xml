@@ -24,7 +24,7 @@
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_username"
         android:ems="10"
-        android:hint="Username"
+        android:hint="@string/username"
         android:inputType="textPersonName"
         android:textSize="16dp" />
 
@@ -38,7 +38,7 @@
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_pw"
         android:ems="10"
-        android:hint="Password"
+        android:hint="@string/reg_password"
         android:inputType="textPassword"
         android:textSize="16dp" />
 
@@ -52,7 +52,7 @@
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_pw"
         android:ems="10"
-        android:hint="Confirm Password"
+        android:hint="@string/confirm_password"
         android:inputType="textPassword"
         android:textSize="16dp" />
 
@@ -67,7 +67,7 @@
     android:background="#11000000"
     android:drawableLeft="@drawable/ic_mobile"
     android:ems="10"
-    android:hint="Mobile"
+    android:hint="@string/mobile"
     android:inputType="number"
     android:textSize="16dp" />
 
