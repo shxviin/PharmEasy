@@ -31,4 +31,6 @@
     <string name="reg_password">Password</string>
     <string name="mobile">Mobile</string>
     <string name="confirm_password">Confirm Password</string>
+    <string name="update_info">Update</string>
+    <string name="address_reg">Address</string>
 </resources>

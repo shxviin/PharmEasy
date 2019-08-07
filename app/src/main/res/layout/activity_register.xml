@@ -71,6 +71,20 @@
     android:inputType="number"
     android:textSize="16dp" />
 
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/mobile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="35dp"
+        android:background="#11000000"
+        android:drawableLeft="@drawable/ic_location"
+        android:ems="10"
+        android:hint="@string/address_reg"
+        android:inputType="text"
+        android:textSize="16dp" />
+
 
     <Spinner
         android:id="@+id/spinner"
