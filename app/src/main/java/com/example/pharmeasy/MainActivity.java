@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity
                 startActivity(orders_intent);
             }
         });
+
+
     }
 
     @Override
@@ -81,6 +83,8 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent registerIntent = new Intent(MainActivity.this,settings.class);
+            startActivity(registerIntent);
             return true;
         }
 
