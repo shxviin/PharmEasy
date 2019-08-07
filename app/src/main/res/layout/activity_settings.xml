@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".settings">
+
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:weightSum="10"
+        android:background="@drawable/sett_bg"
+        android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_weight="2">
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@android:color/white"
+        android:textSize="34sp"
+        android:text="Settings"
+        android:id="@+id/textGrid"/>
+
+</RelativeLayout>
+
+
+    <GridLayout android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_weight="8"
+        android:id="@+id/mainGrid"
+        android:rowCount="1"
+        android:padding="50dp"
+        android:columnOrderPreserved="false"
+        android:columnCount="1"
+        android:alignmentMode="alignMargins">
+
+    <!-- Row 1 -->
+
+
+    <!-- Column 1 -->
+
+
+
+    <android.support.v7.widget.CardView
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="8dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1">
+
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="218dp"
+        android:orientation="horizontal"
+        android:layout_margin="1dp"
+        android:layout_gravity="center_horizontal|center_vertical">
+
+    <ImageView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/edit_personal"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:text="Edit information"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginTop="30dp"/>
+
+</LinearLayout>
+
+</android.support.v7.widget.CardView>
+
+    <!-- Column 2 -->
+
+
+
+    <android.support.v7.widget.CardView
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="8dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1">
+
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="206dp"
+        android:orientation="horizontal"
+        android:layout_margin="1dp"
+        android:layout_gravity="center_horizontal|center_vertical">
+
+    <ImageView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/change_password"/>
+
+    <TextView android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:text="Change Password"
+        android:layout_marginLeft="10dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp"/>
+
+</LinearLayout>
+
+</android.support.v7.widget.CardView>
+
+    <!-- Row 2 -->
+
+
+    <!-- Column 1 -->
+
+
+
+    <android.support.v7.widget.CardView
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="8dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1">
+
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="224dp"
+        android:orientation="horizontal"
+        android:layout_margin="1dp"
+        android:layout_gravity="center_horizontal|center_vertical">
+
+    <ImageView android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginRight="15dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/delete_acc"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:text="Delete Account"
+        android:layout_marginRight="30dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp"/>
+
+</LinearLayout>
+
+</android.support.v7.widget.CardView>
+
+</GridLayout>
+
+</LinearLayout>
+
+</LinearLayout>
