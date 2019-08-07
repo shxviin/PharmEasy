@@ -15,8 +15,12 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="@color/colorAccent"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </android.support.design.widget.AppBarLayout>
 

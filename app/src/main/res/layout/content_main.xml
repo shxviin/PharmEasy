@@ -8,13 +8,244 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <TextView
+    <ScrollView
+        android:id="@+id/layout"
+        android:layout_width="390dp"
+        android:layout_height="91dp"
+        android:fillViewport="true"
+        android:scrollbarStyle="outsideInset"
+        android:scrollbars="horizontal|vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022">
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:scrollbars="horizontal|vertical">
+
+            <TableLayout
+                android:id="@+id/tableLayout"
+                android:layout_width="394dp"
+                android:layout_height="627dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_column="1"
+                        android:fontFamily="serif"
+                        android:text="#"
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:layout_width="132dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:fontFamily="serif"
+                        android:text="Customer"
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:layout_width="104dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:fontFamily="serif"
+                        android:text="Date"
+                        android:textColor="#000" />
+
+                    <TextView
+                        android:layout_width="174dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:fontFamily="serif"
+                        android:text="Prescription Desc"
+                        android:textColor="#000" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:layout_width="27dp"
+                        android:layout_height="match_parent"
+                        android:layout_column="1"
+                        android:text="1" />
+
+                    <TextView
+                        android:layout_width="125dp"
+                        android:layout_height="match_parent"
+                        android:layout_column="1"
+                        android:text="Shavin Kanagar" />
+
+                    <TextView
+                        android:layout_width="67dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:text="18-12-1999" />
+
+                    <TextView
+                        android:layout_width="131dp"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:text="5 x Panadol, 90ml Biotin" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </TableLayout>
+        </HorizontalScrollView>
+    </ScrollView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="378dp"
+        android:layout_height="173dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.741"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout"
+        app:layout_constraintVertical_bias="0.09">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="98dp"
+            android:contentDescription="TODO"
+            android:fadingEdge="horizontal|vertical"
+            android:scaleType="centerCrop"
+            android:visibility="visible"
+            app:srcCompat="@drawable/medicine" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:text="Show >>"
+            android:translationX="260dp"
+            android:translationY="110dp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medicine"
+            android:textColor="#000"
+            android:textSize="24sp"
+            android:translationX="20dp"
+            android:translationY="120dp" />
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05109489" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="378dp"
+        android:layout_height="173dp"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="98dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/delivery" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delivery"
+            android:textColor="#000"
+            android:textSize="24sp"
+            android:translationX="20dp"
+            android:translationY="120dp" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:text="Show >>"
+            android:translationX="260dp"
+            android:translationY="110dp" />
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="378dp"
+        android:layout_height="173dp"
+        app:cardCornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.933" >
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="98dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/feedback" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Feedback"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:translationX="20dp"
+            android:translationY="120dp" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:text="Show >>"
+            android:translationX="260dp"
+            android:translationY="110dp" />
+    </android.support.v7.widget.CardView>
 
 </android.support.constraint.ConstraintLayout>
