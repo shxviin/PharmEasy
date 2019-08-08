@@ -45,12 +45,21 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        Button button = findViewById(R.id.btn_orders);
-        button.setOnClickListener(new View.OnClickListener() {
+        Button button_orders = findViewById(R.id.btn_orders);
+        button_orders.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent orders_intent = new Intent( MainActivity.this, OrdersActivity.class);
                 startActivity(orders_intent);
+            }
+        });
+
+        Button button_medicine = findViewById(R.id.btn_medicine);
+        button_medicine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent medicine_intent = new Intent( MainActivity.this, MedicineActivity.class);
+                startActivity(medicine_intent);
             }
         });
 

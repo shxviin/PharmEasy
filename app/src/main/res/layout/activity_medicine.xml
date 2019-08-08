@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    tools:context=".MainActivity">
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="295dp"
+        android:layout_height="32dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="28dp"
+        android:background="@color/colorAccent" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="18dp"
+        android:layout_toEndOf="@+id/searchView"
+        android:clickable="true"
+        app:backgroundTint="@color/colorPrimary"
+        app:fabSize="mini"
+        app:maxImageSize="20dp"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="373dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/floatingActionButton2"
+        android:layout_marginTop="30dp"
+        android:scrollbars="vertical" />
+
+
+
+
+</RelativeLayout>

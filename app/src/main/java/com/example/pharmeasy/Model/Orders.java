@@ -1,4 +1,4 @@
-package com.example.pharmeasy;
+package com.example.pharmeasy.Model;
 
 public class Orders {
     private String customer;

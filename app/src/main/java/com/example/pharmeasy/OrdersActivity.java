@@ -6,6 +6,9 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.example.pharmeasy.Adapter.OrdersAdapter;
+import com.example.pharmeasy.Model.Orders;
+
 import java.util.ArrayList;
 import java.util.List;
 

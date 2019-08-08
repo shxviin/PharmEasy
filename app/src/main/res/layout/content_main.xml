@@ -81,7 +81,7 @@
             app:srcCompat="@drawable/medicine" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btn_medicine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:drawable/dialog_holo_light_frame"
