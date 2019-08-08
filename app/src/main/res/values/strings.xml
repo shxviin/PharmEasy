@@ -35,4 +35,6 @@
     <string name="address_reg">Address</string>
     <string name="current_password">Current Password</string>
     <string name="new_password">New Password</string>
+    <string name="update_password">Update Password</string>
+    <string name="edit_information">Edit Information</string>
 </resources>

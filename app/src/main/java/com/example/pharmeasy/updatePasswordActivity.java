@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class updatePassword extends AppCompatActivity {
+public class updatePasswordActivity extends AppCompatActivity {
     EditText textInputCurrentPassword;
     EditText textInputNewPassword;
     EditText textInputConfirmPassword;

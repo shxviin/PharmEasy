@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent registerIntent = new Intent(MainActivity.this,settings.class);
+            Intent registerIntent = new Intent(MainActivity.this, settingsActivity.class);
             startActivity(registerIntent);
             return true;
         }

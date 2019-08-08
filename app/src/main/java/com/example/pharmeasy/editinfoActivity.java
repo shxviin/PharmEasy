@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class editinfo extends AppCompatActivity {
+public class editinfoActivity extends AppCompatActivity {
     EditText textInputUsername;
     EditText textInputMobile;
     EditText textInputAddress;
