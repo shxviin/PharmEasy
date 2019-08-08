@@ -21,6 +21,8 @@
         android:layout_height="40dp"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="35dp"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_username"
         android:ems="10"
@@ -34,6 +36,8 @@
         android:layout_height="40dp"
         android:layout_above="@+id/username"
         android:layout_centerHorizontal="true"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
         android:layout_marginBottom="35dp"
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_pw"
@@ -49,6 +53,8 @@
         android:layout_above="@+id/pw"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="35dp"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_pw"
         android:ems="10"
@@ -58,18 +64,20 @@
 
 
     <EditText
-    android:id="@+id/mobile"
-    android:layout_width="250dp"
-    android:layout_height="40dp"
-    android:layout_above="@+id/confirm_pw"
-    android:layout_centerHorizontal="true"
-    android:layout_marginBottom="35dp"
-    android:background="#11000000"
-    android:drawableLeft="@drawable/ic_mobile"
-    android:ems="10"
-    android:hint="@string/mobile"
-    android:inputType="number"
-    android:textSize="16dp" />
+        android:id="@+id/mobile"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/confirm_pw"
+        android:layout_centerHorizontal="true"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:layout_marginBottom="35dp"
+        android:background="#11000000"
+        android:drawableLeft="@drawable/ic_mobile"
+        android:ems="10"
+        android:hint="@string/mobile"
+        android:inputType="number"
+        android:textSize="16dp" />
 
     <EditText
         android:id="@+id/address"
@@ -78,6 +86,8 @@
         android:layout_above="@+id/mobile"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="35dp"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_location"
         android:ems="10"
@@ -91,6 +101,8 @@
         android:background="#11000000"
         android:layout_width="260dp"
         android:layout_height="40dp"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         />
@@ -115,7 +127,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:textColor="#6F6D6D"
+            android:textColor="@color/white"
             android:text="@string/already_registered"/>
 
         <TextView
