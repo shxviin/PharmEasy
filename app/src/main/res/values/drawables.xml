@@ -4,4 +4,7 @@
     <item name="ic_menu_slideshow" type="drawable">@android:drawable/ic_menu_slideshow</item>
     <item name="ic_menu_manage" type="drawable">@android:drawable/ic_menu_manage</item>
     <item name="ic_menu_share" type="drawable">@android:drawable/ic_menu_share</item>
+    <item name="ic_menu_edit" type="drawable">@android:drawable/ic_menu_edit</item>
+    <item name="ic_menu_delete" type="drawable">@android:drawable/ic_menu_delete</item>
+    <item name="ic_input_add" type="drawable">@android:drawable/ic_input_add</item>
 </resources>

@@ -51,4 +51,9 @@
     <string name="name">name</string>
     <string name="add">add</string>
     <string name="delete">delete</string>
+    <string name="title_activity_patients">PatientsActivity</string>
+    <string name="add_patient">Add Patient</string>
+    <string name="patientlist">Patients List</string>
+
+
 </resources>
