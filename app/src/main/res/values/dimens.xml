@@ -15,7 +15,7 @@
     <dimen name="oneninety">190dp</dimen>
     <dimen name="thirtyfive">35dp</dimen>
     <dimen name="twoseventy">270dp</dimen>
-    <dimen name="sixteen">16dp</dimen>
+    <dimen name="form_text_size">16dp</dimen>
     <dimen name="twosixty">260dp</dimen>
     <dimen name="twosix">206dp</dimen>
     <dimen name="onefifty">150dp</dimen>

@@ -28,7 +28,7 @@
         android:ems="10"
         android:hint="@string/username"
         android:inputType="textPersonName"
-        android:textSize="@dimen/sixteen" />
+        android:textSize="@dimen/form_text_size" />
 
     <EditText
         android:id="@+id/pw"
@@ -77,7 +77,7 @@
         android:ems="10"
         android:hint="@string/mobile"
         android:inputType="number"
-        android:textSize="@dimen/sixteen" />
+        android:textSize="@dimen/form_text_size" />
 
     <EditText
         android:id="@+id/address"
@@ -93,7 +93,7 @@
         android:ems="10"
         android:hint="@string/address_reg"
         android:inputType="text"
-        android:textSize="@dimen/sixteen" />
+        android:textSize="@dimen/form_text_size" />
 
 
     <Spinner
@@ -137,7 +137,7 @@
             android:paddingLeft="@dimen/ten"
             android:textStyle="bold"
             android:textColor="@color/green"
-            android:textSize="@dimen/sixteen"
+            android:textSize="@dimen/form_text_size"
             android:text="@string/login"/>
 
     </LinearLayout>
