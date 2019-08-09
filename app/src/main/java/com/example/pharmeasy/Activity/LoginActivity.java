@@ -1,4 +1,4 @@
-package com.example.pharmeasy;
+package com.example.pharmeasy.Activity;
 
 
 
@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.pharmeasy.R;
 
 public class LoginActivity extends AppCompatActivity {
 

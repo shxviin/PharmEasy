@@ -1,4 +1,4 @@
-package com.example.pharmeasy;
+package com.example.pharmeasy.Activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.pharmeasy.R;
 
 public class RegisterActivity extends AppCompatActivity {
 
