@@ -19,7 +19,7 @@
     <dimen name="twosixty">260dp</dimen>
     <dimen name="twosix">206dp</dimen>
     <dimen name="onefifty">150dp</dimen>
-    <dimen name="seventyfive">75dp</dimen>
+    <dimen name="top_heding_text_size">75dp</dimen>
     <dimen name="thirtyfour">34sp</dimen>
     <dimen name="twofiftythree">253dp</dimen>
     <dimen name="twofiftyone">251dp</dimen>
