@@ -8,4 +8,6 @@
     <color name="grey">#575656</color>
     <color name="green">#04ea00</color>
     <color name="formfieldbg">#11000000</color>
+    <color name="hintback">#48000000</color>
+    <color name="defaultback">#80000000</color>
 </resources>
