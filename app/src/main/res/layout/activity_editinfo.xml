@@ -4,10 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".editinfoActivity"
-    android:orientation="vertical"
-    android:background="@color/colorPrimaryDark"
-    android:gravity="center_horizontal">
+    tools:context=".editinfoActivity">
+
 
 
 
@@ -15,32 +13,36 @@
 
 
 <LinearLayout
-    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_marginTop="100dp">
+    android:layout_width="wrap_content"
+    android:weightSum="10"
+    android:background="@drawable/sett_bg"
+    android:orientation="vertical">
+
 
     <RelativeLayout
-        android:layout_height="0dp"
-        android:layout_width="match_parent"
-        android:layout_weight="2"
-        android:layout_marginBottom="50dp">
-
-    <TextView
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_centerInParent="true"
-        android:textColor="@android:color/white"
-        android:textSize="34sp"
-        android:text="@string/edit_information"
-        android:id="@+id/textGrid"/>
+        android:layout_width="match_parent"
+        android:layout_weight="2">
+
+        <TextView
+            android:id="@+id/textGrid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="75dp"
+            android:text="@string/edit_information"
+            android:textColor="@android:color/white"
+            android:textSize="34sp" />
 
     </RelativeLayout>
 
+
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="253dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="75dp"
+        android:layout_marginTop="150dp"
         android:orientation="vertical">
 
         <EditText
@@ -54,8 +56,8 @@
             android:ems="10"
             android:hint="@string/username"
             android:inputType="textPersonName"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
             android:textSize="16dp" />
 
 
@@ -70,9 +72,8 @@
             android:drawableLeft="@drawable/ic_mobile"
             android:ems="10"
             android:hint="@string/mobile"
-            android:inputType="number"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
             android:textSize="16dp" />
 
 
@@ -88,8 +89,8 @@
             android:ems="10"
             android:hint="@string/address_reg"
             android:inputType="text"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
             android:textSize="16dp" />
 
 
