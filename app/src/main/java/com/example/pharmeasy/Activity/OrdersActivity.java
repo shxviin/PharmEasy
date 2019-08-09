@@ -1,4 +1,4 @@
-package com.example.pharmeasy;
+package com.example.pharmeasy.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.pharmeasy.Adapter.OrdersAdapter;
 import com.example.pharmeasy.Model.Orders;
+import com.example.pharmeasy.R;
 
 import java.util.ArrayList;
 import java.util.List;
