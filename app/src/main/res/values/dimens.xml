@@ -23,6 +23,14 @@
     <dimen name="thirtyfour">34sp</dimen>
     <dimen name="twofiftythree">253dp</dimen>
     <dimen name="twofiftyone">251dp</dimen>
+    <dimen name="zero">0dp</dimen>
+    <dimen name="eight">8dp</dimen>
+    <dimen name="twoeighteen">218dp</dimen>
+    <dimen name="one">1dp</dimen>
+    <dimen name="eighteen">18sp</dimen>
+    <dimen name="thirty">30dp</dimen>
+    <dimen name="twotwofour">224dp</dimen>
+    <dimen name="fifteen">15dp</dimen>
 
 
 </resources>
