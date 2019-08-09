@@ -25,7 +25,7 @@
         <EditText
             android:id="@+id/edittext_username"
             android:layout_width="@dimen/form_field_width"
-            android:layout_height="@dimen/fourty"
+            android:layout_height="@dimen/button_and_form_field_height"
             android:layout_above="@+id/editText2"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="@dimen/thirtyfive"
@@ -41,7 +41,7 @@
         <EditText
             android:id="@+id/edittext_password"
             android:layout_width="@dimen/form_field_width"
-            android:layout_height="@dimen/fourty"
+            android:layout_height="@dimen/button_and_form_field_height"
             android:layout_above="@+id/editText2"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="@dimen/thirtyfive"
@@ -58,7 +58,7 @@
     <Button
         android:id="@+id/button_login"
         android:layout_width="@dimen/oneninety"
-        android:layout_height="@dimen/fourty"
+        android:layout_height="@dimen/button_and_form_field_height"
         android:layout_marginTop="@dimen/twenty"
         android:background="@color/green"
         android:textColor="@color/white"

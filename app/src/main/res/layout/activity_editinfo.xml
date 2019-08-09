@@ -48,7 +48,7 @@
         <EditText
             android:id="@+id/username"
             android:layout_width="@dimen/form_field_width"
-            android:layout_height="@dimen/fourty"
+            android:layout_height="@dimen/button_and_form_field_height"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="@dimen/thirtyfive"
             android:background="@color/formfieldbg"
@@ -64,7 +64,7 @@
         <EditText
             android:id="@+id/mobile"
             android:layout_width="@dimen/form_field_width"
-            android:layout_height="@dimen/fourty"
+            android:layout_height="@dimen/button_and_form_field_height"
             android:layout_above="@+id/confirm_pw"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="@dimen/thirtyfive"
@@ -80,7 +80,7 @@
         <EditText
             android:id="@+id/address"
             android:layout_width="@dimen/form_field_width"
-            android:layout_height="@dimen/fourty"
+            android:layout_height="@dimen/button_and_form_field_height"
             android:layout_above="@+id/mobile"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="@dimen/thirtyfive"
@@ -97,7 +97,7 @@
         <Button
             android:id="@+id/button_update"
             android:layout_width="@dimen/twosix"
-            android:layout_height="@dimen/fourty"
+            android:layout_height="@dimen/button_and_form_field_height"
             android:layout_marginLeft="@dimen/twenty"
             android:layout_marginTop="@dimen/twenty"
             android:background="@color/green"
