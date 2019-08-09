@@ -96,6 +96,7 @@
                 android:textSize="18sp" />
 
             <ImageButton
+                android:id="@+id/editPatient"
                 android:layout_width="42dp"
                 android:layout_height="30dp"
                 android:background="#318B17"
