@@ -7,19 +7,36 @@
     android:background="@drawable/sett_bg"
     tools:context=".PatientsActivity">
 
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="295dp"
+        android:layout_height="32dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/tableLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="190dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+        <TableRow>
 
+
+            <Button
+                android:id="@+id/addPatient"
+                android:drawableRight="@drawable/ic_input_add"
+                android:text="@string/add_patient" />
+        </TableRow>
         <TableRow
             android:layout_height="fill_parent"
             android:background="#707B83"
@@ -359,13 +376,7 @@
 
         </TableRow>
 
-        <TableRow>
 
-
-            <Button
-                android:drawableRight="@drawable/ic_input_add"
-                android:text="@string/add_patient" />
-        </TableRow>
     </TableLayout>
 
     <TextView

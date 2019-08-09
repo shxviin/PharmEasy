@@ -6,18 +6,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class PatientsActivity extends AppCompatActivity {
-    private  Button button;
+public class AddPatientActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_patients);
+        setContentView(R.layout.activity_add_patient);
 
-        Button button_addpatient =findViewById(R.id.addPatient);
-        button_addpatient.setOnClickListener(new View.OnClickListener() {
+        Button button_register =findViewById(R.id.button_addPatient);
+        button_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent add_intent = new Intent( PatientsActivity.this, AddPatientActivity.class);
+                Intent add_intent = new Intent( AddPatientActivity.this, PatientsActivity.class);
                 startActivity(add_intent);
             }
         });
