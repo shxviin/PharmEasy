@@ -18,16 +18,16 @@
         android:layout_height="30dp"
         android:layout_alignParentTop="true"
         android:textColor="@android:color/black"
-        android:textSize="@dimen/list_text_size"
+        android:textSize="16sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/prescription"
         android:layout_width="395dp"
         android:layout_height="30dp"
+        android:textSize="16sp"
         android:layout_below="@id/customer"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/list_text_size" />
+        android:textColor="@android:color/black" />
 
     <TextView
         android:id="@+id/address"
@@ -35,15 +35,15 @@
         android:layout_height="30dp"
         android:layout_below="@id/prescription"
         android:textColor="@android:color/black"
-        android:textSize="@dimen/list_text_size" />
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/phone"
         android:layout_width="395dp"
         android:layout_height="30dp"
         android:layout_below="@id/address"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/list_text_size" />
+        android:textSize="16sp"
+        android:textColor="@android:color/black" />
 
     <Spinner
         android:id="@+id/spinner2"
