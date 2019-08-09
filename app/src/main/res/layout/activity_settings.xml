@@ -18,7 +18,7 @@
 
 
     <RelativeLayout
-        android:layout_height="0dp"
+        android:layout_height="@dimen/zero"
         android:layout_width="match_parent"
         android:layout_weight="2">
 
@@ -27,19 +27,19 @@
         android:layout_width="wrap_content"
         android:layout_centerInParent="true"
         android:textColor="@android:color/white"
-        android:textSize="34sp"
-        android:text="Settings"
+        android:textSize="@dimen/thirtyfour"
+        android:text="@string/action_settings"
         android:id="@+id/textGrid"/>
 
 </RelativeLayout>
 
 
-    <GridLayout android:layout_height="0dp"
+    <GridLayout android:layout_height="@dimen/zero"
         android:layout_width="match_parent"
         android:layout_weight="8"
         android:id="@+id/mainGrid"
         android:rowCount="1"
-        android:padding="50dp"
+        android:padding="@dimen/fifty"
         android:columnOrderPreserved="false"
         android:columnCount="1"
         android:alignmentMode="alignMargins">
@@ -53,22 +53,22 @@
 
     <android.support.v7.widget.CardView
         android:id="@+id/grid_editinfo"
-        android:layout_height="0dp"
-        android:layout_width="0dp"
-        app:cardElevation="8dp"
-        app:cardCornerRadius="8dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_height="@dimen/zero"
+        android:layout_width="@dimen/zero"
+        app:cardElevation="@dimen/eight"
+        app:cardCornerRadius="@dimen/eight"
+        android:layout_marginBottom="@dimen/sixteen"
+        android:layout_marginRight="@dimen/sixteen"
+        android:layout_marginLeft="@dimen/sixteen"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1">
 
 
     <LinearLayout
         android:layout_height="wrap_content"
-        android:layout_width="218dp"
+        android:layout_width="@dimen/twoeighteen"
         android:orientation="horizontal"
-        android:layout_margin="1dp"
+        android:layout_margin="@dimen/one"
         android:layout_gravity="center_horizontal|center_vertical">
 
     <ImageView
@@ -81,11 +81,11 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:textColor="@android:color/black"
-        android:textSize="18sp"
+        android:textSize="@dimen/eighteen"
         android:text="Edit information"
         android:textStyle="bold"
         android:textAlignment="center"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="@dimen/thirty"/>
 
 </LinearLayout>
 
@@ -97,22 +97,22 @@
 
     <android.support.v7.widget.CardView
         android:id="@+id/grid_updatePw"
-        android:layout_height="0dp"
-        android:layout_width="0dp"
-        app:cardElevation="8dp"
-        app:cardCornerRadius="8dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_height="@dimen/zero"
+        android:layout_width="@dimen/zero"
+        app:cardElevation="@dimen/eight"
+        app:cardCornerRadius="@dimen/eight"
+        android:layout_marginBottom="@dimen/sixteen"
+        android:layout_marginRight="@dimen/sixteen"
+        android:layout_marginLeft="@dimen/sixteen"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1">
 
 
     <LinearLayout
         android:layout_height="wrap_content"
-        android:layout_width="206dp"
+        android:layout_width="@dimen/twosix"
         android:orientation="horizontal"
-        android:layout_margin="1dp"
+        android:layout_margin="@dimen/one"
         android:layout_gravity="center_horizontal|center_vertical">
 
     <ImageView
@@ -126,10 +126,10 @@
         android:textColor="@android:color/black"
         android:textSize="18sp"
         android:text="Change Password"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="@dimen/ten"
         android:textStyle="bold"
         android:textAlignment="center"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="@dimen/twenty"/>
 
 </LinearLayout>
 
@@ -144,27 +144,27 @@
 
     <android.support.v7.widget.CardView
         android:id="@+id/grid_deleteAcc"
-        android:layout_height="0dp"
-        android:layout_width="0dp"
-        app:cardElevation="8dp"
-        app:cardCornerRadius="8dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_height="@dimen/zero"
+        android:layout_width="@dimen/zero"
+        app:cardElevation="@dimen/eight"
+        app:cardCornerRadius="@dimen/eight"
+        android:layout_marginBottom="@dimen/sixteen"
+        android:layout_marginRight="@dimen/sixteen"
+        android:layout_marginLeft="@dimen/sixteen"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1">
 
 
     <LinearLayout
         android:layout_height="wrap_content"
-        android:layout_width="224dp"
+        android:layout_width="@dimen/twotwofour"
         android:orientation="horizontal"
-        android:layout_margin="1dp"
+        android:layout_margin="@dimen/one"
         android:layout_gravity="center_horizontal|center_vertical">
 
     <ImageView android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:layout_marginRight="15dp"
+        android:layout_marginRight="@dimen/fifteen"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/delete_acc"/>
 
@@ -172,12 +172,12 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:textColor="@android:color/black"
-        android:textSize="18sp"
+        android:textSize="@dimen/eighteen"
         android:text="Delete Account"
-        android:layout_marginRight="30dp"
+        android:layout_marginRight="@dimen/thirty"
         android:textStyle="bold"
         android:textAlignment="center"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="@dimen/twenty"/>
 
 </LinearLayout>
 
