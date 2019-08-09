@@ -42,7 +42,7 @@
         android:layout_width="@dimen/twofiftythree"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/top_heding_text_size"
-        android:layout_marginTop="@dimen/onefifty"
+        android:layout_marginTop="@dimen/logo_height"
         android:orientation="vertical">
 
         <EditText
