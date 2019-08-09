@@ -10,12 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Activity.PatientsActivity"></activity>
-        <activity android:name=".Activity.DeliveryActivity" />
-        <activity android:name=".Activity.MedicineActivity" />
+        <activity android:name=".Activity.DeliveryActivity"
+            android:label="Delivery"/>
+        <activity android:name=".Activity.MedicineActivity"
+            android:label="Medicine" />
         <activity android:name=".Activity.updatePasswordActivity" />
         <activity android:name=".Activity.editinfoActivity" />
         <activity android:name=".Activity.settingsActivity" />
-        <activity android:name=".Activity.OrdersActivity" />
+        <activity android:name=".Activity.OrdersActivity"
+            android:label="Orders"/>
         <activity
             android:name=".Activity.RegisterActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
@@ -40,7 +43,8 @@
         </activity>
         <activity
             android:name=".Activity.AddMedicineActivity"
-            android:theme="@style/AppTheme.CustomTheme" />
+            android:theme="@style/AppTheme.CustomTheme"
+            android:label="Add Medicine"/>
         <activity
             android:name=".Activity.HospitalActivity"
             android:exported="true"
