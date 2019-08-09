@@ -63,6 +63,15 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        Button button_delivery = findViewById(R.id.btn_delivery);
+        button_delivery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent delivery_intent = new Intent( MainActivity.this, DeliveryActivity.class);
+                startActivity(delivery_intent);
+            }
+        });
+
 
     }
 
