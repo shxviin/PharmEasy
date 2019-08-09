@@ -1,5 +1,6 @@
 package com.example.pharmeasy;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -66,6 +67,8 @@ public class HospitalActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent settingsIntent = new Intent(HospitalActivity.this, settingsActivity.class);
+            startActivity(settingsIntent);
             return true;
         }
 
@@ -85,6 +88,8 @@ public class HospitalActivity extends AppCompatActivity
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_tools) {
+            Intent settingsIntent = new Intent(HospitalActivity.this, settingsActivity.class);
+            startActivity(settingsIntent);
 
         } else if (id == R.id.nav_share) {
 
