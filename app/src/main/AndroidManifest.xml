@@ -16,6 +16,8 @@
         <activity android:name=".editinfoActivity" />
         <activity android:name=".settingsActivity" />
         <activity android:name=".OrdersActivity" />
+        <activity android:name=".EditPatientActivity"
+            android:exported="true"></activity>
         <activity
             android:name=".RegisterActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
