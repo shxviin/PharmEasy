@@ -18,7 +18,7 @@
         android:layout_height="30dp"
         android:layout_alignParentTop="true"
         android:textColor="@android:color/black"
-        android:textSize="16sp"
+        android:textSize="@dimen/list_text_size"
         android:textStyle="bold" />
 
     <TextView
@@ -26,7 +26,8 @@
         android:layout_width="395dp"
         android:layout_height="30dp"
         android:layout_below="@id/customer"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/list_text_size" />
 
     <TextView
         android:id="@+id/address"
@@ -34,15 +35,15 @@
         android:layout_height="30dp"
         android:layout_below="@id/prescription"
         android:textColor="@android:color/black"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:textSize="@dimen/list_text_size" />
 
     <TextView
         android:id="@+id/phone"
         android:layout_width="395dp"
         android:layout_height="30dp"
         android:layout_below="@id/address"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/list_text_size" />
 
     <ImageView
         android:id="@+id/imageView6"
