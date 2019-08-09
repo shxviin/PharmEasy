@@ -17,7 +17,7 @@
 
     <EditText
         android:id="@+id/username"
-        android:layout_width="@dimen/twofifty"
+        android:layout_width="@dimen/form_field_width"
         android:layout_height="@dimen/fourty"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="35dp"
@@ -32,7 +32,7 @@
 
     <EditText
         android:id="@+id/pw"
-        android:layout_width="@dimen/twofifty"
+        android:layout_width="@dimen/form_field_width"
         android:layout_height="@dimen/fourty"
         android:layout_above="@+id/username"
         android:layout_centerHorizontal="true"
@@ -48,7 +48,7 @@
 
     <EditText
         android:id="@+id/confirm_pw"
-        android:layout_width="@dimen/twofifty"
+        android:layout_width="@dimen/form_field_width"
         android:layout_height="@dimen/fourty"
         android:layout_above="@+id/pw"
         android:layout_centerHorizontal="true"
@@ -65,7 +65,7 @@
 
     <EditText
         android:id="@+id/mobile"
-        android:layout_width="@dimen/twofifty"
+        android:layout_width="@dimen/form_field_width"
         android:layout_height="@dimen/fourty"
         android:layout_above="@+id/confirm_pw"
         android:layout_centerHorizontal="true"
@@ -81,7 +81,7 @@
 
     <EditText
         android:id="@+id/address"
-        android:layout_width="@dimen/twofifty"
+        android:layout_width="@dimen/form_field_width"
         android:layout_height="@dimen/fourty"
         android:layout_above="@+id/mobile"
         android:layout_centerHorizontal="true"

@@ -8,7 +8,7 @@
     <dimen name="fourty">40dp</dimen>
     <dimen name="ten">10dp</dimen>
     <dimen name="twenty">20dp</dimen>
-    <dimen name="twofifty">250dp</dimen>
+    <dimen name="form_field_width">250dp</dimen>
     <dimen name="fifty">50dp</dimen>
     <dimen name="twoten">210dp</dimen>
     <dimen name="threeseventythree">373dp</dimen>

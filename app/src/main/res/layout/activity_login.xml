@@ -24,7 +24,7 @@
 
         <EditText
             android:id="@+id/edittext_username"
-            android:layout_width="@dimen/twofifty"
+            android:layout_width="@dimen/form_field_width"
             android:layout_height="@dimen/fourty"
             android:layout_above="@+id/editText2"
             android:layout_centerHorizontal="true"
@@ -40,7 +40,7 @@
 
         <EditText
             android:id="@+id/edittext_password"
-            android:layout_width="@dimen/twofifty"
+            android:layout_width="@dimen/form_field_width"
             android:layout_height="@dimen/fourty"
             android:layout_above="@+id/editText2"
             android:layout_centerHorizontal="true"
