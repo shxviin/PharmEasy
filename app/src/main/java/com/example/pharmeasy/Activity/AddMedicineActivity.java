@@ -1,8 +1,10 @@
-package com.example.pharmeasy;
+package com.example.pharmeasy.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+
+import com.example.pharmeasy.R;
 
 public class AddMedicineActivity extends AppCompatActivity {
 

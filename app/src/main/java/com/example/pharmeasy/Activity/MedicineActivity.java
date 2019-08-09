@@ -1,4 +1,4 @@
-package com.example.pharmeasy;
+package com.example.pharmeasy.Activity;
 
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
@@ -8,10 +8,10 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
 
 import com.example.pharmeasy.Adapter.MedicineAdapter;
 import com.example.pharmeasy.Model.Medicine;
+import com.example.pharmeasy.R;
 
 import java.util.ArrayList;
 import java.util.List;

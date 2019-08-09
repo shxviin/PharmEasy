@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_settings"
-            android:title="@string/action_settings" />
-    </group>
-
-    <item android:title="Communicate">
+    <item android:title="What are you looking for?">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_camera"
+                    android:icon="@drawable/ic_assignment"
+                    android:title="Orders" />
+                <item
+                    android:id="@+id/nav_gallery"
+                    android:icon="@drawable/ic_local_hospital"
+                    android:title="Medicine" />
+                <item
+                    android:id="@+id/nav_slideshow"
+                    android:icon="@drawable/ic_shopping_cart"
+                    android:title="Delivery" />
+                <item
+                    android:id="@+id/nav_manage"
+                    android:icon="@drawable/ic_settings"
+                    android:title="@string/action_settings" />
+            </group>
+        </menu>
+    </item>
+    <item android:title="Support">
         <menu>
             <item
                 android:id="@+id/nav_share"
@@ -31,7 +35,27 @@
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="Send Feedback" />
+        </menu>
+    </item>
+    <item android:title="Legal">
+        <menu>
+            <item
+                android:id="@+id/nav_terms"
+                android:icon="@drawable/ic_info"
+                android:title="Terms and Conditions" />
+            <item
+                android:id="@+id/nav_privacy"
+                android:icon="@drawable/ic_lock_outline"
+                android:title="Privacy Policy" />
+        </menu>
+    </item>
+    <item android:title="Logout?">
+        <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_exit_to_app"
+                android:title="Logout?" />
         </menu>
     </item>
 

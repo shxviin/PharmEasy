@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
+    tools:context=".Activity.LoginActivity"
     android:orientation="vertical"
     android:id="@+id/container"
     android:background="@color/colorPrimary"
     android:gravity="center_horizontal">
 
     <ImageView
-        android:layout_width="373dp"
-        android:layout_height="210dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="@dimen/threeseventythree"
+        android:layout_height="@dimen/twoten"
+        android:layout_marginTop="@dimen/fifty"
         app:srcCompat="@drawable/pharmeasy" />
 
     <LinearLayout
@@ -24,65 +24,65 @@
 
         <EditText
             android:id="@+id/edittext_username"
-            android:layout_width="250dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/form_field_width"
+            android:layout_height="@dimen/button_and_form_field_height"
             android:layout_above="@+id/editText2"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="35dp"
-            android:background="#11000000"
+            android:layout_marginBottom="@dimen/thirtyfive"
+            android:background="@color/formfieldbg"
             android:drawableLeft="@drawable/ic_username"
             android:ems="10"
             android:textColorHint="@color/white"
             android:textColor="@color/white"
             android:hint="Username"
             android:inputType="textPersonName"
-            android:textSize="16dp"/>
+            android:textSize="@dimen/form_text_size"/>
 
         <EditText
             android:id="@+id/edittext_password"
-            android:layout_width="250dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/form_field_width"
+            android:layout_height="@dimen/button_and_form_field_height"
             android:layout_above="@+id/editText2"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="35dp"
-            android:background="#11000000"
+            android:layout_marginBottom="@dimen/thirtyfive"
+            android:background="@color/formfieldbg"
             android:textColorHint="@color/white"
             android:textColor="@color/white"
             android:drawableLeft="@drawable/ic_pw"
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"
-            android:textSize="16dp"/>
+            android:textSize="@dimen/form_text_size"/>
     </LinearLayout>
 
     <Button
         android:id="@+id/button_login"
-        android:layout_width="190dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:background="#04ea00"
-        android:textColor="#ffffff"
+        android:layout_width="@dimen/oneninety"
+        android:layout_height="@dimen/button_and_form_field_height"
+        android:layout_marginTop="@dimen/twenty"
+        android:background="@color/green"
+        android:textColor="@color/white"
         android:text="@string/login"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="@dimen/ten">
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/thirtyfive"
             android:textColor="@color/white"
             android:text="@string/not_registered"/>
 
         <TextView
             android:id="@+id/textview_register"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:paddingLeft="10dp"
+            android:layout_height="@dimen/thirtyfive"
+            android:paddingLeft="@dimen/ten"
             android:textStyle="bold"
-            android:textColor="#04ea00"
+            android:textColor="@color/green"
             android:text="@string/register"/>
 
     </LinearLayout>

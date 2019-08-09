@@ -9,11 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EditPatientActivity"></activity>
-        <activity
-            android:name=".AddPatientActivity"
-            android:exported="true" />
-        <activity android:name=".PatientsActivity" />
+        <activity android:name=".PatientsActivity"></activity>
         <activity android:name=".DeliveryActivity" />
         <activity android:name=".MedicineActivity" />
         <activity android:name=".updatePasswordActivity" />

@@ -1,4 +1,4 @@
-package com.example.pharmeasy;
+package com.example.pharmeasy.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.widget.Spinner;
 
 import com.example.pharmeasy.Adapter.DeliveryAdapter;
 import com.example.pharmeasy.Model.Delivery;
+import com.example.pharmeasy.R;
 
 import java.util.ArrayList;
 import java.util.List;
