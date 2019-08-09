@@ -12,7 +12,7 @@
         android:id="@+id/tableLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="150dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -81,7 +81,7 @@
             <ImageButton
                 android:layout_width="42dp"
                 android:layout_height="30dp"
-                android:background="#103007"
+                android:background="#318B17"
                 android:src="@drawable/ic_menu_edit" />
 
             <ImageButton
@@ -120,7 +120,7 @@
             <ImageButton
                 android:layout_width="42dp"
                 android:layout_height="30dp"
-                android:background="#103007"
+                android:background="#318B17"
                 android:src="@drawable/ic_menu_edit" />
 
             <ImageButton
@@ -158,7 +158,7 @@
             <ImageButton
                 android:layout_width="42dp"
                 android:layout_height="30dp"
-                android:background="#103007"
+                android:background="#318B17"
                 android:src="@drawable/ic_menu_edit" />
 
             <ImageButton
@@ -196,7 +196,7 @@
             <ImageButton
                 android:layout_width="42dp"
                 android:layout_height="30dp"
-                android:background="#103007"
+                android:background="#318B17"
                 android:src="@drawable/ic_menu_edit" />
 
             <ImageButton
@@ -234,7 +234,7 @@
             <ImageButton
                 android:layout_width="42dp"
                 android:layout_height="30dp"
-                android:background="#103007"
+                android:background="#318B17"
                 android:src="@drawable/ic_menu_edit" />
 
             <ImageButton
@@ -272,7 +272,7 @@
             <ImageButton
                 android:layout_width="42dp"
                 android:layout_height="30dp"
-                android:background="#103007"
+                android:background="#318B17"
                 android:src="@drawable/ic_menu_edit" />
 
             <ImageButton
@@ -310,7 +310,7 @@
             <ImageButton
                 android:layout_width="42dp"
                 android:layout_height="30dp"
-                android:background="#103007"
+                android:background="#318B17"
                 android:src="@drawable/ic_menu_edit" />
 
             <ImageButton
@@ -348,7 +348,7 @@
             <ImageButton
                 android:layout_width="42dp"
                 android:layout_height="30dp"
-                android:background="#103007"
+                android:background="#318B17"
                 android:src="@drawable/ic_menu_edit" />
 
             <ImageButton
@@ -372,12 +372,12 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="125dp"
+        android:layout_marginStart="110dp"
         android:layout_marginTop="80dp"
         android:layout_marginEnd="183dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="50dp"
         android:fontFamily="@font/abril_fatface"
-        android:text="@string/add_patient"
+        android:text="@string/patientlist"
         android:textColor="#FCF4FCED"
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"

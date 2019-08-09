@@ -54,6 +54,7 @@
     <string name="title_activity_patients">PatientsActivity</string>
     <string name="add_patient">Add Patient</string>
     <string name="patientlist">Patients List</string>
-
+    <string name="hosName">Apollo Hospitals</string>
+    <string name="hos_email">pres.admin@apollo.lk</string>
 
 </resources>

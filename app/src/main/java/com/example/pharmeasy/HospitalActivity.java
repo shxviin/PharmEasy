@@ -81,12 +81,11 @@ public class HospitalActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_gallery) {
 
-        } else if (id == R.id.nav_slideshow) {
-
+        } else if (id == R.id.patients) {
+            Intent patientIntent = new Intent(HospitalActivity.this, PatientsActivity.class);
+            startActivity(patientIntent);
         } else if (id == R.id.nav_tools) {
             Intent settingsIntent = new Intent(HospitalActivity.this, settingsActivity.class);
             startActivity(settingsIntent);
