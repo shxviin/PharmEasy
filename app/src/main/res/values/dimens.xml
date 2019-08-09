@@ -22,6 +22,7 @@
     <dimen name="seventyfive">75dp</dimen>
     <dimen name="thirtyfour">34sp</dimen>
     <dimen name="twofiftythree">253dp</dimen>
+    <dimen name="twofiftyone">251dp</dimen>
 
 
 </resources>
