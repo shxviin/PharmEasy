@@ -11,8 +11,8 @@
     android:gravity="center_horizontal">
 
     <ImageView
-        android:layout_width="@dimen/threeseventythree"
-        android:layout_height="@dimen/twoten"
+        android:layout_width="@dimen/logo_width"
+        android:layout_height="@dimen/logo_height"
         android:layout_marginTop="@dimen/fifty"
         app:srcCompat="@drawable/pharmeasy" />
 
@@ -24,8 +24,8 @@
 
         <EditText
             android:id="@+id/edittext_username"
-            android:layout_width="@dimen/twofifty"
-            android:layout_height="@dimen/fourty"
+            android:layout_width="@dimen/form_field_width"
+            android:layout_height="@dimen/button_and_form_field_height"
             android:layout_above="@+id/editText2"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="@dimen/thirtyfive"
@@ -36,12 +36,12 @@
             android:textColor="@color/white"
             android:hint="Username"
             android:inputType="textPersonName"
-            android:textSize="@dimen/sixteen"/>
+            android:textSize="@dimen/form_text_size"/>
 
         <EditText
             android:id="@+id/edittext_password"
-            android:layout_width="@dimen/twofifty"
-            android:layout_height="@dimen/fourty"
+            android:layout_width="@dimen/form_field_width"
+            android:layout_height="@dimen/button_and_form_field_height"
             android:layout_above="@+id/editText2"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="@dimen/thirtyfive"
@@ -52,13 +52,13 @@
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"
-            android:textSize="16dp"/>
+            android:textSize="@dimen/form_text_size"/>
     </LinearLayout>
 
     <Button
         android:id="@+id/button_login"
         android:layout_width="@dimen/oneninety"
-        android:layout_height="@dimen/fourty"
+        android:layout_height="@dimen/button_and_form_field_height"
         android:layout_marginTop="@dimen/twenty"
         android:background="@color/green"
         android:textColor="@color/white"

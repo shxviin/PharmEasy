@@ -10,15 +10,15 @@
     android:gravity="center_horizontal">
 
     <ImageView
-        android:layout_width="@dimen/twoseventy"
-        android:layout_height="@dimen/onefifty"
+        android:layout_width="@dimen/logo_width"
+        android:layout_height="@dimen/logo_height"
         android:layout_marginTop="@dimen/fifty"
         app:srcCompat="@drawable/pharmeasy"/>
 
     <EditText
         android:id="@+id/username"
-        android:layout_width="@dimen/twofifty"
-        android:layout_height="@dimen/fourty"
+        android:layout_width="@dimen/form_field_width"
+        android:layout_height="@dimen/button_and_form_field_height"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="35dp"
         android:textColorHint="@color/white"
@@ -28,12 +28,12 @@
         android:ems="10"
         android:hint="@string/username"
         android:inputType="textPersonName"
-        android:textSize="@dimen/sixteen" />
+        android:textSize="@dimen/form_text_size" />
 
     <EditText
         android:id="@+id/pw"
-        android:layout_width="@dimen/twofifty"
-        android:layout_height="@dimen/fourty"
+        android:layout_width="@dimen/form_field_width"
+        android:layout_height="@dimen/button_and_form_field_height"
         android:layout_above="@+id/username"
         android:layout_centerHorizontal="true"
         android:textColorHint="@color/white"
@@ -48,8 +48,8 @@
 
     <EditText
         android:id="@+id/confirm_pw"
-        android:layout_width="@dimen/twofifty"
-        android:layout_height="@dimen/fourty"
+        android:layout_width="@dimen/form_field_width"
+        android:layout_height="@dimen/button_and_form_field_height"
         android:layout_above="@+id/pw"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/thirtyfive"
@@ -65,8 +65,8 @@
 
     <EditText
         android:id="@+id/mobile"
-        android:layout_width="@dimen/twofifty"
-        android:layout_height="@dimen/fourty"
+        android:layout_width="@dimen/form_field_width"
+        android:layout_height="@dimen/button_and_form_field_height"
         android:layout_above="@+id/confirm_pw"
         android:layout_centerHorizontal="true"
         android:textColorHint="@color/white"
@@ -77,12 +77,12 @@
         android:ems="10"
         android:hint="@string/mobile"
         android:inputType="number"
-        android:textSize="@dimen/sixteen" />
+        android:textSize="@dimen/form_text_size" />
 
     <EditText
         android:id="@+id/address"
-        android:layout_width="@dimen/twofifty"
-        android:layout_height="@dimen/fourty"
+        android:layout_width="@dimen/form_field_width"
+        android:layout_height="@dimen/button_and_form_field_height"
         android:layout_above="@+id/mobile"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/thirtyfive"
@@ -93,14 +93,14 @@
         android:ems="10"
         android:hint="@string/address_reg"
         android:inputType="text"
-        android:textSize="@dimen/sixteen" />
+        android:textSize="@dimen/form_text_size" />
 
 
     <Spinner
         android:id="@+id/spinner"
         android:background="#11000000"
         android:layout_width="@dimen/twosixty"
-        android:layout_height="@dimen/fourty"
+        android:layout_height="@dimen/button_and_form_field_height"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
         android:layout_alignParentTop="true"
@@ -112,7 +112,7 @@
     <Button
         android:id="@+id/button_register"
         android:layout_width="@dimen/twosix"
-        android:layout_height="@dimen/fourty"
+        android:layout_height="@dimen/button_and_form_field_height"
         android:layout_marginTop="@dimen/twenty"
         android:background="@color/green"
         android:textColor="@color/white"
@@ -137,7 +137,7 @@
             android:paddingLeft="@dimen/ten"
             android:textStyle="bold"
             android:textColor="@color/green"
-            android:textSize="@dimen/sixteen"
+            android:textSize="@dimen/form_text_size"
             android:text="@string/login"/>
 
     </LinearLayout>

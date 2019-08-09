@@ -56,6 +56,10 @@
     <string name="patientlist">Patients List</string>
     <string name="hosName">Apollo Hospitals</string>
     <string name="hos_email">pres.admin@apollo.lk</string>
+    <string name="patient_name">Patient Name</string>
+    <string name="diagnosis">Diagnosis</string>
+    <string name="addMedicine">Add Medicine</string>
+    <string name="patient_details">Patient Details</string>
 
 
 </resources>

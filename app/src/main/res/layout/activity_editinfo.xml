@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/seventyfive"
+            android:layout_marginTop="@dimen/top_heding_text_size"
             android:text="@string/edit_information"
             android:textColor="@android:color/white"
             android:textSize="@dimen/thirtyfour" />
@@ -41,14 +41,14 @@
     <LinearLayout
         android:layout_width="@dimen/twofiftythree"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/seventyfive"
-        android:layout_marginTop="@dimen/onefifty"
+        android:layout_marginLeft="@dimen/top_heding_text_size"
+        android:layout_marginTop="@dimen/logo_height"
         android:orientation="vertical">
 
         <EditText
             android:id="@+id/username"
-            android:layout_width="@dimen/twofifty"
-            android:layout_height="@dimen/fourty"
+            android:layout_width="@dimen/form_field_width"
+            android:layout_height="@dimen/button_and_form_field_height"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="@dimen/thirtyfive"
             android:background="@color/formfieldbg"
@@ -58,13 +58,13 @@
             android:inputType="textPersonName"
             android:textColor="@color/black"
             android:textColorHint="@color/grey"
-            android:textSize="@dimen/sixteen" />
+            android:textSize="@dimen/form_text_size" />
 
 
         <EditText
             android:id="@+id/mobile"
-            android:layout_width="@dimen/twofifty"
-            android:layout_height="@dimen/fourty"
+            android:layout_width="@dimen/form_field_width"
+            android:layout_height="@dimen/button_and_form_field_height"
             android:layout_above="@+id/confirm_pw"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="@dimen/thirtyfive"
@@ -74,13 +74,13 @@
             android:hint="@string/mobile"
             android:textColor="@color/black"
             android:textColorHint="@color/grey"
-            android:textSize="@dimen/sixteen" />
+            android:textSize="@dimen/form_text_size" />
 
 
         <EditText
             android:id="@+id/address"
-            android:layout_width="@dimen/twofifty"
-            android:layout_height="@dimen/fourty"
+            android:layout_width="@dimen/form_field_width"
+            android:layout_height="@dimen/button_and_form_field_height"
             android:layout_above="@+id/mobile"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="@dimen/thirtyfive"
@@ -91,13 +91,13 @@
             android:inputType="text"
             android:textColor="@color/black"
             android:textColorHint="@color/grey"
-            android:textSize="@dimen/sixteen" />
+            android:textSize="@dimen/form_text_size" />
 
 
         <Button
             android:id="@+id/button_update"
             android:layout_width="@dimen/twosix"
-            android:layout_height="@dimen/fourty"
+            android:layout_height="@dimen/button_and_form_field_height"
             android:layout_marginLeft="@dimen/twenty"
             android:layout_marginTop="@dimen/twenty"
             android:background="@color/green"
