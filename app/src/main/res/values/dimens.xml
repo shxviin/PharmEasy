@@ -35,13 +35,11 @@
     <dimen name="twenty">20dp</dimen>
     <dimen name="fifty">50dp</dimen>
     <dimen name="twoten">210dp</dimen>
-
     <dimen name="oneninety">190dp</dimen>
     <dimen name="thirtyfive">35dp</dimen>
     <dimen name="twoseventy">270dp</dimen>
     <dimen name="twosixty">260dp</dimen>
     <dimen name="twosix">206dp</dimen>
-
     <dimen name="thirtyfour">34sp</dimen>
     <dimen name="twofiftythree">253dp</dimen>
     <dimen name="twofiftyone">251dp</dimen>

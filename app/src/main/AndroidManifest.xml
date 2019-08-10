@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".feedbackActivity"></activity>
+        <activity android:name=".feedbackActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Activity.PatientsActivity" />
         <activity android:name=".Activity.DeliveryActivity" />
         <activity android:name=".Activity.MedicineActivity" />
