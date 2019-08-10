@@ -60,6 +60,7 @@
     <string name="diagnosis">Diagnosis</string>
     <string name="addMedicine">Add Medicine</string>
     <string name="patient_details">Patient Details</string>
+    <string name="Feed_btn">GO!</string>
 
 
 </resources>
