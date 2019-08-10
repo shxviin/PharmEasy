@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".feedbackActivity"
-    android:background="3498db"
-    >
+    android:background="@drawable/sett_bg"
+    tools:context=".feedbackActivity">
+
     <EditText
         android:id="@+id/name"
         android:layout_width="match_parent"
@@ -48,7 +48,7 @@
         android:text="Message"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.41"
+        app:layout_constraintVertical_bias="0.42"
         tools:layout_editor_absoluteX="0dp" />
 
     <Button
