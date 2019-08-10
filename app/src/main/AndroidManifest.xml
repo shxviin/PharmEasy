@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.PatientsActivity"></activity>
+        <activity android:name=".feedbackActivity"></activity>
+        <activity android:name=".Activity.PatientsActivity" />
         <activity android:name=".Activity.DeliveryActivity" />
         <activity android:name=".Activity.MedicineActivity" />
         <activity android:name=".Activity.updatePasswordActivity" />
@@ -52,12 +53,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.EditPatientActivity"></activity>
-        <activity android:name=".Activity.AddPatientActivity"></activity>
+        <activity android:name=".Activity.EditPatientActivity" />
+        <activity android:name=".Activity.AddPatientActivity" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
-
 
 </manifest>
