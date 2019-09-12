@@ -135,13 +135,13 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
             return false;
         }
-        if (i != passwordInput){
+        else if (i.equals(passwordInput) ){
+            return true;
+        }
+        else {
             input =  "Password does not match";
             Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
             return false;
-        }
-        else {
-            return true;
         }
 
 

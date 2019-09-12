@@ -2,8 +2,11 @@ package com.example.pharmeasy.Database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.List;
 
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -49,6 +52,30 @@ public class DBHelper extends SQLiteOpenHelper {
         long newRowId = db.insert(UsersMaster.Users.TABLE_NAME,null,values);
 
 
+
+    }
+
+
+    public String checkUser (String userName, String password){
+        SQLiteDatabase db = getReadableDatabase();
+
+//        String[] columns = {
+//                UsersMaster.Users.COLUMN_NAME_USERNAME,
+//                UsersMaster.Users.COLUMN_NAME_PASSWORD,
+//                UsersMaster.Users.COLUMN_NAME_TYPE
+//        };
+
+
+        Cursor cursor = db.rawQuery("SELECT * from users where username = ? and password = ?",new String[]{userName,password});
+
+        if (cursor.moveToFirst()) {
+            String type = cursor.getString(cursor.getColumnIndexOrThrow(UsersMaster.Users.COLUMN_NAME_TYPE));
+            return type;
+        }
+        cursor.close();
+        return "";
+//        if (cursor.getCount() > 0) return type;
+//        else return "";
 
     }
 }
