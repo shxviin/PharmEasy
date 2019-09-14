@@ -15,7 +15,7 @@ public class EditPatientActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_patient);
 
-        Button button_register =findViewById(R.id.button_addPatient);
+        Button button_register =findViewById(R.id.btn_addPatient);
         button_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -16,7 +16,7 @@
         app:srcCompat="@drawable/pharmeasy"/>
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/txtpatient"
         android:layout_width="@dimen/form_field_width"
         android:layout_height="@dimen/button_and_form_field_height"
         android:layout_centerHorizontal="true"
@@ -34,7 +34,7 @@
         android:id="@+id/pw"
         android:layout_width="@dimen/form_field_width"
         android:layout_height="@dimen/button_and_form_field_height"
-        android:layout_above="@+id/username"
+        android:layout_above="@+id/txtpatient"
         android:layout_centerHorizontal="true"
         android:textColorHint="@color/white"
         android:textColor="@color/white"

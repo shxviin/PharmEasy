@@ -46,7 +46,7 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/username"
+            android:id="@+id/txtpatient"
             android:layout_width="@dimen/form_field_width"
             android:layout_height="@dimen/button_and_form_field_height"
             android:layout_centerHorizontal="true"

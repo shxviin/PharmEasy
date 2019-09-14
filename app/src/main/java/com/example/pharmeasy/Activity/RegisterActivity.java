@@ -33,7 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
          mySpinner = (Spinner) findViewById(R.id.spinner);
-        textInputUsername = (EditText)findViewById(R.id.username);
+        textInputUsername = (EditText)findViewById(R.id.txtpatient);
         textInputPassword = (EditText)findViewById(R.id.pw);
         textInputConfirmPassword = (EditText)findViewById(R.id.confirm_pw);
         textInputMobile = (EditText)findViewById(R.id.mobile);
