@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".feedbackActivity">
+        <activity android:name=".pharmFeedback">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,10 +25,12 @@
         <activity android:name=".Activity.OrdersActivity" />
         <activity
             android:name=".Activity.RegisterActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar" android:exported="true"/>
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".Activity.LoginActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar" android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

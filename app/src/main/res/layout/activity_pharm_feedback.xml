@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pharmFeedback">
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:weightSum="10"
+        android:background="@drawable/sett_bg"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="2">
+
+            <TextView
+                android:id="@+id/textGrid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/top_heding_text_size"
+                android:text="@string/feed"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/thirtyfour" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="@dimen/twofiftythree"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/top_heding_text_size"
+            android:layout_marginTop="@dimen/logo_height"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/txtpatient"
+                android:layout_width="@dimen/form_field_width"
+                android:layout_height="@dimen/button_and_form_field_height"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/thirtyfive"
+                android:background="@color/formfieldbg"
+                android:drawableLeft="@drawable/ic_person_black_24dp"
+                android:ems="10"
+                android:hint="@string/feedName"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey"
+                android:textSize="@dimen/form_text_size" />
+
+
+            <EditText
+                android:id="@+id/mobile"
+                android:layout_width="@dimen/form_field_width"
+                android:layout_height="@dimen/button_and_form_field_height"
+                android:layout_above="@+id/confirm_pw"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/thirtyfive"
+                android:background="@color/formfieldbg"
+                android:drawableLeft="@drawable/ic_email_black_24dp"
+                android:ems="10"
+                android:hint="@string/feedMail"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey"
+                android:textSize="@dimen/form_text_size" />
+
+
+            <ScrollView
+                android:id="@+id/address"
+                android:layout_width="@dimen/form_field_width"
+                android:layout_height="200dp"
+                android:layout_above="@+id/mobile"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/thirtyfive"
+                android:background="@color/formfieldbg"
+                android:drawableLeft="@drawable/ic_message_black_24dp"
+                android:ems="10"
+                android:hint="@string/feedMessage"
+                android:inputType="text"
+                android:scrollbarStyle="insideInset"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey"
+                android:textSize="@dimen/form_text_size">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:hint="@string/feedMessage"/>
+
+
+
+            </ScrollView>
+
+
+            <Button
+                android:id="@+id/button_update"
+                android:layout_width="@dimen/twosix"
+                android:layout_height="@dimen/button_and_form_field_height"
+                android:layout_marginLeft="@dimen/twenty"
+                android:layout_marginTop="@dimen/twenty"
+                android:background="@color/green"
+                android:text="@string/feedSubmit"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
