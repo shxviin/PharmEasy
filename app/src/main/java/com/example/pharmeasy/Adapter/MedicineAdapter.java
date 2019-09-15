@@ -8,11 +8,14 @@ import android.widget.TextView;
 
 import com.example.pharmeasy.Model.Medicine;
 import com.example.pharmeasy.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
 public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.MedicineViewHolder> {
     private List<Medicine> medicineList;
+    DatabaseReference dbRef;
 
     public MedicineAdapter(List<Medicine> medicineList) {
         this.medicineList = medicineList;
@@ -22,14 +25,14 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.Medici
 
     @Override
     public MedicineViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.medicine_list_row, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.medicine_list_row, parent, false);
 
         return new MedicineViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(MedicineViewHolder holder, int position) {
+        dbRef = FirebaseDatabase.getInstance().getReference().child("student");
         holder.medicine.setText(medicineList.get(position).getMedicine());
     }
 
@@ -43,7 +46,7 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.Medici
 
         public MedicineViewHolder(View view) {
             super(view);
-            medicine = view.findViewById(R.id.medicine);
+            medicine = view.findViewById(R.id.txtName);
         }
     }
 }

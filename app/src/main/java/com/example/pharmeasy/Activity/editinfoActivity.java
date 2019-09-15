@@ -20,7 +20,7 @@ public class editinfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editinfo);
 
-        textInputUsername = (EditText)findViewById(R.id.username);
+        textInputUsername = (EditText)findViewById(R.id.txtpatient);
         textInputMobile = (EditText)findViewById(R.id.mobile);
         textInputAddress = (EditText)findViewById(R.id.address);
         mButtonUpdate = (Button)findViewById(R.id.button_update);

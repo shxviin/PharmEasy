@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.pharmeasy.Database.DBHelper;
 import com.example.pharmeasy.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -20,12 +21,13 @@ public class LoginActivity extends AppCompatActivity {
     EditText textInputPassword;
     Button mButtonLogin;
     TextView mTextViewRegister;
+    DBHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        dbHelper = new DBHelper(this);
         textInputUsername = (EditText)findViewById(R.id.edittext_username);
         textInputPassword = (EditText)findViewById(R.id.edittext_password);
         mButtonLogin = (Button)findViewById(R.id.button_login);
@@ -40,8 +42,24 @@ public class LoginActivity extends AppCompatActivity {
         mButtonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                validateUsername();
-                validatePassword();
+
+
+                if (validateUsername()== true &&  validatePassword() == true  ){
+                    String type = checkUser();
+                    if(type.equals("Pharmacy")){
+                        Intent loginIntent = new Intent(LoginActivity.this,MainActivity.class);
+                        startActivity(loginIntent);
+                    }
+                    if(type.equals("Hospital")){
+                        Intent loginIntent = new Intent(LoginActivity.this,HospitalActivity.class);
+                        startActivity(loginIntent);
+                    }
+                    if(type.equals("Patient")){
+                        Intent loginIntent = new Intent(LoginActivity.this,PatientsActivity.class);
+                        startActivity(loginIntent);
+                    }
+                    Toast.makeText(getApplicationContext(),type,Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
@@ -49,29 +67,47 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-    private void validateUsername() {
+    private boolean validateUsername() {
         String usernameInput = textInputUsername.getText().toString().trim();
         String input;
         if (usernameInput.isEmpty()) {
            input =  "Username cannot be empty";
            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+           return  false;
         }
-
+        else {
+            return true;
+        }
 
     }
 
-    private void validatePassword() {
+    private boolean validatePassword() {
         String passwordInput = textInputPassword.getEditableText().toString().trim();
         String input;
 
         if (passwordInput.isEmpty()) {
             input =  "Password cannot be empty";
             Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return  false;
+        }
+        else {
+            return true;
         }
 
     }
 
+    private String checkUser(){
+        String uname = textInputUsername.getText().toString().trim();
+        String pwd = textInputPassword.getText().toString().trim();
 
+       String type = dbHelper.checkUser(uname,pwd);
+return type;
+//       if(type == "Hospital"){
+//           Intent loginIntent = new Intent(LoginActivity.this,MedicineActivity.class);
+//           startActivity(loginIntent);
+//       }
+
+    }
 
 
 }

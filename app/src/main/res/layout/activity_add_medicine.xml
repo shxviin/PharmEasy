@@ -15,7 +15,7 @@
         android:text="@string/popMsg"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintBottom_toTopOf="@+id/txtMedicine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.559"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +23,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/txtMedicine"
         android:layout_width="277dp"
         android:layout_height="38dp"
         android:layout_below="@id/pop_textView"
@@ -41,7 +41,7 @@
 
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btnSave"
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:contentDescription="@string/add"
@@ -49,20 +49,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.304"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/txtMedicine"
         app:layout_constraintVertical_bias="0.082"
         app:srcCompat="@android:drawable/ic_input_add" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/btnClear"
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:contentDescription="@string/delete"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.537"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintStart_toEndOf="@+id/btnSave"
+        app:layout_constraintTop_toBottomOf="@+id/txtMedicine"
         app:layout_constraintVertical_bias="0.08"
         app:srcCompat="@android:drawable/ic_delete" />
 
