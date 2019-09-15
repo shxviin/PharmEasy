@@ -35,7 +35,7 @@ public class DBHelper extends SQLiteOpenHelper {
                         UsersMaster.Prescriptions.COLUMN_NAME_PATIENTNAME+" TEXT,"+
                         UsersMaster.Prescriptions.COLUMN_NAME_DESCRIPTION+" TEXT,"+
                         UsersMaster.Prescriptions.COLUMN_NAME_ADDRESS+" TEXT,"+
-                        UsersMaster.Prescriptions.COLUMN_NAME_PHONE+" INTEGER,"+
+                        UsersMaster.Prescriptions.COLUMN_NAME_PHONE+" TEXT,"+
                         UsersMaster.Prescriptions.COLUMN_NAME_MED1+" TEXT,"+
                         UsersMaster.Prescriptions.COLUMN_NAME_MED2+" TEXT,"+
                         UsersMaster.Prescriptions.COLUMN_NAME_MED3+" TEXT,"+
@@ -97,7 +97,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    public boolean addPrescription(String name,String desc, String adds,int phn,String med1,String med2,String med3,String med4,String med5,String med6,String med7,String med8){
+    public boolean addPrescription(String name,String desc, String adds,String phn,String med1,String med2,String med3,String med4,String med5,String med6,String med7,String med8){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
 
@@ -116,11 +116,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         long result=db.insert(UsersMaster.Prescriptions.TABLE_NAME,null,values);
 
-        if(result<0){
-            return  false;
-        }else {
-            return true;
-        }
+        return result >= 0;
 
     }
 }
