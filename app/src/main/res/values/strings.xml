@@ -14,21 +14,11 @@
     <string name="already_registered">Already registered?</string>
     <string name="doctor_name">Doctor"'"s Name</string>
 
-    <string-array name="status">
-        <item>Dispatched</item>
-        <item>To Be Dispatched</item>
-        <item>Delivered</item>
-    </string-array>
-
-    <string-array name="user">
-        <item>Patient</item>
-        <item>Pharmacy</item>
-        <item>Hospital</item>
-    </string-array>
     <string name="title_activity_hospital">PharmEasy</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
+
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
@@ -61,6 +51,21 @@
     <string name="addMedicine">Add Medicine</string>
     <string name="patient_details">Patient Details</string>
     <string name="Feed_btn">GO!</string>
+    <string-array name="status">
+        <item>Dispatched</item>
+        <item>To Be Dispatched</item>
+        <item>Delivered</item>
+    </string-array>
+    <string-array name="user">
+        <item>Patient</item>
+        <item>Pharmacy</item>
+        <item>Hospital</item>
+    </string-array>
+    <string name="feedName">Name</string>
+    <string name="feedMail">Email</string>
+    <string name="feedMessage">Message</string>
+    <string name="feedSubmit">Submit</string>
+    <string name="feed">Feedback</string>
 
 
 </resources>
