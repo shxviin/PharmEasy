@@ -243,6 +243,24 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
+
+    public void changeuser (){
+        SQLiteDatabase db = getWritableDatabase();
+
+
+        ContentValues values = new ContentValues();
+        values.put(UsersMaster.Users.COLUMN_NAME_CURRENT,"FALSE");
+
+
+        String selection = UsersMaster.Users.COLUMN_NAME_CURRENT + " LIKE ?";
+        String[] selectionArgs = {"TRUE"};
+        db.update(UsersMaster.Users.TABLE_NAME,values,selection,selectionArgs);
+
+
+
+
+    }
+
     public String getpwd() {
 
 

@@ -23,6 +23,10 @@
                     android:id="@+id/nav_manage"
                     android:icon="@drawable/ic_settings"
                     android:title="@string/action_settings" />
+                <item
+                    android:id="@+id/nav_logout"
+                    android:icon="@drawable/ic_highlight_off_black_24dp"
+                    android:title="@string/log_out" />
             </group>
         </menu>
     </item>
@@ -50,13 +54,6 @@
                 android:title="Privacy Policy" />
         </menu>
     </item>
-    <item android:title="Logout?">
-        <menu>
-            <item
-                android:id="@+id/nav_logout"
-                android:icon="@drawable/ic_exit_to_app"
-                android:title="Logout?" />
-        </menu>
-    </item>
+
 
 </menu>

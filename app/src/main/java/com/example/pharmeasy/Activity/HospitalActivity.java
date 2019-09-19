@@ -27,13 +27,13 @@ public class HospitalActivity extends AppCompatActivity
 
     TextView navheadertitle;
     String x;
-
+    DBHelper dbHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hospital);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        DBHelper dbHelper = new DBHelper(this);
+         dbHelper = new DBHelper(this);
         navheadertitle =  (TextView)  findViewById(R.id.nav_header);
         x = dbHelper.getUsername();
 //        navheadertitle.setText(dbHelper.getUsername());
@@ -109,7 +109,11 @@ public class HospitalActivity extends AppCompatActivity
             Intent settingsIntent = new Intent(HospitalActivity.this, settingsActivity.class);
             startActivity(settingsIntent);
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_logout) {
+            dbHelper.changeuser();
+            Intent logIntent = new Intent(HospitalActivity.this, LoginActivity.class);
+            startActivity(logIntent);
+            Toast.makeText(getApplicationContext(),"Successfully Logged Out",Toast.LENGTH_LONG).show();
 
         } else if (id == R.id.nav_send) {
 

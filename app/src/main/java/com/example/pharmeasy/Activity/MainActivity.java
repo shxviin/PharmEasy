@@ -14,18 +14,21 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.example.pharmeasy.Database.DBHelper;
 import com.example.pharmeasy.R;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private Button button;
-
+    DBHelper dbHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        dbHelper = new DBHelper(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -127,8 +130,11 @@ public class MainActivity extends AppCompatActivity
             Intent settingsIntent = new Intent(MainActivity.this, settingsActivity.class);
             startActivity(settingsIntent);
 
-        } else if (id == R.id.nav_share) {
-
+        } else if (id == R.id.nav_logout) {
+            dbHelper.changeuser();
+            Intent logIntent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(logIntent);
+            Toast.makeText(getApplicationContext(),"Successfully Logged Out",Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_send) {
 
         }

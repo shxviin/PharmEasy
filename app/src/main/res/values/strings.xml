@@ -66,6 +66,7 @@
     <string name="feedMessage">Message</string>
     <string name="feedSubmit">Submit</string>
     <string name="feed">Feedback</string>
+    <string name="log_out">Log out</string>
 
 
 </resources>
