@@ -62,6 +62,8 @@ public class RegisterActivity extends AppCompatActivity {
 
                 if (validateUsername() == true && validatePassword() == true && validateMobile() == true && validateConfirmPassword()== true ){
                     addUser();
+                    Intent RegisterIntent = new Intent(RegisterActivity.this,LoginActivity.class);
+                    startActivity(RegisterIntent);
                     Toast.makeText(getApplicationContext(),"Successfully Registered!",Toast.LENGTH_LONG).show();
                 }
 

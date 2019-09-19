@@ -14,18 +14,32 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.pharmeasy.Database.DBHelper;
 import com.example.pharmeasy.R;
 
 public class HospitalActivity extends AppCompatActivity
+
+
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    TextView navheadertitle;
+    String x;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hospital);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        DBHelper dbHelper = new DBHelper(this);
+        navheadertitle =  (TextView)  findViewById(R.id.nav_header);
+        x = dbHelper.getUsername();
+//        navheadertitle.setText(dbHelper.getUsername());
         setSupportActionBar(toolbar);
+
+
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +55,7 @@ public class HospitalActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+        Toast.makeText(getApplicationContext(),x,Toast.LENGTH_LONG);
     }
 
     @Override
@@ -71,7 +86,9 @@ public class HospitalActivity extends AppCompatActivity
         if (id == R.id.action_settings) {
             Intent settingsIntent = new Intent(HospitalActivity.this, settingsActivity.class);
             startActivity(settingsIntent);
+            Toast.makeText(getApplicationContext(),x,Toast.LENGTH_LONG);
             return true;
+
         }
 
         return super.onOptionsItemSelected(item);

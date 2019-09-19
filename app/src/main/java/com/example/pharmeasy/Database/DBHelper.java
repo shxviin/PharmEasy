@@ -25,7 +25,8 @@ public class DBHelper extends SQLiteOpenHelper {
                         UsersMaster.Users.COLUMN_NAME_PASSWORD + " TEXT,"+
                         UsersMaster.Users.COLUMN_NAME_MOBILE + " TEXT,"+
                         UsersMaster.Users.COLUMN_NAME_ADDRESS + " TEXT,"+
-                        UsersMaster.Users.COLUMN_NAME_TYPE + " TEXT)";
+                        UsersMaster.Users.COLUMN_NAME_TYPE + " TEXT,"+
+                        UsersMaster.Users.COLUMN_NAME_CURRENT + " TEXT)";
 
         sqLiteDatabase.execSQL(SQL_CREATE_ENTRIES);
 
@@ -66,6 +67,7 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(UsersMaster.Users.COLUMN_NAME_MOBILE,mobile);
         values.put(UsersMaster.Users.COLUMN_NAME_ADDRESS,address);
         values.put(UsersMaster.Users.COLUMN_NAME_TYPE,type);
+        values.put(UsersMaster.Users.COLUMN_NAME_CURRENT,"FALSE");
 
         long newRowId = db.insert(UsersMaster.Users.TABLE_NAME,null,values);
 
@@ -77,23 +79,86 @@ public class DBHelper extends SQLiteOpenHelper {
     public String checkUser (String userName, String password){
         SQLiteDatabase db = getReadableDatabase();
 
-//        String[] columns = {
-//                UsersMaster.Users.COLUMN_NAME_USERNAME,
-//                UsersMaster.Users.COLUMN_NAME_PASSWORD,
-//                UsersMaster.Users.COLUMN_NAME_TYPE
-//        };
 
 
         Cursor cursor = db.rawQuery("SELECT * from users where username = ? and password = ?",new String[]{userName,password});
 
         if (cursor.moveToFirst()) {
+            SQLiteDatabase db1 = getWritableDatabase();
+
+            ContentValues values = new ContentValues();
+            values.put(UsersMaster.Users.COLUMN_NAME_CURRENT,"TRUE");
+            String selection = UsersMaster.Users.COLUMN_NAME_USERNAME + " LIKE ?";
+            String[] selectionArgs = {userName};
+            db1.update(UsersMaster.Users.TABLE_NAME,values,selection,selectionArgs);
             String type = cursor.getString(cursor.getColumnIndexOrThrow(UsersMaster.Users.COLUMN_NAME_TYPE));
             return type;
         }
         cursor.close();
         return "";
-//        if (cursor.getCount() > 0) return type;
-//        else return "";
+
+
+    }
+
+
+
+    public String getUsername() {
+
+
+        String [] projection = {
+                UsersMaster.Users.COLUMN_NAME_USERNAME
+        };
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor cursor = db.query(UsersMaster.Users.TABLE_NAME,
+                projection,
+                UsersMaster.Users.COLUMN_NAME_CURRENT + " LIKE ? ",
+                new String []{"TRUE"},
+                null, null, null);
+//        cursor.moveToFirst();
+        String currentUsername ;
+
+
+//        Cursor cursor = this.getReadableDatabase().query(
+//                UsersMaster.Users.TABLE_NAME, new String[] {UsersMaster.Users.COLUMN_NAME_USERNAME},
+//                null, null, null, null, null);
+        if (cursor.moveToFirst()) {
+            do {
+               currentUsername = cursor.getString(cursor.getColumnIndex(UsersMaster.Users.COLUMN_NAME_USERNAME));
+            } while (cursor.moveToNext());
+        }
+        else {
+            currentUsername = "123";
+        }
+        cursor.close();
+//        currentUsername = "123";
+        return currentUsername;
+    }
+
+
+
+
+
+
+
+
+
+
+    public void changeinfo (String userName, String mobile,String address){
+        SQLiteDatabase db = getWritableDatabase();
+
+
+            ContentValues values = new ContentValues();
+            values.put(UsersMaster.Users.COLUMN_NAME_USERNAME,userName);
+            values.put(UsersMaster.Users.COLUMN_NAME_MOBILE,mobile);
+            values.put(UsersMaster.Users.COLUMN_NAME_ADDRESS,address);
+
+
+            String selection = UsersMaster.Users.COLUMN_NAME_CURRENT + " LIKE ?";
+            String[] selectionArgs = {"TRUE"};
+            db.update(UsersMaster.Users.TABLE_NAME,values,selection,selectionArgs);
+
+
+
 
     }
 
@@ -119,4 +184,8 @@ public class DBHelper extends SQLiteOpenHelper {
         return result >= 0;
 
     }
+
+
 }
+
+

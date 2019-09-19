@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.pharmeasy.Database.DBHelper;
 import com.example.pharmeasy.R;
 
 public class editinfoActivity extends AppCompatActivity {
@@ -14,7 +15,7 @@ public class editinfoActivity extends AppCompatActivity {
     EditText textInputMobile;
     EditText textInputAddress;
     Button mButtonUpdate;
-
+    DBHelper dbHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,56 +25,81 @@ public class editinfoActivity extends AppCompatActivity {
         textInputMobile = (EditText)findViewById(R.id.mobile);
         textInputAddress = (EditText)findViewById(R.id.address);
         mButtonUpdate = (Button)findViewById(R.id.button_update);
-
+        dbHelper = new DBHelper(this);
         mButtonUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 validateUsername();
                 validateMobile();
                 validateaddress();
+
+                if (validateUsername() == true &&  validateMobile() == true &&  validateaddress()== true ){
+                    editinfo();
+                    Toast.makeText(getApplicationContext(),"Successfully updated",Toast.LENGTH_LONG).show();
+
+                }
             }
         });
 
 
     }
 
+    private void editinfo(){
+
+        String uname = textInputUsername.getText().toString().trim();
+        String mob = textInputMobile.getText().toString().trim();
+        String address = textInputAddress.getText().toString().trim();
 
 
-    private void validateUsername() {
+        dbHelper.changeinfo(uname,mob,address);
+    }
+
+    private boolean validateUsername() {
         String usernameInput = textInputUsername.getText().toString().trim();
         String input;
         if (usernameInput.isEmpty()) {
             input =  "Username cannot be empty";
             Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return false;
         }
-
+        else {
+            return true;
+        }
 
     }
 
 
 
-    private void validateMobile() {
+    private boolean validateMobile() {
         String passwordInput = textInputMobile.getEditableText().toString().trim();
         String input;
         int len = passwordInput.length();
         if (passwordInput.isEmpty()) {
             input =  "Password cannot be empty";
             Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return false;
         }
         else if (passwordInput.length() > 10){
             input =  "Enter a valid mobile number";
             Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return false;
         }
-
+        else {
+            return true;
+        }
 
     }
 
-    private void validateaddress() {
+    private boolean validateaddress() {
         String addressInput = textInputAddress.getText().toString().trim();
         String input;
         if (addressInput.isEmpty()) {
             input =  "Address cannot be empty";
             Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else {
+            return true;
         }
 
 

@@ -3,6 +3,7 @@ package com.example.pharmeasy.Activity;
 
 
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -22,12 +23,13 @@ public class LoginActivity extends AppCompatActivity {
     Button mButtonLogin;
     TextView mTextViewRegister;
     DBHelper dbHelper;
-
+    SharedPreferences pref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         dbHelper = new DBHelper(this);
+        pref = getSharedPreferences("user_details",MODE_PRIVATE);
         textInputUsername = (EditText)findViewById(R.id.edittext_username);
         textInputPassword = (EditText)findViewById(R.id.edittext_password);
         mButtonLogin = (Button)findViewById(R.id.button_login);
@@ -58,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
                         Intent loginIntent = new Intent(LoginActivity.this,PatientsActivity.class);
                         startActivity(loginIntent);
                     }
-                    Toast.makeText(getApplicationContext(),type,Toast.LENGTH_LONG).show();
+//                    Toast.makeText(getApplicationContext(),type,Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -100,8 +102,14 @@ public class LoginActivity extends AppCompatActivity {
         String uname = textInputUsername.getText().toString().trim();
         String pwd = textInputPassword.getText().toString().trim();
 
-       String type = dbHelper.checkUser(uname,pwd);
-return type;
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString("username",uname);
+        editor.putString("password",pwd);
+        editor.commit();
+        String type = dbHelper.checkUser(uname,pwd);
+        return type;
+
+
 //       if(type == "Hospital"){
 //           Intent loginIntent = new Intent(LoginActivity.this,MedicineActivity.class);
 //           startActivity(loginIntent);

@@ -14,6 +14,7 @@ public class UsersMaster {
         public static final String COLUMN_NAME_MOBILE = "mobile";
         public static final String COLUMN_NAME_ADDRESS = "address";
         public static final String COLUMN_NAME_TYPE = "type";
+        public static final String COLUMN_NAME_CURRENT = "current";
     }
 
     public static class Prescriptions implements BaseColumns{
