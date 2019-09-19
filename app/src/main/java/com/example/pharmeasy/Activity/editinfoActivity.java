@@ -20,12 +20,15 @@ public class editinfoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editinfo);
+        dbHelper = new DBHelper(this);
 
         textInputUsername = (EditText)findViewById(R.id.txtpatient);
+        textInputUsername.setText(dbHelper.getUsername());
         textInputMobile = (EditText)findViewById(R.id.mobile);
+        textInputMobile.setText(dbHelper.getMobile());
         textInputAddress = (EditText)findViewById(R.id.address);
+        textInputAddress.setText(dbHelper.getAddress());
         mButtonUpdate = (Button)findViewById(R.id.button_update);
-        dbHelper = new DBHelper(this);
         mButtonUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

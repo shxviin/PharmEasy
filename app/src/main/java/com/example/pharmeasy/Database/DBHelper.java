@@ -136,11 +136,74 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
 
+    public String getMobile() {
+
+
+        String [] projection = {
+                UsersMaster.Users.COLUMN_NAME_MOBILE
+        };
+        SQLiteDatabase db = getWritableDatabase();
+
+
+        String selection = UsersMaster.Users.COLUMN_NAME_CURRENT + " LIKE ?";
+        String[] selectionArgs = {"TRUE"};
+
+
+
+        Cursor cursor = db.query(UsersMaster.Users.TABLE_NAME,
+                projection,
+                selection,
+                selectionArgs,
+                null, null, null);
+        String currentUsername ;
+
+        if (cursor.moveToFirst()) {
+            do {
+                currentUsername = cursor.getString(cursor.getColumnIndex(UsersMaster.Users.COLUMN_NAME_MOBILE));
+            } while (cursor.moveToNext());
+        }
+        else {
+            currentUsername = "123";
+        }
+        cursor.close();
+        return currentUsername;
+    }
 
 
 
 
+    public String getAddress() {
 
+
+        String [] projection = {
+                UsersMaster.Users.COLUMN_NAME_ADDRESS
+        };
+        SQLiteDatabase db = getWritableDatabase();
+
+
+        String selection = UsersMaster.Users.COLUMN_NAME_CURRENT + " LIKE ?";
+        String[] selectionArgs = {"TRUE"};
+
+
+
+        Cursor cursor = db.query(UsersMaster.Users.TABLE_NAME,
+                projection,
+                selection,
+                selectionArgs,
+                null, null, null);
+        String currentUsername ;
+
+        if (cursor.moveToFirst()) {
+            do {
+                currentUsername = cursor.getString(cursor.getColumnIndex(UsersMaster.Users.COLUMN_NAME_ADDRESS));
+            } while (cursor.moveToNext());
+        }
+        else {
+            currentUsername = "123";
+        }
+        cursor.close();
+        return currentUsername;
+    }
 
 
     public void changeinfo (String userName, String mobile,String address){
@@ -160,6 +223,57 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
 
+    }
+
+
+    public void changepwd (String pwd){
+        SQLiteDatabase db = getWritableDatabase();
+
+
+        ContentValues values = new ContentValues();
+        values.put(UsersMaster.Users.COLUMN_NAME_PASSWORD,pwd);
+
+
+        String selection = UsersMaster.Users.COLUMN_NAME_CURRENT + " LIKE ?";
+        String[] selectionArgs = {"TRUE"};
+        db.update(UsersMaster.Users.TABLE_NAME,values,selection,selectionArgs);
+
+
+
+
+    }
+
+    public String getpwd() {
+
+
+        String [] projection = {
+                UsersMaster.Users.COLUMN_NAME_PASSWORD
+        };
+        SQLiteDatabase db = getWritableDatabase();
+
+
+        String selection = UsersMaster.Users.COLUMN_NAME_CURRENT + " LIKE ?";
+        String[] selectionArgs = {"TRUE"};
+
+
+
+        Cursor cursor = db.query(UsersMaster.Users.TABLE_NAME,
+                projection,
+                selection,
+                selectionArgs,
+                null, null, null);
+        String currentUsername ;
+
+        if (cursor.moveToFirst()) {
+            do {
+                currentUsername = cursor.getString(cursor.getColumnIndex(UsersMaster.Users.COLUMN_NAME_PASSWORD));
+            } while (cursor.moveToNext());
+        }
+        else {
+            currentUsername = "123";
+        }
+        cursor.close();
+        return currentUsername;
     }
 
     public boolean addPrescription(String name,String desc, String adds,String phn,String med1,String med2,String med3,String med4,String med5,String med6,String med7,String med8){
