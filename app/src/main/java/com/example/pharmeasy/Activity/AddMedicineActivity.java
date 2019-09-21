@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -40,7 +39,7 @@ public class AddMedicineActivity extends AppCompatActivity {
         btn_save = findViewById(R.id.btnSave);
         btn_clear = findViewById(R.id.btnClear);
 
-        med = new Medicine();
+
 
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,11 +51,14 @@ public class AddMedicineActivity extends AppCompatActivity {
                 }
                 else{
 
-                    med.setMedicine(txt_medicine.getText().toString().trim());
+                    String medicine = txt_medicine.getText().toString().trim();
+                    String id = dbRef.push().getKey();
 
-                    dbRef.push().setValue(med);
-//                dbRef.child("IT001").setValue(med);
-                    Toast.makeText(getApplicationContext(), "Medicine added successfully", Toast.LENGTH_LONG).show();
+                    Medicine med  = new Medicine(id, medicine);
+
+                    dbRef.child(id).setValue(med);
+
+                    Toast.makeText(getApplicationContext(), "Medicine inserted successfully", Toast.LENGTH_LONG).show();
                     clearData();
                 }
             }

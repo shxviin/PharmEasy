@@ -1,17 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/txtName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="366dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:paddingStart="15dp"
+        android:paddingEnd="0dp"
+        android:paddingBottom="15dp"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="0dp"
+        android:layout_height="47dp"
+        android:layout_weight="1"
+        android:background="@drawable/delete_acc" />
+
+</LinearLayout>
 
 
 

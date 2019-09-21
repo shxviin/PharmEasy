@@ -18,6 +18,7 @@ tools:context=".Activity.MainActivity">
         android:layout_height="32dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="28dp"
+        android:paddingLeft="15dp"
         android:background="@color/colorAccent" />
 
     <android.support.design.widget.FloatingActionButton
@@ -38,8 +39,12 @@ tools:context=".Activity.MainActivity">
     <TextView
         android:id="@+id/textView9"
         android:layout_width="match_parent"
-        android:layout_height="33dp"
-        android:text="Medicine List" />
+        android:layout_height="57dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp"
+        android:text="Medicine List"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <View
         android:layout_width="match_parent"
