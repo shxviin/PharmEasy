@@ -120,7 +120,7 @@
                 android:textColorHint="@color/white"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/address" />
+                app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
 
             <EditText
                 android:id="@+id/med2"
@@ -138,7 +138,7 @@
                 android:textColorHint="#FFFFFF"
                 android:textSize="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/address" />
+                app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
 
             <EditText
                 android:id="@+id/med3"
@@ -156,7 +156,7 @@
                 android:textColorHint="@color/white"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/address" />/>
+                app:layout_constraintTop_toBottomOf="@+id/txtAddress" />/>
 
             <EditText
                 android:id="@+id/med4"
@@ -174,7 +174,7 @@
                 android:textColorHint="@color/white"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/address" />
+                app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
 
             <EditText
                 android:id="@+id/med5"
@@ -192,7 +192,7 @@
                 android:textColorHint="@color/white"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/address" />
+                app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
 
             <EditText
                 android:id="@+id/med6"
@@ -210,7 +210,7 @@
                 android:textColorHint="@color/white"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/address" />
+                app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
 
             <EditText
                 android:id="@+id/med7"
@@ -228,7 +228,7 @@
                 android:textColorHint="@color/white"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/address" />
+                app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
 
             <EditText
                 android:id="@+id/med8"
@@ -246,7 +246,7 @@
                 android:textColorHint="@color/white"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/address" />
+                app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
 
 
 

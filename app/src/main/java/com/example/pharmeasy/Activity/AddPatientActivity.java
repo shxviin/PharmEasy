@@ -1,11 +1,9 @@
 package com.example.pharmeasy.Activity;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.pharmeasy.Database.DBHelper;
@@ -22,7 +20,7 @@ public class AddPatientActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_patient);
 
         name = findViewById(R.id.txtpatient).toString();
-        addrs=findViewById(R.id.address).toString();
+        addrs=findViewById(R.id.txtAddress).toString();
         phone = findViewById(R.id.mobileNo).toString();
         desc= findViewById(R.id.diagnosis).toString();
         medi1=findViewById(R.id.med1).toString();

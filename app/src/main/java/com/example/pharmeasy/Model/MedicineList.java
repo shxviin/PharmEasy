@@ -1,17 +1,14 @@
 package com.example.pharmeasy.Model;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.example.pharmeasy.Activity.AddMedicineActivity;
-import com.example.pharmeasy.Activity.MedicineActivity;
 import com.example.pharmeasy.R;
 import com.google.firebase.database.DatabaseReference;
 
@@ -44,6 +41,7 @@ public class MedicineList extends ArrayAdapter<Medicine> {
             @Override
             public void onClick(View v) {
                 dbRef.child(medicine.getId()).removeValue();
+                Toast.makeText(v.getContext(), "Medicine deleted successfully", Toast.LENGTH_SHORT).show();
             }
         });
 

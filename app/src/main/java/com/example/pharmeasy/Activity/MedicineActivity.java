@@ -5,7 +5,9 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SearchView;
 
@@ -47,7 +49,6 @@ public class MedicineActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent add_medicine_intent = new Intent( MedicineActivity.this, AddMedicineActivity.class);
-//                add_medicine_intent.putExtra("medicineId", medicineId);
                 startActivity(add_medicine_intent);
             }
         });

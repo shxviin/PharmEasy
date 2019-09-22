@@ -49,10 +49,10 @@ public class DeliveryAdapter extends RecyclerView.Adapter<DeliveryAdapter.Delive
 
         public DeliveryViewHolder(View view) {
             super(view);
-            customer = view.findViewById(R.id.customer);
-            prescription = view.findViewById(R.id.prescription);
-            address = view.findViewById(R.id.address);
-            phone = view.findViewById(R.id.phone);
+            customer = view.findViewById(R.id.txtCustomerName);
+            prescription = view.findViewById(R.id.txtPrescription);
+            address = view.findViewById(R.id.txtAddress);
+            phone = view.findViewById(R.id.txtPhone);
         }
     }
 }

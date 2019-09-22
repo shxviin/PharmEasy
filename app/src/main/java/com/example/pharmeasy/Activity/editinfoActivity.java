@@ -26,7 +26,7 @@ public class editinfoActivity extends AppCompatActivity {
         textInputUsername.setText(dbHelper.getUsername());
         textInputMobile = (EditText)findViewById(R.id.mobile);
         textInputMobile.setText(dbHelper.getMobile());
-        textInputAddress = (EditText)findViewById(R.id.address);
+        textInputAddress = (EditText)findViewById(R.id.txtAddress);
         textInputAddress.setText(dbHelper.getAddress());
         mButtonUpdate = (Button)findViewById(R.id.button_update);
         mButtonUpdate.setOnClickListener(new View.OnClickListener() {

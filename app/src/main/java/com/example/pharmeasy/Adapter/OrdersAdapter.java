@@ -1,58 +1,74 @@
 package com.example.pharmeasy.Adapter;
 
-import android.support.v7.widget.RecyclerView;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.pharmeasy.Activity.OrdersActivity;
 import com.example.pharmeasy.Model.Orders;
 import com.example.pharmeasy.R;
 
 import java.util.List;
 
-public class OrdersAdapter extends RecyclerView.Adapter<OrdersAdapter.OrdersViewHolder> {
-    private List<Orders> ordersList;
+public class OrdersAdapter extends ArrayAdapter<Orders> {
 
-    public OrdersAdapter(List<Orders> ordersList) {
+    Context mCtx;
+    int listLayoutRes;
+    List<Orders> ordersList;
+    SQLiteDatabase mDatabase;
+
+    public OrdersAdapter(Context mCtx, int listLayoutRes, List<Orders> ordersList, SQLiteDatabase mDatabase) {
+        super(mCtx, listLayoutRes, ordersList);
+
+        this.mCtx = mCtx;
+        this.listLayoutRes = listLayoutRes;
         this.ordersList = ordersList;
+        this.mDatabase = mDatabase;
     }
 
-
-
+    @NonNull
     @Override
-    public OrdersViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.orders_list_row, parent, false);
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        LayoutInflater inflater = LayoutInflater.from(mCtx);
+        View view = inflater.inflate(listLayoutRes, null);
 
-        return new OrdersViewHolder(itemView);
-    }
+        //getting employee of the specified position
+        final Orders orders = ordersList.get(position);
 
-    @Override
-    public void onBindViewHolder(OrdersViewHolder holder, int position) {
-        holder.customer.setText(ordersList.get(position).getCustomer());
-        holder.prescription.setText(ordersList.get(position).getPrescription());
-        holder.address.setText(ordersList.get(position).getAddress());
-        holder.phone.setText(ordersList.get(position).getPhone());
-    }
 
-    @Override
-    public int getItemCount() {
-        return ordersList.size();
-    }
+        //getting views
+        TextView textViewCustomerName = view.findViewById(R.id.txtCustomerName);
+        TextView textViewPrescription = view.findViewById(R.id.txtPrescription);
+        TextView textAddress = view.findViewById(R.id.txtAddress);
+        TextView textViewPhone = view.findViewById(R.id.txtPhone);
 
-    public class OrdersViewHolder extends RecyclerView.ViewHolder {
-        public TextView customer;
-        public TextView prescription;
-        public TextView address;
-        public TextView phone;
+        //adding data to views
+        textViewCustomerName.setText(orders.getCustomerName());
+        textViewPrescription.setText(orders.getPrescription());
+        textAddress.setText(orders.getAddress());
+        textViewPhone.setText(orders.getPhone());
 
-        public OrdersViewHolder(View view) {
-            super(view);
-            customer = view.findViewById(R.id.customer);
-            prescription = view.findViewById(R.id.prescription);
-            address = view.findViewById(R.id.address);
-            phone = view.findViewById(R.id.phone);
-        }
+        //we will use these buttons later for move operation
+        Button buttonMoveOrder = view.findViewById(R.id.buttonMoveOrder);
+
+        buttonMoveOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(), "The order has been moved to Delivery", Toast.LENGTH_SHORT).show();
+                String sql = "DELETE FROM orders WHERE id = ?";
+                mDatabase.execSQL(sql, new Integer[]{orders.getId()});
+            }
+        });
+
+        return view;
     }
 }

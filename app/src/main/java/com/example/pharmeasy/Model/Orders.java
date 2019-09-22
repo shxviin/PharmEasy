@@ -1,16 +1,22 @@
 package com.example.pharmeasy.Model;
 
 public class Orders {
-    private String customer;
+    private Integer id;
+    private String customerName;
     private String prescription;
     private String address;
     private String phone;
 
-    public Orders(String customer, String prescription, String address, String phone ) {
-        this.customer = customer;
+    public Orders(Integer id,String customer, String prescription, String address, String phone ) {
+        this.id = id;
+        this.customerName = customer;
         this.prescription = prescription;
         this.address = address;
         this.phone = phone;
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public String getAddress() {
@@ -21,8 +27,8 @@ public class Orders {
         return phone;
     }
 
-    public String getCustomer() {
-        return customer;
+    public String getCustomerName() {
+        return customerName;
     }
 
     public String getPrescription() {

@@ -71,7 +71,7 @@
 
 
             <ScrollView
-                android:id="@+id/address"
+                android:id="@+id/txtAddress"
                 android:layout_width="@dimen/form_field_width"
                 android:layout_height="200dp"
                 android:layout_above="@+id/mobile"

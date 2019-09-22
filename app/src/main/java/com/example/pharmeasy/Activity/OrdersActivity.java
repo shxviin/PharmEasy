@@ -1,10 +1,13 @@
 package com.example.pharmeasy.Activity;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.pharmeasy.Adapter.OrdersAdapter;
 import com.example.pharmeasy.Model.Orders;
@@ -15,9 +18,13 @@ import java.util.List;
 
 public class OrdersActivity extends AppCompatActivity {
 
-    private List<Orders> ordersList = new ArrayList<>();
-    private RecyclerView recyclerView;
-    private OrdersAdapter mAdapter;
+    public static final String DATABASE_NAME = "myOrdersDatabase";
+
+    private List<Orders> ordersList;
+    SQLiteDatabase mDatabase;
+    ListView listViewOrders;
+    OrdersAdapter adapter;
+    Button btnDemo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,35 +32,95 @@ public class OrdersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_orders);
 
 
-        recyclerView = findViewById(R.id.recycler_view);
+        listViewOrders = findViewById(R.id.listViewOrders);
+        ordersList = new ArrayList<>();
 
-        mAdapter = new OrdersAdapter(ordersList);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(mAdapter);
+        btnDemo = findViewById(R.id.btnDemo);
 
-        initOrdersData();
+        //opening the database
+        mDatabase = openOrCreateDatabase(DATABASE_NAME, MODE_PRIVATE, null);
+
+        createEmployeeTable();
+
+        btnDemo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addEmployee();
+            }
+        });
+
+        //this method will display the orders in the list
+        showOrdersFromDatabase();
     }
 
-    private void initOrdersData() {
-        Orders order;
+    private void createEmployeeTable() {
+        mDatabase.execSQL(
+                "CREATE TABLE IF NOT EXISTS orders (\n" +
+                        "    id INTEGER NOT NULL CONSTRAINT orders_pk PRIMARY KEY AUTOINCREMENT,\n" +
+                        "    cusname varchar(200) NOT NULL,\n" +
+                        "    prescription varchar(200) NOT NULL,\n" +
+                        "    address varchar(200) NOT NULL,\n" +
+                        "    phone varchar(20) NOT NULL\n" +
+                        ");"
+        );
+    }
 
-        order = new Orders("Ed Burnette", "5 x Panadol", "36/2A, Madampitiya Rd, Col - 15", "0774592569");
-        ordersList.add(order);
+    //In this method we will do the create operation
+    private void addEmployee() {
 
-        order = new Orders("Mark Murphy", "5 x Panadol", "36/2A, Madampitiya Rd, Col - 15", "0774592569");
-        ordersList.add(order);
+            String insertSQL = "INSERT INTO orders \n" +
+                    "(cusname, prescription, address, phone)\n" +
+                    "VALUES \n" +
+                    "('Shavin Kanagar', 'Panadol X 5', '36/2, Madampititya Rd', '0774592569');";
+            mDatabase.execSQL(insertSQL);
+            Toast.makeText(this, "Employee Added Successfully", Toast.LENGTH_SHORT).show();
+        reloadOrdersFromDatabase();
+    }
 
-        order = new Orders( " W. Frank Ableson", "5 x Panadol", "36/2A, Madampitiya Rd, Col - 15", "0774592569");
-        ordersList.add(order);
+    private void showOrdersFromDatabase() {
+        //we used rawQuery(sql, selectionargs) for fetching all the orders
+        Cursor cursorOrders = mDatabase.rawQuery("SELECT * FROM orders", null);
 
-        order = new Orders( "Wei Meng Lee", "5 x Panadol", "36/2A, Madampitiya Rd, Col - 15", "0774592569");
-        ordersList.add(order);
+        //if the cursor has some data
+        if (cursorOrders.moveToFirst()) {
+            //looping through all the records
+            do {
+                //pushing each record in the order list
+                ordersList.add(new Orders(
+                        cursorOrders.getInt(0),
+                        cursorOrders.getString(1),
+                        cursorOrders.getString(2),
+                        cursorOrders.getString(3),
+                        cursorOrders.getString(4)
+                ));
+            } while (cursorOrders.moveToNext());
+        }
+        //closing the cursor
+        cursorOrders.close();
 
-        order = new Orders( "Sheran Gunasekera", "5 x Panadol", "36/2A, Madampitiya Rd, Col - 15", "0774592569");
-        ordersList.add(order);
+        //creating the adapter object
+        adapter = new OrdersAdapter(this, R.layout.orders_list_row, ordersList, mDatabase);
 
-        mAdapter.notifyDataSetChanged();
+        //adding the adapter to listview
+        listViewOrders.setAdapter(adapter);
+        reloadOrdersFromDatabase();
+    }
+
+    public void reloadOrdersFromDatabase() {
+        Cursor cursorOrders = mDatabase.rawQuery("SELECT * FROM orders", null);
+        if (cursorOrders.moveToFirst()) {
+            ordersList.clear();
+            do {
+                ordersList.add(new Orders(
+                        cursorOrders.getInt(0),
+                        cursorOrders.getString(1),
+                        cursorOrders.getString(2),
+                        cursorOrders.getString(3),
+                        cursorOrders.getString(4)
+                ));
+            } while (cursorOrders.moveToNext());
+        }
+        cursorOrders.close();
+        adapter.notifyDataSetChanged();
     }
 }

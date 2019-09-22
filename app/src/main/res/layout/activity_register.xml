@@ -80,7 +80,7 @@
         android:textSize="@dimen/form_text_size" />
 
     <EditText
-        android:id="@+id/address"
+        android:id="@+id/txtAddress"
         android:layout_width="@dimen/form_field_width"
         android:layout_height="@dimen/button_and_form_field_height"
         android:layout_above="@+id/mobile"
