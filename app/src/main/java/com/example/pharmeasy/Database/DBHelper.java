@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.pharmeasy.Database.UsersMaster.Prescriptions;
+import com.example.pharmeasy.Database.UsersMaster.Orders;
 
 import java.util.List;
 
@@ -43,6 +44,17 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
         sqLiteDatabase.execSQL(SQL_CREATE_PRESCRIPTION);
+
+        String SQL_CREATE_ORDERS=
+                "CREATE TABLE " +   Orders.TABLE_NAME + " ("+
+                        "id INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                        Orders.COLUMN_NAME_CUSTOMER_NAME + " TEXT,"+
+                        Orders.COLUMN_NAME_PRESCRIPTION + " TEXT," +
+                        Orders.COLUMN_NAME_ADDRESS + " TEXT,"+
+                        Orders.COLUMN_NAME_PHONE + " TEXT)";
+
+
+        sqLiteDatabase.execSQL(SQL_CREATE_ORDERS);
     }
 
     @Override
@@ -303,6 +315,20 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
         long result=db.insert(Prescriptions.TABLE_NAME,null,values);
+
+        return result;
+    }
+
+    public long addOrder(String name,String pres, String adds,String phn){
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(Orders.COLUMN_NAME_CUSTOMER_NAME,name);
+        values.put(Orders.COLUMN_NAME_PRESCRIPTION,pres);
+        values.put(Orders.COLUMN_NAME_ADDRESS,adds);
+        values.put(Orders.COLUMN_NAME_PHONE,phn);
+
+        long result = db.insert(Orders.TABLE_NAME,null,values);
 
         return result;
     }

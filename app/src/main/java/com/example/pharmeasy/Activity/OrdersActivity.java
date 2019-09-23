@@ -18,7 +18,7 @@ import java.util.List;
 
 public class OrdersActivity extends AppCompatActivity {
 
-    public static final String DATABASE_NAME = "myOrdersDatabase";
+    public static final String DATABASE_NAME = "PharmEasyDB";
 
     private List<Orders> ordersList;
     SQLiteDatabase mDatabase;
@@ -40,7 +40,7 @@ public class OrdersActivity extends AppCompatActivity {
         //opening the database
         mDatabase = openOrCreateDatabase(DATABASE_NAME, MODE_PRIVATE, null);
 
-        createEmployeeTable();
+//        createEmployeeTable();
 
         btnDemo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +53,7 @@ public class OrdersActivity extends AppCompatActivity {
         showOrdersFromDatabase();
     }
 
+    /*
     private void createEmployeeTable() {
         mDatabase.execSQL(
                 "CREATE TABLE IF NOT EXISTS orders (\n" +
@@ -64,6 +65,7 @@ public class OrdersActivity extends AppCompatActivity {
                         ");"
         );
     }
+    */
 
     //In this method we will do the create operation
     private void addEmployee() {

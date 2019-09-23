@@ -26,4 +26,13 @@ public class UsersMaster {
         public static final String COLUMN_NAME_PRESCRIPTION="prescription";
 
     }
+
+    public static class Orders implements BaseColumns{
+        public static final String TABLE_NAME = "orders";
+        public static final String COLUMN_NAME_CUSTOMER_NAME = "cusName";
+        public static final String COLUMN_NAME_PRESCRIPTION="prescription";
+        public static final String COLUMN_NAME_ADDRESS="address";
+        public static final String COLUMN_NAME_PHONE = "phone";
+
+    }
 }

@@ -42,9 +42,10 @@ public class AddPatientActivity extends AppCompatActivity {
       String pdiagnosis= diag.getText().toString().trim();
       String pprescription= pres.getText().toString().trim();
 
+        long result2 = dbHelper.addOrder(pname, pprescription, paddress, pphone);
       long result = dbHelper.addPrescription(pname,pdiagnosis,paddress,pphone,pprescription);
 
-      if (result<0){
+      if (result<0 && result2<0){
           Toast.makeText(getApplicationContext(),"Failed to Add",Toast.LENGTH_LONG).show();
       }else{
           Toast.makeText(getApplicationContext(),"Successfully Added",Toast.LENGTH_LONG).show();
