@@ -62,7 +62,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity.EditPatientActivity" />
-        <activity android:name=".Activity.AddPatientActivity" />
+        <activity android:name=".Activity.AddPatientActivity" android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"

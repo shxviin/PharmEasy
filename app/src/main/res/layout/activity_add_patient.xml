@@ -73,7 +73,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtpatient" />
             <EditText
-                android:id="@+id/address"
+                android:id="@+id/txtaddress"
                 android:layout_width="250dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="80dp"
@@ -85,10 +85,10 @@
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/diagnosis" />
+                app:layout_constraintTop_toBottomOf="@+id/txtdiagnosis" />
 
             <EditText
-                android:id="@+id/diagnosis"
+                android:id="@+id/txtdiagnosis"
                 android:layout_width="250dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="80dp"
@@ -105,137 +105,9 @@
 
 
             <EditText
-                android:id="@+id/med1"
-                android:layout_width="150dp"
-                android:layout_height="40dp"
-                android:layout_above="@+id/confirm_pw"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="120dp"
-                android:layout_marginTop="30dp"
-                android:background="#48000000"
-                android:ems="10"
-                android:hint="@string/addMedicine"
-                android:inputType="text"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                android:textSize="16dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
-
-            <EditText
-                android:id="@+id/med2"
-                android:layout_width="150dp"
-                android:layout_height="40dp"
-                android:layout_above="@+id/mobile"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="120dp"
-                android:layout_marginTop="30dp"
-                android:background="@color/hintback"
-                android:ems="10"
-                android:hint="@string/addMedicine"
-                android:inputType="text"
-                android:textColor="#0AFFFFFF"
-                android:textColorHint="#FFFFFF"
-                android:textSize="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
-
-            <EditText
-                android:id="@+id/med3"
-                android:layout_width="150dp"
-                android:layout_height="40dp"
-                android:layout_above="@+id/confirm_pw"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="120dp"
-                android:layout_marginTop="30dp"
-                android:background="#48000000"
-                android:ems="10"
-                android:hint="@string/addMedicine"
-                android:inputType="text"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                android:textSize="16dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtAddress" />/>
-
-            <EditText
-                android:id="@+id/med4"
-                android:layout_width="150dp"
-                android:layout_height="40dp"
-                android:layout_above="@+id/confirm_pw"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="120dp"
-                android:layout_marginTop="30dp"
-                android:background="#48000000"
-                android:ems="10"
-                android:hint="@string/addMedicine"
-                android:inputType="text"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                android:textSize="16dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
-
-            <EditText
-                android:id="@+id/med5"
-                android:layout_width="150dp"
-                android:layout_height="40dp"
-                android:layout_above="@+id/confirm_pw"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="120dp"
-                android:layout_marginTop="30dp"
-                android:background="#48000000"
-                android:ems="10"
-                android:hint="@string/addMedicine"
-                android:inputType="text"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                android:textSize="16dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
-
-            <EditText
-                android:id="@+id/med6"
-                android:layout_width="150dp"
-                android:layout_height="40dp"
-                android:layout_above="@+id/confirm_pw"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="120dp"
-                android:layout_marginTop="30dp"
-                android:background="#48000000"
-                android:ems="10"
-                android:hint="@string/addMedicine"
-                android:inputType="text"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                android:textSize="16dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
-
-            <EditText
-                android:id="@+id/med7"
-                android:layout_width="150dp"
-                android:layout_height="40dp"
-                android:layout_above="@+id/confirm_pw"
-                android:layout_centerHorizontal="true"
-                android:layout_marginStart="120dp"
-                android:layout_marginTop="30dp"
-                android:background="#48000000"
-                android:ems="10"
-                android:hint="@string/addMedicine"
-                android:inputType="text"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                android:textSize="16dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
-
-            <EditText
-                android:id="@+id/med8"
-                android:layout_width="150dp"
-                android:layout_height="40dp"
-                android:layout_above="@+id/confirm_pw"
-                android:layout_centerHorizontal="true"
+                android:id="@+id/txtPrescription"
+                android:layout_width="200dp"
+                android:layout_height="80dp"
                 android:layout_marginStart="120dp"
                 android:layout_marginTop="30dp"
                 android:background="#48000000"
