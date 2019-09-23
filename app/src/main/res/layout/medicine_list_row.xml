@@ -16,7 +16,8 @@
         android:paddingStart="15dp"
         android:paddingEnd="0dp"
         android:paddingBottom="15dp"
-        android:textSize="24sp" />
+        android:textSize="20sp"
+        android:textColor="@android:color/black"/>
 
     <Button
         android:id="@+id/btnDelete"
@@ -26,6 +27,3 @@
         android:background="@drawable/delete_acc" />
 
 </LinearLayout>
-
-
-

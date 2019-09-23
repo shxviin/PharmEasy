@@ -45,7 +45,7 @@ public class OrdersActivity extends AppCompatActivity {
         btnDemo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addEmployee();
+                addOrder();
             }
         });
 
@@ -68,14 +68,14 @@ public class OrdersActivity extends AppCompatActivity {
     */
 
     //In this method we will do the create operation
-    private void addEmployee() {
+    private void addOrder() {
 
             String insertSQL = "INSERT INTO orders \n" +
                     "(cusname, prescription, address, phone)\n" +
                     "VALUES \n" +
                     "('Shavin Kanagar', 'Panadol X 5', '36/2, Madampititya Rd', '0774592569');";
             mDatabase.execSQL(insertSQL);
-            Toast.makeText(this, "Employee Added Successfully", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Order Added Successfully", Toast.LENGTH_SHORT).show();
         reloadOrdersFromDatabase();
     }
 
