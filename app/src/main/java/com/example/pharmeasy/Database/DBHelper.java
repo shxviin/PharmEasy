@@ -369,6 +369,20 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
+    public void deleteAccount (){
+        SQLiteDatabase db = getReadableDatabase();
+
+
+        String selection = UsersMaster.Users.COLUMN_NAME_CURRENT + " LIKE ?";
+        String[] selectionArgs = {"TRUE"};
+        db.delete(UsersMaster.Users.TABLE_NAME,selection,selectionArgs);
+
+
+
+
+    }
+
+
 }
 
 
