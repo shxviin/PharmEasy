@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,137 +13,186 @@
     android:background="@color/colorPrimary"
     android:gravity="center_horizontal">
 
-    <ImageView
-        android:layout_width="@dimen/logo_width"
-        android:layout_height="@dimen/logo_height"
-        android:layout_marginTop="@dimen/fifty"
-        app:srcCompat="@drawable/pharmeasy"/>
 
-    <EditText
-        android:id="@+id/txtpatient"
-        android:layout_width="@dimen/form_field_width"
-        android:layout_height="@dimen/button_and_form_field_height"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="35dp"
-        android:textColorHint="@color/white"
-        android:textColor="@color/white"
-        android:background="@color/formfieldbg"
-        android:drawableLeft="@drawable/ic_username"
-        android:ems="10"
-        android:hint="@string/username"
-        android:inputType="textPersonName"
-        android:textSize="@dimen/form_text_size" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-28dp">
 
-    <EditText
-        android:id="@+id/pw"
-        android:layout_width="@dimen/form_field_width"
-        android:layout_height="@dimen/button_and_form_field_height"
-        android:layout_above="@+id/txtpatient"
-        android:layout_centerHorizontal="true"
-        android:textColorHint="@color/white"
-        android:textColor="@color/white"
-        android:layout_marginBottom="35dp"
-        android:background="@color/formfieldbg"
-        android:drawableLeft="@drawable/ic_pw"
-        android:ems="10"
-        android:hint="@string/reg_password"
-        android:inputType="textPassword"
-        android:textSize="16dp" />
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/confirm_pw"
-        android:layout_width="@dimen/form_field_width"
-        android:layout_height="@dimen/button_and_form_field_height"
-        android:layout_above="@+id/pw"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/thirtyfive"
-        android:textColorHint="@color/white"
-        android:textColor="@color/white"
-        android:background="@color/formfieldbg"
-        android:drawableLeft="@drawable/ic_pw"
-        android:ems="10"
-        android:hint="@string/confirm_password"
-        android:inputType="textPassword"
-        android:textSize="16dp" />
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="410dp"
+                android:layout_height="244dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/pharmeasy" />
 
+            <EditText
+                android:id="@+id/txtpatient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="108dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="109dp"
+                android:background="@color/formfieldbg"
+                android:drawableLeft="@drawable/ic_username"
+                android:ems="10"
+                android:hint="@string/username"
+                android:inputType="textPersonName"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/form_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView8" />
 
-    <EditText
-        android:id="@+id/mobile"
-        android:layout_width="@dimen/form_field_width"
-        android:layout_height="@dimen/button_and_form_field_height"
-        android:layout_above="@+id/confirm_pw"
-        android:layout_centerHorizontal="true"
-        android:textColorHint="@color/white"
-        android:textColor="@color/white"
-        android:layout_marginBottom="@dimen/thirtyfive"
-        android:background="@color/formfieldbg"
-        android:drawableLeft="@drawable/ic_mobile"
-        android:ems="10"
-        android:hint="@string/mobile"
-        android:inputType="number"
-        android:textSize="@dimen/form_text_size" />
+            <EditText
+                android:id="@+id/pw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="108dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="109dp"
+                android:background="@color/formfieldbg"
+                android:drawableLeft="@drawable/ic_pw"
+                android:ems="10"
+                android:hint="@string/reg_password"
+                android:inputType="textPassword"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtpatient" />
 
-    <EditText
-        android:id="@+id/txtAddress"
-        android:layout_width="@dimen/form_field_width"
-        android:layout_height="@dimen/button_and_form_field_height"
-        android:layout_above="@+id/mobile"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/thirtyfive"
-        android:textColorHint="@color/white"
-        android:textColor="@color/white"
-        android:background="#11000000"
-        android:drawableLeft="@drawable/ic_location"
-        android:ems="10"
-        android:hint="@string/address_reg"
-        android:inputType="text"
-        android:textSize="@dimen/form_text_size" />
+            <EditText
+                android:id="@+id/confirm_pw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="108dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="109dp"
+                android:background="@color/formfieldbg"
+                android:drawableLeft="@drawable/ic_pw"
+                android:ems="10"
+                android:hint="@string/confirm_password"
+                android:inputType="textPassword"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pw" />
 
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:background="#11000000"
-        android:layout_width="@dimen/twosixty"
-        android:layout_height="@dimen/button_and_form_field_height"
-        android:textColorHint="@color/white"
-        android:textColor="@color/white"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        />
+            <EditText
+                android:id="@+id/mobile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="108dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="109dp"
+                android:background="@color/formfieldbg"
+                android:drawableLeft="@drawable/ic_mobile"
+                android:ems="10"
+                android:hint="@string/mobile"
+                android:inputType="number"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/form_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/confirm_pw" />
+
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="108dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="109dp"
+                android:background="#11000000"
+                android:drawableLeft="@drawable/ic_location"
+                android:ems="10"
+                android:hint="@string/address_reg"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/form_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mobile" />
 
 
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="194dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="109dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="108dp"
+                android:background="#11000000"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/address" />
 
-    <Button
-        android:id="@+id/button_register"
-        android:layout_width="@dimen/twosix"
-        android:layout_height="@dimen/button_and_form_field_height"
-        android:layout_marginTop="@dimen/twenty"
-        android:background="@color/green"
-        android:textColor="@color/white"
-        android:text="@string/register"/>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="@dimen/ten">
+            <Button
+                android:id="@+id/button_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@color/green"
+                android:text="@string/register"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/thirtyfive"
-            android:textColor="@color/white"
-            android:text="@string/already_registered"/>
 
-        <TextView
-            android:id="@+id/textview_login"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/thirtyfive"
-            android:paddingLeft="@dimen/ten"
-            android:textStyle="bold"
-            android:textColor="@color/green"
-            android:textSize="@dimen/form_text_size"
-            android:text="@string/login"/>
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="108dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/already_registered"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toStartOf="@+id/textview_login"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_register" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/textview_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="128dp"
+                android:paddingLeft="@dimen/ten"
+                android:text="@string/login"
+                android:textColor="@color/green"
+                android:textSize="@dimen/form_text_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView13"
+                app:layout_constraintTop_toBottomOf="@+id/button_register" />
 
-</LinearLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

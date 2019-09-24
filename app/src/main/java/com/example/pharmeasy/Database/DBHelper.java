@@ -302,6 +302,41 @@ public class DBHelper extends SQLiteOpenHelper {
         return currentUsername;
     }
 
+
+
+    public String gettype() {
+
+
+        String [] projection = {
+                UsersMaster.Users.COLUMN_NAME_TYPE
+        };
+        SQLiteDatabase db = getWritableDatabase();
+
+
+        String selection = UsersMaster.Users.COLUMN_NAME_CURRENT + " LIKE ?";
+        String[] selectionArgs = {"TRUE"};
+
+
+
+        Cursor cursor = db.query(UsersMaster.Users.TABLE_NAME,
+                projection,
+                selection,
+                selectionArgs,
+                null, null, null);
+        String currentUsername ;
+
+        if (cursor.moveToFirst()) {
+            do {
+                currentUsername = cursor.getString(cursor.getColumnIndex(UsersMaster.Users.COLUMN_NAME_TYPE));
+            } while (cursor.moveToNext());
+        }
+        else {
+            currentUsername = "";
+        }
+        cursor.close();
+        return currentUsername;
+    }
+
     public long addPrescription(String name,String diag, String adds,String phn,String pres){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
