@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pharmeasy.Activity.OrdersActivity;
+import com.example.pharmeasy.Database.DBHelper;
 import com.example.pharmeasy.Model.Orders;
 import com.example.pharmeasy.R;
 
@@ -25,6 +26,7 @@ public class OrdersAdapter extends ArrayAdapter<Orders> {
     int listLayoutRes;
     List<Orders> ordersList;
     SQLiteDatabase mDatabase;
+    DBHelper dbHelper;
 
     public OrdersAdapter(Context mCtx, int listLayoutRes, List<Orders> ordersList, SQLiteDatabase mDatabase) {
         super(mCtx, listLayoutRes, ordersList);
@@ -64,10 +66,28 @@ public class OrdersAdapter extends ArrayAdapter<Orders> {
             @Override
             public void onClick(View v) {
                 Toast.makeText(v.getContext(), "The order has been moved to Delivery", Toast.LENGTH_SHORT).show();
+
+                String sql2 = "INSERT INTO delivery(cusName, prescription, address, phone) SELECT cusName, prescription, address, phone FROM orders WHERE id = ?";
+
+                mDatabase.execSQL(sql2, new Integer[]{orders.getId()});
+
                 String sql = "DELETE FROM orders WHERE id = ?";
                 mDatabase.execSQL(sql, new Integer[]{orders.getId()});
+
+
             }
         });
+
+//        buttonMoveOrder.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//
+//                String sql2 = "INSERT INTO delivery(cusName, prescription, address, phone) SELECT cusName, prescription, address, phone FROM orders WHERE id = ?";
+//
+//                mDatabase.execSQL(sql2, new Integer[]{orders.getId()});
+//            }
+//        });
 
         return view;
     }

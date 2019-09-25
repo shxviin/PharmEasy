@@ -5,9 +5,12 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.view.View;
+import android.widget.Toast;
 
 import com.example.pharmeasy.Database.UsersMaster.Prescriptions;
 import com.example.pharmeasy.Database.UsersMaster.Orders;
+import com.example.pharmeasy.Database.UsersMaster.Delivery;
 
 import java.util.List;
 
@@ -55,6 +58,18 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
         sqLiteDatabase.execSQL(SQL_CREATE_ORDERS);
+
+        String SQL_CREATE_DELIVERY=
+                "CREATE TABLE " +   Delivery.TABLE_NAME + " ("+
+                        "id INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                        Delivery.COLUMN_NAME_CUSTOMER_NAME + " TEXT,"+
+                        Delivery.COLUMN_NAME_PRESCRIPTION + " TEXT," +
+                        Delivery.COLUMN_NAME_ADDRESS + " TEXT,"+
+                        Delivery.COLUMN_NAME_PHONE + " TEXT,"+
+                        Delivery.COLUMN_NAME_STATUS + " TEXT)";
+
+
+        sqLiteDatabase.execSQL(SQL_CREATE_DELIVERY);
     }
 
     @Override

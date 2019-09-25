@@ -47,7 +47,7 @@ public class OrdersActivity extends AppCompatActivity {
         //opening the database
         mDatabase = openOrCreateDatabase(DATABASE_NAME, MODE_PRIVATE, null);
 
-//        createEmployeeTable();
+        createEmployeeTable();
 
         btnDemo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,19 +88,22 @@ public class OrdersActivity extends AppCompatActivity {
 
     }
 
-    /*
+
     private void createEmployeeTable() {
         mDatabase.execSQL(
-                "CREATE TABLE IF NOT EXISTS orders (\n" +
-                        "    id INTEGER NOT NULL CONSTRAINT orders_pk PRIMARY KEY AUTOINCREMENT,\n" +
+                "CREATE TABLE IF NOT EXISTS delivery (\n" +
+                        "    id INTEGER NOT NULL CONSTRAINT delivery_pk PRIMARY KEY AUTOINCREMENT,\n" +
                         "    cusname varchar(200) NOT NULL,\n" +
                         "    prescription varchar(200) NOT NULL,\n" +
                         "    address varchar(200) NOT NULL,\n" +
-                        "    phone varchar(20) NOT NULL\n" +
+                        "    phone varchar(20) NOT NULL,\n" +
+                        "    status varchar(20) DEFAULT 'To Be Dispatched'\n" +
                         ");"
         );
+//        mDatabase.execSQL("DROP TABLE delivery");
+//        Toast.makeText(getApplicationContext(), "deleted delivery",Toast.LENGTH_LONG).show();
     }
-    */
+
 
     //In this method we will do the create operation
     private void addOrder() {
