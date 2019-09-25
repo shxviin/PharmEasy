@@ -308,6 +308,14 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
+    public Cursor getPatient(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT * FROM " +Prescriptions.TABLE_NAME;
+
+        Cursor data = db.rawQuery(query,null);
+        return data;
+    }
+
 }
 
 

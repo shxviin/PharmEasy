@@ -1,5 +1,6 @@
 package com.example.pharmeasy.Activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -30,7 +31,12 @@ public class AddPatientActivity extends AppCompatActivity {
         button_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addPrescription();
+                if (nameIsfull()==true && addressIsfull()== true && mobileIsfull() == true && ValidatePhoneNo()==true){
+                    addPrescription();
+                    Intent patientList = new Intent(AddPatientActivity.this,PatientsActivity.class);
+                    startActivity(patientList);
+                }
+
             }
         });
     }
@@ -51,4 +57,55 @@ public class AddPatientActivity extends AppCompatActivity {
       }
 
     }
+
+    private boolean nameIsfull(){
+        String vname = name.getText().toString().trim();
+
+        if (vname.isEmpty()){
+            Toast.makeText(getApplicationContext(),"Name Field Cannot be Empty",Toast.LENGTH_LONG).show();
+            return false;
+        }else {
+            return true;
+        }
+
+    }
+
+    private boolean addressIsfull(){
+        String vaddress = addrs.getText().toString().trim();
+
+        if (vaddress.isEmpty()){
+            Toast.makeText(getApplicationContext(),"Address Field Cannot be Empty",Toast.LENGTH_LONG).show();
+            return false;
+        }else {
+            return true;
+        }
+
+    }
+
+    private boolean mobileIsfull(){
+        String vmobile = phone.getText().toString().trim();
+
+        if (vmobile.isEmpty()){
+            Toast.makeText(getApplicationContext(),"Phone Number Field Cannot be Empty",Toast.LENGTH_LONG).show();
+            return false;
+        }else {
+            return true;
+        }
+
+    }
+
+    private boolean ValidatePhoneNo(){
+        String vmobile = phone.getText().toString().trim();
+        if(vmobile.length() == 10){
+            return true;
+        }
+
+        else {
+            Toast.makeText(getApplicationContext(),"Invalid Phone number",Toast.LENGTH_LONG).show();
+            return false;
+        }
+    }
+
+
+
 }

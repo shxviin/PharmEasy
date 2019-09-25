@@ -7,396 +7,62 @@
     android:background="@drawable/sett_bg"
     tools:context=".Activity.PatientsActivity">
 
-    <SearchView
-        android:id="@+id/searchView"
-        android:layout_width="295dp"
-        android:layout_height="32dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="71dp"
-        android:layout_marginTop="16dp"
-        android:background="@color/colorAccent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/tableLayout"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="190dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-        <TableRow>
 
-
-            <Button
-                android:id="@+id/addPatient"
-                android:drawableRight="@drawable/ic_input_add"
-                android:text="@string/add_patient" />
-        </TableRow>
-        <TableRow
-            android:layout_height="fill_parent"
-            android:background="#707B83"
-            android:padding="3dp"
-            android:scrollbarSize="5dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="#"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:layout_weight="1"
-                android:text="Patient Name"
-                android:textAlignment="inherit"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Choose"
-                android:textAlignment="center"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-        </TableRow>
-
-        <TableRow
-            android:background="#DAE8FC"
-            android:padding="3dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#E2E3E9"
-                android:text="1"
-                android:textAllCaps="true"
-                android:textColor="#131413"
-                android:textSize="18sp" />
-
-            <TextView
-                android:layout_width="174dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#E2E3E9"
-                android:text="Suresh Dasari"
-                android:textAllCaps="true"
-                android:textColor="#131413"
-                android:textSize="18sp" />
-
-            <ImageButton
-                android:id="@+id/editPatient"
-                android:layout_width="42dp"
-                android:layout_height="30dp"
-                android:background="#318B17"
-                android:src="@drawable/ic_menu_edit" />
-
-            <ImageButton
-                android:layout_width="45dp"
-                android:layout_height="30dp"
-                android:background="#DB0E0E"
-                android:src="@drawable/ic_menu_delete" />
-
-
-        </TableRow>
-
-        <TableRow
-            android:background="#DAE8FC"
-            android:padding="5dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#E2E3E9"
-                android:text="2"
-                android:textAllCaps="true"
-                android:textColor="#131413"
-                android:textSize="18sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#E2E3E9"
-                android:text="Rohini Alavala"
-                android:textAllCaps="true"
-                android:textColor="#131413"
-                android:textSize="18sp" />
-
-            <ImageButton
-                android:layout_width="42dp"
-                android:layout_height="30dp"
-                android:background="#318B17"
-                android:src="@drawable/ic_menu_edit" />
-
-            <ImageButton
-                android:layout_width="45dp"
-                android:layout_height="30dp"
-                android:background="#DB0E0E"
-                android:src="@drawable/ic_menu_delete" />
-
-        </TableRow>
-
-        <TableRow
-            android:background="#DAE8FC"
-            android:padding="5dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#E2E3E9"
-                android:text="3"
-                android:textAllCaps="true"
-                android:textColor="#131413"
-                android:textSize="18sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#E2E3E9"
-                android:text="Samuel Patel"
-                android:textAllCaps="true"
-                android:textColor="#131413"
-                android:textSize="18sp" />
-
-            <ImageButton
-                android:layout_width="42dp"
-                android:layout_height="30dp"
-                android:background="#318B17"
-                android:src="@drawable/ic_menu_edit" />
-
-            <ImageButton
-                android:layout_width="45dp"
-                android:layout_height="30dp"
-                android:background="#DB0E0E"
-                android:src="@drawable/ic_menu_delete" />
-
-        </TableRow>
-
-        <TableRow
-            android:background="#DAE8FC"
-            android:padding="5dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#E2E3E9"
-                android:text="4"
-                android:textAllCaps="true"
-                android:textColor="#131413"
-                android:textSize="18sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#E2E3E9"
-                android:text="Vinod Mohan"
-                android:textAllCaps="true"
-                android:textColor="#131413"
-                android:textSize="18sp" />
-
-            <ImageButton
-                android:layout_width="42dp"
-                android:layout_height="30dp"
-                android:background="#318B17"
-                android:src="@drawable/ic_menu_edit" />
-
-            <ImageButton
-                android:layout_width="45dp"
-                android:layout_height="30dp"
-                android:background="#DB0E0E"
-                android:src="@drawable/ic_menu_delete" />
-
-        </TableRow>
-
-        <TableRow
-            android:background="#DAE8FC"
-            android:padding="5dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#E2E3E9"
-                android:text="5"
-                android:textAllCaps="true"
-                android:textColor="#131413"
-                android:textSize="18sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#E2E3E9"
-                android:text="Kumar Khan"
-                android:textAllCaps="true"
-                android:textColor="#131413"
-                android:textSize="18sp" />
-
-            <ImageButton
-                android:layout_width="42dp"
-                android:layout_height="30dp"
-                android:background="#318B17"
-                android:src="@drawable/ic_menu_edit" />
-
-            <ImageButton
-                android:layout_width="45dp"
-                android:layout_height="30dp"
-                android:background="#DB0E0E"
-                android:src="@drawable/ic_menu_delete" />
-
-        </TableRow>
-
-        <TableRow
-            android:background="#DAE8FC"
-            android:padding="5dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#E2E3E9"
-                android:text="6"
-                android:textAllCaps="true"
-                android:textColor="#131413"
-                android:textSize="18sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#E2E3E9"
-                android:text="Balaji Mohan"
-                android:textAllCaps="true"
-                android:textColor="#131413"
-                android:textSize="18sp" />
-
-            <ImageButton
-                android:layout_width="42dp"
-                android:layout_height="30dp"
-                android:background="#318B17"
-                android:src="@drawable/ic_menu_edit" />
-
-            <ImageButton
-                android:layout_width="45dp"
-                android:layout_height="30dp"
-                android:background="#DB0E0E"
-                android:src="@drawable/ic_menu_delete" />
-
-        </TableRow>
-
-        <TableRow
-            android:background="#DAE8FC"
-            android:padding="5dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#E2E3E9"
-                android:text="7"
-                android:textAllCaps="true"
-                android:textColor="#131413"
-                android:textSize="18sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#E2E3E9"
-                android:text="Sanath singh"
-                android:textAllCaps="true"
-                android:textColor="#131413"
-                android:textSize="18sp" />
-
-            <ImageButton
-                android:layout_width="42dp"
-                android:layout_height="30dp"
-                android:background="#318B17"
-                android:src="@drawable/ic_menu_edit" />
-
-            <ImageButton
-                android:layout_width="45dp"
-                android:layout_height="30dp"
-                android:background="#DB0E0E"
-                android:src="@drawable/ic_menu_delete" />
-
-        </TableRow>
-
-        <TableRow
-            android:background="#DAE8FC"
-            android:padding="5dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#E2E3E9"
-                android:text="8"
-                android:textAllCaps="true"
-                android:textColor="#131413"
-                android:textSize="18sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#E2E3E9"
-                android:text="Trishika Dasari"
-                android:textAllCaps="true"
-                android:textColor="#131413"
-                android:textSize="18sp" />
-
-            <ImageButton
-                android:layout_width="42dp"
-                android:layout_height="30dp"
-                android:background="#318B17"
-                android:src="@drawable/ic_menu_edit" />
-
-            <ImageButton
-                android:layout_width="45dp"
-                android:layout_height="30dp"
-                android:background="#DB0E0E"
-                android:src="@drawable/ic_menu_delete" />
-
-        </TableRow>
-
-
-    </TableLayout>
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="183dp"
-        android:layout_marginBottom="50dp"
-        android:fontFamily="@font/abril_fatface"
-        android:text="@string/patientlist"
-        android:textColor="#FCF4FCED"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="234dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="183dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/abril_fatface"
+            android:text="@string/patientlist"
+            android:textColor="#FCF4FCED"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toTopOf="@+id/searchView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="295dp"
+            android:layout_height="32dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="71dp"
+            android:layout_marginTop="25dp"
+            android:background="@color/colorAccent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+
+        <ListView
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+    </LinearLayout>
+
+
 
 </android.support.constraint.ConstraintLayout>
