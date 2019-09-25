@@ -1,9 +1,11 @@
 package com.example.pharmeasy.Activity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -36,8 +38,9 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+                sendEmail();
             }
         });
 
@@ -50,8 +53,8 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        Button button_orders = findViewById(R.id.btn_orders);
-        button_orders.setOnClickListener(new View.OnClickListener() {
+        CardView cardOrders = findViewById(R.id.cardOrders);
+        cardOrders.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent orders_intent = new Intent( MainActivity.this, OrdersActivity.class);
@@ -59,8 +62,8 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        Button button_medicine = findViewById(R.id.btn_medicine);
-        button_medicine.setOnClickListener(new View.OnClickListener() {
+        CardView cardMedicine = findViewById(R.id.cardMedicine);
+        cardMedicine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent medicine_intent = new Intent( MainActivity.this, MedicineActivity.class);
@@ -68,8 +71,8 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        Button button_delivery = findViewById(R.id.btn_delivery);
-        button_delivery.setOnClickListener(new View.OnClickListener() {
+        CardView cardDelivery = findViewById(R.id.cardDelivery);
+        cardDelivery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent delivery_intent = new Intent( MainActivity.this, DeliveryActivity.class);
@@ -78,6 +81,24 @@ public class MainActivity extends AppCompatActivity
         });
 
 
+    }
+
+    protected void sendEmail() {
+        Log.i("Send email", "");
+        String[] TO = {"info@pharmeasy.com"};
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+
+        emailIntent.setData(Uri.parse("mailto:"));
+        emailIntent.setType("text/plain");
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+
+        try {
+            startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+            finish();
+            Log.i("Finished sending email", "");
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(MainActivity.this, "There is no email client installed.", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
@@ -106,8 +127,8 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent registerIntent = new Intent(MainActivity.this, settingsActivity.class);
-            startActivity(registerIntent);
+            Intent settingsIntent = new Intent(MainActivity.this, settingsActivity.class);
+            startActivity(settingsIntent);
             return true;
         }
 
@@ -120,13 +141,16 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
+        if (id == R.id.nav_orders) {
+            Intent orders_intent = new Intent( MainActivity.this, OrdersActivity.class);
+            startActivity(orders_intent);
+        } else if (id == R.id.nav_medicine) {
+            Intent medicine_intent = new Intent( MainActivity.this, MedicineActivity.class);
+            startActivity(medicine_intent);
+        } else if (id == R.id.nav_delivery) {
+            Intent delivery_intent = new Intent( MainActivity.this, DeliveryActivity.class);
+            startActivity(delivery_intent);
+        } else if (id == R.id.nav_settings) {
             Intent settingsIntent = new Intent(MainActivity.this, settingsActivity.class);
             startActivity(settingsIntent);
 

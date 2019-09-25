@@ -60,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
                         Intent loginIntent = new Intent(LoginActivity.this,PatientsActivity.class);
                         startActivity(loginIntent);
                     }
-//                    Toast.makeText(getApplicationContext(),type,Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),type,Toast.LENGTH_LONG).show();
                 }
             }
         });

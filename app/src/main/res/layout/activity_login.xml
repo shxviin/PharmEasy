@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,81 +9,120 @@
     android:id="@+id/container"
     android:background="@color/colorPrimary"
     android:gravity="center_horizontal">
-
-    <ImageView
-        android:layout_width="@dimen/logo_width"
-        android:layout_height="@dimen/logo_height"
-        android:layout_marginTop="@dimen/fifty"
-        app:srcCompat="@drawable/pharmeasy" />
-
-    <LinearLayout
-        android:gravity="center_horizontal"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-28dp">
 
-        <EditText
-            android:id="@+id/edittext_username"
-            android:layout_width="@dimen/form_field_width"
-            android:layout_height="@dimen/button_and_form_field_height"
-            android:layout_above="@+id/editText2"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="@dimen/thirtyfive"
-            android:background="@color/formfieldbg"
-            android:drawableLeft="@drawable/ic_username"
-            android:ems="10"
-            android:textColorHint="@color/white"
-            android:textColor="@color/white"
-            android:hint="Username"
-            android:inputType="textPersonName"
-            android:textSize="@dimen/form_text_size"/>
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/edittext_password"
-            android:layout_width="@dimen/form_field_width"
-            android:layout_height="@dimen/button_and_form_field_height"
-            android:layout_above="@+id/editText2"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="@dimen/thirtyfive"
-            android:background="@color/formfieldbg"
-            android:textColorHint="@color/white"
-            android:textColor="@color/white"
-            android:drawableLeft="@drawable/ic_pw"
-            android:ems="10"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:textSize="@dimen/form_text_size"/>
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="@dimen/logo_width"
+                android:layout_height="@dimen/logo_height"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/pharmeasy" />
 
-    <Button
-        android:id="@+id/button_login"
-        android:layout_width="@dimen/oneninety"
-        android:layout_height="@dimen/button_and_form_field_height"
-        android:layout_marginTop="@dimen/twenty"
-        android:background="@color/green"
-        android:textColor="@color/white"
-        android:text="@string/login"/>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="@dimen/ten">
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        <TextView
+            <EditText
+                android:id="@+id/edittext_username"
+                android:layout_width="@dimen/form_field_width"
+                android:layout_height="@dimen/button_and_form_field_height"
+                android:layout_above="@id/imageView9"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="70dp"
+                android:background="@color/formfieldbg"
+                android:drawableLeft="@drawable/ic_username"
+                android:ems="10"
+                android:hint="Username"
+                android:inputType="textPersonName"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/form_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
+            <EditText
+                android:id="@+id/edittext_password"
+                android:layout_width="@dimen/form_field_width"
+                android:layout_height="@dimen/button_and_form_field_height"
+                android:layout_above="@id/edittext_username"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="32dp"
+                android:background="@color/formfieldbg"
+                android:drawableLeft="@drawable/ic_pw"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/form_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edittext_username" />
+
+            <Button
+                android:id="@+id/button_login"
+                android:layout_width="@dimen/oneninety"
+                android:layout_height="@dimen/button_and_form_field_height"
+                android:layout_marginTop="40dp"
+                android:background="@color/green"
+                android:text="@string/login"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edittext_password" />
+
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/thirtyfive"
-            android:textColor="@color/white"
-            android:text="@string/not_registered"/>
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/ten">
 
-        <TextView
-            android:id="@+id/textview_register"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/thirtyfive"
-            android:paddingLeft="@dimen/ten"
-            android:textStyle="bold"
-            android:textColor="@color/green"
-            android:text="@string/register"/>
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/thirtyfive"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/not_registered"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@+id/button_login"
+                app:layout_constraintTop_toBottomOf="@+id/button_login" />
 
-    </LinearLayout>
-</LinearLayout>
+            <TextView
+                android:id="@+id/textview_register"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/thirtyfive"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:paddingLeft="@dimen/ten"
+                android:text="@string/register"
+                android:textColor="@color/green"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/textView15"
+                app:layout_constraintTop_toBottomOf="@+id/button_login" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

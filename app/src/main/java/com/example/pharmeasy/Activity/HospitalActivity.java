@@ -100,7 +100,7 @@ public class HospitalActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_medicine) {
 
         } else if (id == R.id.patients) {
             Intent patientIntent = new Intent(HospitalActivity.this, PatientsActivity.class);

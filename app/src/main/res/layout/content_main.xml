@@ -18,8 +18,10 @@
             app:layout_constraintGuide_percent="0.05109489" />
 
     <android.support.v7.widget.CardView
+        android:id="@+id/cardOrders"
         android:layout_width="@dimen/card_width"
         android:layout_height="@dimen/card_height"
+        app:cardCornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.636"
@@ -45,19 +47,10 @@
             android:translationX="20dp"
             android:translationY="120dp" />
 
-        <Button
-            android:id="@+id/btn_orders"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/dialog_holo_light_frame"
-            android:text="@string/show"
-            android:textSize="@dimen/card_btn_size"
-            android:translationX="260dp"
-            android:translationY="110dp" />
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
-        android:id="@+id/cardView"
+        android:id="@+id/cardMedicine"
         android:layout_width="@dimen/card_width"
         android:layout_height="@dimen/card_height"
         android:layout_marginStart="8dp"
@@ -82,16 +75,6 @@
             android:visibility="visible"
             app:srcCompat="@drawable/medicine" />
 
-        <Button
-            android:id="@+id/btn_medicine"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/dialog_holo_light_frame"
-            android:text="@string/show"
-            android:textSize="@dimen/card_btn_size"
-            android:translationX="260dp"
-            android:translationY="110dp" />
-
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
@@ -105,6 +88,7 @@
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
+        android:id="@+id/cardDelivery"
         android:layout_width="@dimen/card_width"
         android:layout_height="@dimen/card_height"
         android:clipToPadding="false"
@@ -134,18 +118,10 @@
             android:translationX="20dp"
             android:translationY="120dp" />
 
-        <Button
-            android:id="@+id/btn_delivery"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/dialog_holo_light_frame"
-            android:text="@string/show"
-            android:textSize="@dimen/card_btn_size"
-            android:translationX="260dp"
-            android:translationY="110dp" />
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
+        android:id="@+id/cardFeedback"
         android:layout_width="@dimen/card_width"
         android:layout_height="@dimen/card_height"
         app:cardCornerRadius="8dp"
@@ -174,15 +150,6 @@
             android:translationX="20dp"
             android:translationY="120dp" />
 
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/dialog_holo_light_frame"
-            android:text="@string/show"
-            android:textSize="@dimen/card_btn_size"
-            android:translationX="260dp"
-            android:translationY="110dp" />
     </android.support.v7.widget.CardView>
 
 

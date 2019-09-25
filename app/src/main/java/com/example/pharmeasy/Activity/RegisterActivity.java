@@ -37,7 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
         textInputPassword = (EditText)findViewById(R.id.pw);
         textInputConfirmPassword = (EditText)findViewById(R.id.confirm_pw);
         textInputMobile = (EditText)findViewById(R.id.mobile);
-        textInputAddress = (EditText) findViewById(R.id.txtAddress);
+        textInputAddress = (EditText) findViewById(R.id.address);
         mButtonRegister = (Button)findViewById(R.id.button_register);
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(RegisterActivity.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.user));
