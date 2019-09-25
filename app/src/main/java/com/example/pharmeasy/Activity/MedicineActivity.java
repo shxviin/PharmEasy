@@ -41,7 +41,6 @@ public class MedicineActivity extends AppCompatActivity {
 
         dbRef = FirebaseDatabase.getInstance().getReference("medicine");
 
-        searchView = (SearchView) findViewById(R.id.searchView);
         listViewMedicines = findViewById(R.id.listViewMedicines);
 
         FloatingActionButton button_medicine = findViewById(R.id.addMedFloatingButton);

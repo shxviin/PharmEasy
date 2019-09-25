@@ -4,27 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    tools:context=".Activity.EditDeliveryActivity">
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/list_text_size"
+        android:textStyle="bold"
+        android:paddingStart="15dp"
+        android:paddingTop="15dp"/>
 
     <TextView
         android:id="@+id/txtName"
         android:layout_width="match_parent"
         android:layout_height="35dp"
-        android:text="TextView"
-        android:textSize="24sp" />
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/list_text_size"
+        android:paddingStart="15dp"/>
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Prescription"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/list_text_size"
+        android:textStyle="bold"
+        android:paddingStart="15dp"/>
 
     <TextView
         android:id="@+id/txtPrescription"
         android:layout_width="match_parent"
         android:layout_height="37dp"
-        android:text="TextView"
-        android:textSize="24sp" />
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/list_text_size"
+        android:paddingStart="15dp"/>
 
     <Spinner
         android:id="@+id/spinnerStatus"
         android:layout_width="match_parent"
-        android:layout_height="35dp" />
+        android:layout_height="35dp"
+        android:paddingStart="15dp"
+        android:entries="@array/status"/>
 
     <Button
         android:id="@+id/btnSave"
@@ -33,7 +57,7 @@
         android:text="SAVE" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnCancel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="CANCEL" />

@@ -31,6 +31,7 @@ public class OrdersActivity extends AppCompatActivity {
     OrdersAdapter adapter;
     Button btnDemo, btnShowOrders;
     SearchView txtSearch;
+    List<Orders> ordersList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,7 +119,7 @@ public class OrdersActivity extends AppCompatActivity {
     }
 
     private void showOrdersFromDatabase() {
-        List<Orders> ordersList = new ArrayList<>();
+//        List<Orders> ordersList = new ArrayList<>();
         //we used rawQuery(sql, selectionargs) for fetching all the orders
         Cursor cursorOrders = mDatabase.rawQuery("SELECT * FROM orders", null);
 
@@ -147,8 +148,7 @@ public class OrdersActivity extends AppCompatActivity {
 //        reloadOrdersFromDatabase();
     }
 
-    public void reloadOrdersFromDatabase() {
-        List<Orders> ordersList = new ArrayList<>();
+    private void reloadOrdersFromDatabase() {
         Cursor cursorOrders = mDatabase.rawQuery("SELECT * FROM orders", null);
         if (cursorOrders.moveToFirst()) {
             ordersList.clear();

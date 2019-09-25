@@ -2,6 +2,7 @@ package com.example.pharmeasy.Adapter;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -76,16 +77,16 @@ public class DeliveryAdapter extends ArrayAdapter<Delivery> {
         btnRemove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(), "The order has been moved to Delivery", Toast.LENGTH_SHORT).show();
+                Toast.makeText(v.getContext(), "Removed from Delivery", Toast.LENGTH_SHORT).show();
 
-                String sql2 = "INSERT INTO orders(cusName, prescription, address, phone) SELECT cusName, prescription, address, phone FROM delivery WHERE id = ?";
-
-                mDatabase.execSQL(sql2, new Integer[]{delivery.getId()});
+//                String sql2 = "INSERT INTO orders(cusName, prescription, address, phone) SELECT cusName, prescription, address, phone FROM delivery WHERE id = ?";
+//
+//                mDatabase.execSQL(sql2, new Integer[]{delivery.getId()});
 
                 String sql = "DELETE FROM delivery WHERE id = ?";
                 mDatabase.execSQL(sql, new Integer[]{delivery.getId()});
 
-
+                reloadEmployeesFromDatabase();
             }
         });
 
@@ -108,5 +109,48 @@ public class DeliveryAdapter extends ArrayAdapter<Delivery> {
 
         final AlertDialog dialog = builder.create();
         dialog.show();
+
+        view.findViewById(R.id.btnSave).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String status = spinnerStatus.getSelectedItem().toString();
+
+                String sql = "UPDATE delivery \n" +
+                        "SET status = ? \n" +
+                        "WHERE id = ?;\n";
+
+                mDatabase.execSQL(sql, new String[]{ status, String.valueOf(delivery.getId())});
+                Toast.makeText(mCtx, "Delivery Updated", Toast.LENGTH_SHORT).show();
+                reloadEmployeesFromDatabase();
+
+                dialog.dismiss();
+            }
+        });
+
+        view.findViewById(R.id.btnCancel).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+    }
+
+    private void reloadEmployeesFromDatabase() {
+        Cursor cursorDelivery = mDatabase.rawQuery("SELECT * FROM delivery", null);
+        if (cursorDelivery.moveToFirst()) {
+            deliveryList.clear();
+            do {
+                deliveryList.add(new Delivery(
+                        cursorDelivery.getInt(0),
+                        cursorDelivery.getString(1),
+                        cursorDelivery.getString(2),
+                        cursorDelivery.getString(3),
+                        cursorDelivery.getString(4),
+                        cursorDelivery.getString(5)
+                ));
+            } while (cursorDelivery.moveToNext());
+        }
+        cursorDelivery.close();
+        notifyDataSetChanged();
     }
 }

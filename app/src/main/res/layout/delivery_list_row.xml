@@ -13,7 +13,7 @@
         <TextView
             android:id="@+id/txtCustomerName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_alignParentTop="true"
             android:textColor="@android:color/black"
             android:textSize="16sp"
@@ -22,7 +22,7 @@
         <TextView
             android:id="@+id/txtPrescription"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_below="@id/txtCustomerName"
             android:textColor="@android:color/black"
             android:textSize="16sp" />
@@ -30,7 +30,7 @@
         <TextView
             android:id="@+id/txtAddress"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_below="@id/txtPrescription"
             android:textColor="@android:color/black"
             android:textSize="16sp" />
@@ -38,7 +38,7 @@
         <TextView
             android:id="@+id/txtPhone"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_below="@id/txtAddress"
             android:textColor="@android:color/black"
             android:textSize="16sp" />
@@ -46,7 +46,7 @@
         <TextView
             android:id="@+id/txtStatus"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="30dp" />
     </LinearLayout>
 
     <LinearLayout

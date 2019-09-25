@@ -74,21 +74,28 @@ public class OrdersAdapter extends ArrayAdapter<Orders> {
                 String sql = "DELETE FROM orders WHERE id = ?";
                 mDatabase.execSQL(sql, new Integer[]{orders.getId()});
 
-
+                reloadOrdersFromDatabase();
             }
         });
 
-//        buttonMoveOrder.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//
-//                String sql2 = "INSERT INTO delivery(cusName, prescription, address, phone) SELECT cusName, prescription, address, phone FROM orders WHERE id = ?";
-//
-//                mDatabase.execSQL(sql2, new Integer[]{orders.getId()});
-//            }
-//        });
-
         return view;
+    }
+
+    private void reloadOrdersFromDatabase() {
+        Cursor cursorOrders = mDatabase.rawQuery("SELECT * FROM orders", null);
+        if (cursorOrders.moveToFirst()) {
+            ordersList.clear();
+            do {
+                ordersList.add(new Orders(
+                        cursorOrders.getInt(0),
+                        cursorOrders.getString(1),
+                        cursorOrders.getString(2),
+                        cursorOrders.getString(3),
+                        cursorOrders.getString(4)
+                ));
+            } while (cursorOrders.moveToNext());
+        }
+        cursorOrders.close();
+        notifyDataSetChanged();
     }
 }
