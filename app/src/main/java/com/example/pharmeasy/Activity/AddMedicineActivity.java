@@ -18,7 +18,6 @@ public class AddMedicineActivity extends AppCompatActivity {
 
     EditText txt_medicine;
     ImageButton btn_save, btn_clear;
-    Medicine med;
     DatabaseReference dbRef;
 
     @Override
@@ -73,6 +72,7 @@ public class AddMedicineActivity extends AppCompatActivity {
         });
     }
 
+    //This method clears the text typed in EditText
     public void clearData(){
         txt_medicine.setText("");
     }

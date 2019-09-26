@@ -26,11 +26,9 @@ import java.util.List;
 
 public class MedicineActivity extends AppCompatActivity {
 
-    SearchView searchView;
     DatabaseReference dbRef;
     ListView listViewMedicines;
     List<Medicine> medicines;
-    private static String medicineId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +39,6 @@ public class MedicineActivity extends AppCompatActivity {
 
         dbRef = FirebaseDatabase.getInstance().getReference("medicine");
 
-        searchView = (SearchView) findViewById(R.id.searchView);
         listViewMedicines = findViewById(R.id.listViewMedicines);
 
         FloatingActionButton button_medicine = findViewById(R.id.addMedFloatingButton);

@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.pharmeasy.Activity.OrdersActivity;
+import com.example.pharmeasy.Database.DBHelper;
 import com.example.pharmeasy.Model.Orders;
 import com.example.pharmeasy.R;
 
@@ -64,11 +64,36 @@ public class OrdersAdapter extends ArrayAdapter<Orders> {
             @Override
             public void onClick(View v) {
                 Toast.makeText(v.getContext(), "The order has been moved to Delivery", Toast.LENGTH_SHORT).show();
+
+                String sql2 = "INSERT INTO delivery(cusName, prescription, address, phone) SELECT cusName, prescription, address, phone FROM orders WHERE id = ?";
+
+                mDatabase.execSQL(sql2, new Integer[]{orders.getId()});
+
                 String sql = "DELETE FROM orders WHERE id = ?";
                 mDatabase.execSQL(sql, new Integer[]{orders.getId()});
+
+                reloadOrdersFromDatabase();
             }
         });
 
         return view;
+    }
+
+    private void reloadOrdersFromDatabase() {
+        Cursor cursorOrders = mDatabase.rawQuery("SELECT * FROM orders", null);
+        if (cursorOrders.moveToFirst()) {
+            ordersList.clear();
+            do {
+                ordersList.add(new Orders(
+                        cursorOrders.getInt(0),
+                        cursorOrders.getString(1),
+                        cursorOrders.getString(2),
+                        cursorOrders.getString(3),
+                        cursorOrders.getString(4)
+                ));
+            } while (cursorOrders.moveToNext());
+        }
+        cursorOrders.close();
+        notifyDataSetChanged();
     }
 }
