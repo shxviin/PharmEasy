@@ -18,14 +18,10 @@ import com.example.pharmeasy.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.lang.Boolean.FALSE;
-import static java.lang.Boolean.TRUE;
-
 public class OrdersActivity extends AppCompatActivity {
 
     public static final String DATABASE_NAME = "PharmEasyDB";
 
-//    List<Orders> ordersList;
     SQLiteDatabase mDatabase;
     ListView listViewOrders;
     OrdersAdapter adapter;
@@ -106,7 +102,7 @@ public class OrdersActivity extends AppCompatActivity {
     }
 
 
-    //In this method we will do the create operation
+    //In this method we will do the demo create operation
     private void addOrder() {
 
             String insertSQL = "INSERT INTO orders \n" +
@@ -118,8 +114,9 @@ public class OrdersActivity extends AppCompatActivity {
         reloadOrdersFromDatabase();
     }
 
+    //In this method we will retreive all the orders from the database
     private void showOrdersFromDatabase() {
-//        List<Orders> ordersList = new ArrayList<>();
+
         //we used rawQuery(sql, selectionargs) for fetching all the orders
         Cursor cursorOrders = mDatabase.rawQuery("SELECT * FROM orders", null);
 
@@ -145,9 +142,9 @@ public class OrdersActivity extends AppCompatActivity {
 
         //adding the adapter to listview
         listViewOrders.setAdapter(adapter);
-//        reloadOrdersFromDatabase();
     }
 
+    //In this method we will reload all the orders list from the database
     private void reloadOrdersFromDatabase() {
         Cursor cursorOrders = mDatabase.rawQuery("SELECT * FROM orders", null);
         if (cursorOrders.moveToFirst()) {
@@ -166,10 +163,11 @@ public class OrdersActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
     }
 
+    //In this method we will search for a specific order from all the orders from the database
     private void searchOrders(String search){
 
         List<Orders> ordersList = new ArrayList<>();
-        Cursor cursorOrders = mDatabase.rawQuery("SELECT * FROM orders WHERE prescription LIKE '" + search + "%'", null);
+        Cursor cursorOrders = mDatabase.rawQuery("SELECT * FROM orders WHERE prescription LIKE '" + search + "%' OR address LIKE '%" + search + "%'", null);
         //if the cursor has some data
         if (cursorOrders.moveToFirst()) {
             //looping through all the records

@@ -13,7 +13,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.pharmeasy.Activity.OrdersActivity;
 import com.example.pharmeasy.Database.DBHelper;
 import com.example.pharmeasy.Model.Orders;
 import com.example.pharmeasy.R;
@@ -26,7 +25,6 @@ public class OrdersAdapter extends ArrayAdapter<Orders> {
     int listLayoutRes;
     List<Orders> ordersList;
     SQLiteDatabase mDatabase;
-    DBHelper dbHelper;
 
     public OrdersAdapter(Context mCtx, int listLayoutRes, List<Orders> ordersList, SQLiteDatabase mDatabase) {
         super(mCtx, listLayoutRes, ordersList);

@@ -13,7 +13,7 @@ tools:context=".Activity.MainActivity">
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/txtOrdersTitle"
             android:layout_width="297dp"
             android:layout_height="57dp"
             android:paddingLeft="15dp"
