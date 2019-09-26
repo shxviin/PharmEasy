@@ -34,9 +34,10 @@ public class HospitalActivity extends AppCompatActivity
         setContentView(R.layout.activity_hospital);
         Toolbar toolbar = findViewById(R.id.toolbar);
          dbHelper = new DBHelper(this);
-        navheadertitle =  (TextView)  findViewById(R.id.nav_header);
-        x = dbHelper.getUsername();
-//        navheadertitle.setText(dbHelper.getUsername());
+
+
+
+
         setSupportActionBar(toolbar);
 
 
@@ -50,11 +51,16 @@ public class HospitalActivity extends AppCompatActivity
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+        View hView =  navigationView.getHeaderView(0);
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+        navheadertitle =  (TextView)  hView.findViewById(R.id.user_nav);
+        x = "Welcome "+ dbHelper.getUsername() + "!";
+        navheadertitle.setText(x);
         Toast.makeText(getApplicationContext(),x,Toast.LENGTH_LONG);
     }
 
