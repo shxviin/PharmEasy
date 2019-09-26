@@ -27,7 +27,7 @@ public class PatientsActivity extends AppCompatActivity {
     private ListView plist;
     DBHelper dbHelper;
     private Button add;
-    private SearchView editsearch = findViewById(R.id.search_View);
+//    private SearchView editsearch = findViewById(R.id.search_View);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
