@@ -26,11 +26,9 @@ import java.util.List;
 
 public class MedicineActivity extends AppCompatActivity {
 
-    SearchView searchView;
     DatabaseReference dbRef;
     ListView listViewMedicines;
     List<Medicine> medicines;
-    private static String medicineId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
