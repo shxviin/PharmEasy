@@ -14,6 +14,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -62,6 +63,25 @@ public class HospitalActivity extends AppCompatActivity
         x = "Welcome "+ dbHelper.getUsername() + "!";
         navheadertitle.setText(x);
         Toast.makeText(getApplicationContext(),x,Toast.LENGTH_LONG);
+
+        Button addPatient = findViewById(R.id.addPatient);
+        Button patientList = findViewById(R.id.patientlist);
+
+        addPatient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent addactivity = new Intent(HospitalActivity.this,AddPatientActivity.class);
+                startActivity(addactivity);
+            }
+        });
+
+        patientList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent listactivity = new Intent(HospitalActivity.this,PatientsActivity.class);
+                startActivity(listactivity);
+            }
+        });
     }
 
     @Override
@@ -121,8 +141,9 @@ public class HospitalActivity extends AppCompatActivity
             startActivity(logIntent);
             Toast.makeText(getApplicationContext(),"Successfully Logged Out",Toast.LENGTH_LONG).show();
 
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.addpatients) {
+            Intent addpatientIntent = new Intent(HospitalActivity.this, AddPatientActivity.class);
+            startActivity(addpatientIntent);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

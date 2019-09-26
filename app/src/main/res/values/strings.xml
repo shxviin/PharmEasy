@@ -38,7 +38,7 @@
     <string name="delivery">Delivery</string>
     <string name="feedback">Feedback</string>
     <string name="popMsg">Enter the medicine name.</string>
-    <string name="name">name</string>
+    <string name="name">Name</string>
     <string name="add">add</string>
     <string name="delete">delete</string>
     <string name="title_activity_patients">PatientsActivity</string>
@@ -68,6 +68,12 @@
     <string name="feed">Feedback</string>
     <string name="log_out">Log out</string>
     <string name="showAllOrders">SHOW ALL ORDERS</string>
+    <string name="OrdersTitle">Orders List</string>
+    <string name="MoveOrder">Move To Delivery</string>
+    <string name="MedicineTitle">Medicine List</string>
+    <string name="DeliveryTitle">Delivery List</string>
+    <string name="Edit">Edit</string>
+    <string name="Remove">Remove</string>
 
 
 </resources>

@@ -18,19 +18,16 @@ import com.example.pharmeasy.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.lang.Boolean.FALSE;
-import static java.lang.Boolean.TRUE;
-
 public class OrdersActivity extends AppCompatActivity {
 
     public static final String DATABASE_NAME = "PharmEasyDB";
 
-//    List<Orders> ordersList;
     SQLiteDatabase mDatabase;
     ListView listViewOrders;
     OrdersAdapter adapter;
     Button btnDemo, btnShowOrders;
     SearchView txtSearch;
+    List<Orders> ordersList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +44,7 @@ public class OrdersActivity extends AppCompatActivity {
         //opening the database
         mDatabase = openOrCreateDatabase(DATABASE_NAME, MODE_PRIVATE, null);
 
-//        createEmployeeTable();
+        createEmployeeTable();
 
         btnDemo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,21 +85,24 @@ public class OrdersActivity extends AppCompatActivity {
 
     }
 
-    /*
+
     private void createEmployeeTable() {
         mDatabase.execSQL(
-                "CREATE TABLE IF NOT EXISTS orders (\n" +
-                        "    id INTEGER NOT NULL CONSTRAINT orders_pk PRIMARY KEY AUTOINCREMENT,\n" +
+                "CREATE TABLE IF NOT EXISTS delivery (\n" +
+                        "    id INTEGER NOT NULL CONSTRAINT delivery_pk PRIMARY KEY AUTOINCREMENT,\n" +
                         "    cusname varchar(200) NOT NULL,\n" +
                         "    prescription varchar(200) NOT NULL,\n" +
                         "    address varchar(200) NOT NULL,\n" +
-                        "    phone varchar(20) NOT NULL\n" +
+                        "    phone varchar(20) NOT NULL,\n" +
+                        "    status varchar(20) DEFAULT 'To Be Dispatched'\n" +
                         ");"
         );
+//        mDatabase.execSQL("DROP TABLE delivery");
+//        Toast.makeText(getApplicationContext(), "deleted delivery",Toast.LENGTH_LONG).show();
     }
-    */
 
-    //In this method we will do the create operation
+
+    //In this method we will do the demo create operation
     private void addOrder() {
 
             String insertSQL = "INSERT INTO orders \n" +
@@ -114,8 +114,9 @@ public class OrdersActivity extends AppCompatActivity {
         reloadOrdersFromDatabase();
     }
 
+    //In this method we will retreive all the orders from the database
     private void showOrdersFromDatabase() {
-        List<Orders> ordersList = new ArrayList<>();
+
         //we used rawQuery(sql, selectionargs) for fetching all the orders
         Cursor cursorOrders = mDatabase.rawQuery("SELECT * FROM orders", null);
 
@@ -141,11 +142,10 @@ public class OrdersActivity extends AppCompatActivity {
 
         //adding the adapter to listview
         listViewOrders.setAdapter(adapter);
-//        reloadOrdersFromDatabase();
     }
 
-    public void reloadOrdersFromDatabase() {
-        List<Orders> ordersList = new ArrayList<>();
+    //In this method we will reload all the orders list from the database
+    private void reloadOrdersFromDatabase() {
         Cursor cursorOrders = mDatabase.rawQuery("SELECT * FROM orders", null);
         if (cursorOrders.moveToFirst()) {
             ordersList.clear();
@@ -163,10 +163,11 @@ public class OrdersActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
     }
 
+    //In this method we will search for a specific order from all the orders from the database
     private void searchOrders(String search){
 
         List<Orders> ordersList = new ArrayList<>();
-        Cursor cursorOrders = mDatabase.rawQuery("SELECT * FROM orders WHERE prescription LIKE '" + search + "%'", null);
+        Cursor cursorOrders = mDatabase.rawQuery("SELECT * FROM orders WHERE prescription LIKE '" + search + "%' OR address LIKE '%" + search + "%'", null);
         //if the cursor has some data
         if (cursorOrders.moveToFirst()) {
             //looping through all the records

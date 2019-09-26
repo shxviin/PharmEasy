@@ -31,7 +31,7 @@ public class AddPatientActivity extends AppCompatActivity {
         button_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (nameIsfull()==true && addressIsfull()== true && mobileIsfull() == true && ValidatePhoneNo()==true){
+                if (nameIsfull()==true && addressIsfull()== true && mobileIsfull() == true && ValidatePhoneNo()==true && diagnosisIsfull() == true && prescriptionIsfull() == true){
                     addPrescription();
                     Intent patientList = new Intent(AddPatientActivity.this,PatientsActivity.class);
                     startActivity(patientList);
@@ -94,6 +94,31 @@ public class AddPatientActivity extends AppCompatActivity {
         }
 
     }
+
+    private boolean diagnosisIsfull(){
+        String vdiag = diag.getText().toString().trim();
+
+        if (vdiag.isEmpty()){
+            Toast.makeText(getApplicationContext(),"Diagnosis Field Cannot be Empty",Toast.LENGTH_LONG).show();
+            return false;
+        }else {
+            return true;
+        }
+
+    }
+
+    private boolean prescriptionIsfull(){
+        String vpres = pres.getText().toString().trim();
+
+        if (vpres.isEmpty()){
+            Toast.makeText(getApplicationContext(),"Prescription Field Cannot be Empty",Toast.LENGTH_LONG).show();
+            return false;
+        }else {
+            return true;
+        }
+
+    }
+
 
     private boolean ValidatePhoneNo(){
         String vmobile = phone.getText().toString().trim();

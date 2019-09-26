@@ -5,15 +5,20 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
 
 import com.example.pharmeasy.Database.UsersMaster.Prescriptions;
 import com.example.pharmeasy.Database.UsersMaster.Orders;
+import com.example.pharmeasy.Database.UsersMaster.Delivery;
 
 import java.util.List;
 
 public class DBHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "PharmEasyDB";
+    private static final String TAG ="DBHelper" ;
 
     public DBHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -55,6 +60,18 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
         sqLiteDatabase.execSQL(SQL_CREATE_ORDERS);
+
+        String SQL_CREATE_DELIVERY=
+                "CREATE TABLE " +   Delivery.TABLE_NAME + " ("+
+                        "id INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                        Delivery.COLUMN_NAME_CUSTOMER_NAME + " TEXT,"+
+                        Delivery.COLUMN_NAME_PRESCRIPTION + " TEXT," +
+                        Delivery.COLUMN_NAME_ADDRESS + " TEXT,"+
+                        Delivery.COLUMN_NAME_PHONE + " TEXT,"+
+                        Delivery.COLUMN_NAME_STATUS + " TEXT)";
+
+
+        sqLiteDatabase.execSQL(SQL_CREATE_DELIVERY);
     }
 
     @Override
@@ -390,6 +407,72 @@ public class DBHelper extends SQLiteOpenHelper {
         Cursor data = db.rawQuery(query,null);
         return data;
     }
+
+
+    public Cursor getPatientID(String name){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT " + "*" + " FROM " +Prescriptions.TABLE_NAME +
+                " WHERE " +Prescriptions.COLUMN_NAME_PATIENTNAME + " = '" + name + "'";
+        Cursor data = db.rawQuery(query,null);
+        return data;
+    }
+
+    public void updatePatientname(String newName, int id, String oldName){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "UPDATE " + Prescriptions.TABLE_NAME + " SET " + Prescriptions.COLUMN_NAME_PATIENTNAME +
+                " = '" + newName + "' WHERE " + Prescriptions._ID + " = '" + id + "'" +
+                " AND " + Prescriptions.COLUMN_NAME_PATIENTNAME + " = '" + oldName + "'";
+        Log.d(TAG, "updateName: query" + query);
+        Log.d(TAG, "updateName: Setting Name to " + newName);
+        db.execSQL(query);
+    }
+
+    public void updatePatientaddress(String address, int id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "UPDATE " + Prescriptions.TABLE_NAME + " SET " + Prescriptions.COLUMN_NAME_ADDRESS +
+                " = '" + address + "' WHERE " + Prescriptions._ID + " = '" + id + "'" ;
+        Log.d(TAG, "updateName: query" + query);
+        Log.d(TAG, "updateName: Setting Address to " + address);
+        db.execSQL(query);
+    }
+    public void updatePatientmobile(String mobile, int id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "UPDATE " + Prescriptions.TABLE_NAME + " SET " + Prescriptions.COLUMN_NAME_PHONE +
+                " = '" + mobile + "' WHERE " + Prescriptions._ID + " = '" + id + "'" ;
+        Log.d(TAG, "updateName: query" + query);
+        Log.d(TAG, "updateName: Setting phone number to " + mobile);
+        db.execSQL(query);
+    }
+    public void updatePatientdiagnosis(String diagnosis, int id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "UPDATE " + Prescriptions.TABLE_NAME + " SET " + Prescriptions.COLUMN_NAME_DIAGNOSIS +
+                " = '" + diagnosis + "' WHERE " + Prescriptions._ID + " = '" + id + "'" ;
+        Log.d(TAG, "updateName: query" + query);
+        Log.d(TAG, "updateName: Setting diagnosis to " + diagnosis);
+        db.execSQL(query);
+    }
+    public void updatePatientprescription(String prescription, int id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "UPDATE " + Prescriptions.TABLE_NAME + " SET " + Prescriptions.COLUMN_NAME_PRESCRIPTION +
+                " = '" + prescription + "' WHERE " + Prescriptions._ID + " = '" + id + "'" ;
+        Log.d(TAG, "updateName: query" + query);
+        Log.d(TAG, "updateName: Setting prescription to " + prescription);
+        db.execSQL(query);
+    }
+
+
+    public void deletePatient(int id,String name){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "DELETE FROM " + Prescriptions.TABLE_NAME + " WHERE "
+                +Prescriptions._ID + " = '" + id + "'" + " AND " + Prescriptions.COLUMN_NAME_PATIENTNAME +
+                " = '" + name +"'";
+        Log.d(TAG, "deletePatient: query " + query);
+        Log.d(TAG, "deletePatient: Deleting  " + name + " from database.");
+
+        db.execSQL(query);
+    }
+
+
 
 }
 
