@@ -8,10 +8,6 @@ public class Delivery {
     private String phone;
     private String status;
 
-    public Integer getId() {
-        return id;
-    }
-
     public Delivery(Integer id, String customer, String prescription, String address, String phone, String status) {
         this.id = id;
         this.customer = customer;
@@ -19,6 +15,10 @@ public class Delivery {
         this.address = address;
         this.phone = phone;
         this.status = status;
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public String getStatus() {

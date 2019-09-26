@@ -7,12 +7,13 @@
     tools:context=".Activity.MainActivity">
 
     <TextView
-        android:id="@+id/txtOrdersTitle"
+        android:id="@+id/txtDeliveryTitle"
         android:layout_width="match_parent"
         android:layout_height="57dp"
-        android:paddingLeft="15dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="0dp"
         android:paddingTop="15dp"
-        android:text="Delivery List"
+        android:text="@string/DeliveryTitle"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -21,6 +22,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingStart="15dp"
-        android:paddingEnd="10dp"></ListView>
+        android:paddingEnd="10dp"/>
 
 </LinearLayout>

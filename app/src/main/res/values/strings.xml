@@ -71,6 +71,9 @@
     <string name="OrdersTitle">Orders List</string>
     <string name="MoveOrder">Move To Delivery</string>
     <string name="MedicineTitle">Medicine List</string>
+    <string name="DeliveryTitle">Delivery List</string>
+    <string name="Edit">Edit</string>
+    <string name="Remove">Remove</string>
 
 
 </resources>

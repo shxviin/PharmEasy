@@ -43,7 +43,7 @@ public class DeliveryAdapter extends ArrayAdapter<Delivery> {
         LayoutInflater inflater = LayoutInflater.from(mCtx);
         View view = inflater.inflate(listLayoutRes, null);
 
-        //getting employee of the specified position
+        //getting delivery of the specified position
         final Delivery delivery = deliveryList.get(position);
 
         //getting views
@@ -60,14 +60,11 @@ public class DeliveryAdapter extends ArrayAdapter<Delivery> {
         textViewPhone.setText(delivery.getPhone());
         textViewStatus.setText(delivery.getStatus());
 
-        //we will use these buttons later for move operation
-        btnEditDelivery = view.findViewById(R.id.btnEditDelivery);
+        btnEditDelivery = view.findViewById(R.id.btnEdit);
 
         btnEditDelivery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent edit_delivery_intent = new Intent(getContext(), EditDeliveryActivity.class);
-//                mCtx.startActivity(edit_delivery_intent);
                 updateDelivery(delivery);
             }
         });
@@ -78,10 +75,6 @@ public class DeliveryAdapter extends ArrayAdapter<Delivery> {
             @Override
             public void onClick(View v) {
                 Toast.makeText(v.getContext(), "Removed from Delivery", Toast.LENGTH_SHORT).show();
-
-//                String sql2 = "INSERT INTO orders(cusName, prescription, address, phone) SELECT cusName, prescription, address, phone FROM delivery WHERE id = ?";
-//
-//                mDatabase.execSQL(sql2, new Integer[]{delivery.getId()});
 
                 String sql = "DELETE FROM delivery WHERE id = ?";
                 mDatabase.execSQL(sql, new Integer[]{delivery.getId()});
@@ -120,7 +113,7 @@ public class DeliveryAdapter extends ArrayAdapter<Delivery> {
                         "WHERE id = ?;\n";
 
                 mDatabase.execSQL(sql, new String[]{ status, String.valueOf(delivery.getId())});
-                Toast.makeText(mCtx, "Delivery Updated", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mCtx, "Delivery Status Updated", Toast.LENGTH_SHORT).show();
                 reloadEmployeesFromDatabase();
 
                 dialog.dismiss();

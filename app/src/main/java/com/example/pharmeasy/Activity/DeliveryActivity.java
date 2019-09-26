@@ -4,12 +4,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Spinner;
 
 import com.example.pharmeasy.Adapter.DeliveryAdapter;
 import com.example.pharmeasy.Model.Delivery;
@@ -38,6 +33,7 @@ public class DeliveryActivity extends AppCompatActivity {
         showDeliveryFromDatabase();
     }
 
+    //This method retreives and displays all delivery from the database
     private void showDeliveryFromDatabase() {
         List<Delivery> deliveryList = new ArrayList<>();
         //we used rawQuery(sql, selectionargs) for fetching all the orders
@@ -47,7 +43,7 @@ public class DeliveryActivity extends AppCompatActivity {
         if (cursorDelivery.moveToFirst()) {
             //looping through all the records
             do {
-                //pushing each record in the order list
+                //pushing each record in the delivery list
                 deliveryList.add(new Delivery(
                         cursorDelivery.getInt(0),
                         cursorDelivery.getString(1),
