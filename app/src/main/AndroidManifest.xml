@@ -26,13 +26,13 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".Activity.PatientsActivity" />
+        <activity android:name=".Activity.PatientsActivity" android:exported="true"/>
         <activity android:name=".Activity.DeliveryActivity" />
         <activity android:name=".Activity.MedicineActivity" />
         <activity android:name=".Activity.updatePasswordActivity" />
         <activity android:name=".Activity.editinfoActivity" />
         <activity android:name=".Activity.settingsActivity" />
-        <activity android:name=".Activity.OrdersActivity" />
+        <activity android:name=".Activity.OrdersActivity" android:exported="true"/>
         <activity
             android:name=".Activity.RegisterActivity"
             android:exported="true"

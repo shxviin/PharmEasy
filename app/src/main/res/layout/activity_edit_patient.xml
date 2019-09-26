@@ -38,7 +38,7 @@
 
 
             <EditText
-                android:id="@+id/txtpatient"
+                android:id="@+id/txt_patient"
                 android:layout_width="250dp"
                 android:layout_height="40dp"
                 android:layout_centerHorizontal="true"
@@ -56,7 +56,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
             <EditText
-                android:id="@+id/mobileNo"
+                android:id="@+id/mobile_No"
                 android:layout_width="250dp"
                 android:layout_height="40dp"
                 android:layout_above="@+id/txtpatient"
@@ -73,7 +73,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtpatient" />
             <EditText
-                android:id="@+id/txtaddress"
+                android:id="@+id/txt_address"
                 android:layout_width="250dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="80dp"
@@ -88,7 +88,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtdiagnosis" />
 
             <EditText
-                android:id="@+id/txtdiagnosis"
+                android:id="@+id/txt_diagnosis"
                 android:layout_width="250dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="80dp"
@@ -105,7 +105,7 @@
 
 
             <EditText
-                android:id="@+id/txtPrescription"
+                android:id="@+id/txt_Prescription"
                 android:layout_width="250dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="80dp"
@@ -121,7 +121,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
 
             <Button
-                android:id="@+id/btn_addPatient"
+                android:id="@+id/btn_editPatient"
                 android:layout_width="206dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="96dp"

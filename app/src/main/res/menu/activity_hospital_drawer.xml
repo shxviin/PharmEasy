@@ -5,6 +5,11 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/addpatients"
+            android:icon="@drawable/ic_menu_edit"
+            android:title="@string/add_patient"
+            />
+        <item
             android:id="@+id/patients"
             android:icon="@drawable/ic_menu_edit"
             android:title="@string/patientlist" />
