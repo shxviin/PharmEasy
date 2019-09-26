@@ -45,21 +45,21 @@ public class PatientsActivity extends AppCompatActivity {
         });
 
         populateListView();
-        SearchManager searchManager = (SearchManager) getSystemService(SEARCH_SERVICE);
-
-        editsearch.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-        editsearch.setSubmitButtonEnabled(true);
-        editsearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                return false;
-            }
-        });
+//        SearchManager searchManager = (SearchManager) getSystemService(SEARCH_SERVICE);
+//
+//        editsearch.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+//        editsearch.setSubmitButtonEnabled(true);
+//        editsearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String query) {
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String newText) {
+//                return false;
+//            }
+//        });
 
 
     }
