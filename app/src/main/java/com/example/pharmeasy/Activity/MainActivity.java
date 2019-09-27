@@ -84,6 +84,16 @@ public class MainActivity extends AppCompatActivity
                 startActivity(delivery_intent);
             }
         });
+
+        CardView cardfeed = findViewById(R.id.cardFeedback);
+        cardfeed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent delivery_intent = new Intent( MainActivity.this, pharmFeedback.class);
+                startActivity(delivery_intent);
+            }
+        });
+
         navheadertitle =  (TextView)  hView.findViewById(R.id.user_nav);
         x = "Welcome "+ dbHelper.getUsername() + "!";
         navheadertitle.setText(x);

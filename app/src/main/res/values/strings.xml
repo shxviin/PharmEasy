@@ -51,16 +51,6 @@
     <string name="addMedicine">Add Medicine</string>
     <string name="patient_details">Patient Details</string>
     <string name="Feed_btn">GO!</string>
-    <string-array name="status">
-        <item>Dispatched</item>
-        <item>To Be Dispatched</item>
-        <item>Delivered</item>
-    </string-array>
-    <string-array name="user">
-        <item>Patient</item>
-        <item>Pharmacy</item>
-        <item>Hospital</item>
-    </string-array>
     <string name="feedName">Name</string>
     <string name="feedMail">Email</string>
     <string name="feedMessage">Message</string>
@@ -74,6 +64,16 @@
     <string name="DeliveryTitle">Delivery List</string>
     <string name="Edit">Edit</string>
     <string name="Remove">Remove</string>
+    <string-array name="status">
+        <item>Dispatched</item>
+        <item>To Be Dispatched</item>
+        <item>Delivered</item>
+    </string-array>
+    <string-array name="user">
+        <item>Patient</item>
+        <item>Pharmacy</item>
+        <item>Hospital</item>
+    </string-array>
 
 
 </resources>

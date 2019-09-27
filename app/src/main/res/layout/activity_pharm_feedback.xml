@@ -4,111 +4,94 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pharmFeedback">
+    android:background="@drawable/sett_bg"
+    tools:context=".Activity.pharmFeedback">
 
-    <LinearLayout
-        android:layout_height="wrap_content"
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="129dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginBottom="588dp"
+        android:text="FEEDBACK"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/feedname"
         android:layout_width="wrap_content"
-        android:weightSum="10"
-        android:background="@drawable/sett_bg"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="95dp"
 
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="103dp"
+        android:drawableLeft="@drawable/ic_username"
 
-        <RelativeLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:layout_weight="2">
+        android:layout_marginBottom="404dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-            <TextView
-                android:id="@+id/textGrid"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/top_heding_text_size"
-                android:text="@string/feed"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/thirtyfour" />
+    <EditText
+        android:id="@+id/feedmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="95dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="103dp"
+        android:drawableLeft="@drawable/ic_email_black_24dp"
 
-        </RelativeLayout>
+        android:layout_marginBottom="315dp"
+        android:ems="10"
+        android:hint="Mail"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/feedname"
+        app:layout_constraintVertical_bias="0.0" />
 
+    <EditText
+        android:id="@+id/feedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="95dp"
+        android:drawableLeft="@drawable/ic_menu_send"
 
-        <LinearLayout
-            android:layout_width="@dimen/twofiftythree"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/top_heding_text_size"
-            android:layout_marginTop="@dimen/logo_height"
-            android:orientation="vertical">
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="105dp"
+        android:layout_marginBottom="227dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Feedback"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/feedmail" />
 
-            <EditText
-                android:id="@+id/txtpatient"
-                android:layout_width="@dimen/form_field_width"
-                android:layout_height="@dimen/button_and_form_field_height"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="@dimen/thirtyfive"
-                android:background="@color/formfieldbg"
-                android:drawableLeft="@drawable/ic_person_black_24dp"
-                android:ems="10"
-                android:hint="@string/feedName"
-                android:textColor="@color/black"
-                android:textColorHint="@color/grey"
-                android:textSize="@dimen/form_text_size" />
-
-
-            <EditText
-                android:id="@+id/mobile"
-                android:layout_width="@dimen/form_field_width"
-                android:layout_height="@dimen/button_and_form_field_height"
-                android:layout_above="@+id/confirm_pw"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="@dimen/thirtyfive"
-                android:background="@color/formfieldbg"
-                android:drawableLeft="@drawable/ic_email_black_24dp"
-                android:ems="10"
-                android:hint="@string/feedMail"
-                android:textColor="@color/black"
-                android:textColorHint="@color/grey"
-                android:textSize="@dimen/form_text_size" />
-
-
-            <ScrollView
-                android:id="@+id/txtAddress"
-                android:layout_width="@dimen/form_field_width"
-                android:layout_height="200dp"
-                android:layout_above="@+id/mobile"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="@dimen/thirtyfive"
-                android:background="@color/formfieldbg"
-                android:drawableLeft="@drawable/ic_message_black_24dp"
-                android:ems="10"
-                android:hint="@string/feedMessage"
-                android:inputType="text"
-                android:scrollbarStyle="insideInset"
-                android:textColor="@color/black"
-                android:textColorHint="@color/grey"
-                android:textSize="@dimen/form_text_size">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:hint="@string/feedMessage"/>
-
-
-
-            </ScrollView>
-
-
-            <Button
-                android:id="@+id/button_update"
-                android:layout_width="@dimen/twosix"
-                android:layout_height="@dimen/button_and_form_field_height"
-                android:layout_marginLeft="@dimen/twenty"
-                android:layout_marginTop="@dimen/twenty"
-                android:background="@color/green"
-                android:text="@string/feedSubmit"
-                android:textColor="@color/white" />
-
-        </LinearLayout>
-    </LinearLayout>
-
+    <Button
+        android:id="@+id/button_feed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="49dp"
+        android:layout_marginEnd="165dp"
+        android:background="@color/green"
+        android:textColor="@color/white"
+        android:text="@string/feedSubmit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/feedback" />
 </android.support.constraint.ConstraintLayout>
