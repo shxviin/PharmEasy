@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.example.pharmeasy.Database.DBHelper;
 import com.example.pharmeasy.Model.Medicine;
 import com.example.pharmeasy.R;
 import com.google.firebase.database.DatabaseReference;
@@ -19,6 +20,7 @@ public class AddMedicineActivity extends AppCompatActivity {
     EditText txt_medicine;
     ImageButton btn_save, btn_clear;
     DatabaseReference dbRef;
+    DBHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +40,12 @@ public class AddMedicineActivity extends AppCompatActivity {
         btn_save = findViewById(R.id.btnSave);
         btn_clear = findViewById(R.id.btnClear);
 
-
+        dbHelper = new DBHelper(this);
 
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dbRef = FirebaseDatabase.getInstance().getReference().child("medicine");
+                dbRef = FirebaseDatabase.getInstance().getReference().child(dbHelper.getUsername());
 
                 if (TextUtils.isEmpty(txt_medicine.getText().toString().trim())) {
                     Toast.makeText(getApplicationContext(), "Field is empty", Toast.LENGTH_LONG).show();

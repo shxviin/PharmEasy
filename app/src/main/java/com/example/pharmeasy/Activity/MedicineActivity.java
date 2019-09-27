@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SearchView;
 
+import com.example.pharmeasy.Database.DBHelper;
 import com.example.pharmeasy.Model.Medicine;
 import com.example.pharmeasy.Model.MedicineList;
 
@@ -29,15 +30,18 @@ public class MedicineActivity extends AppCompatActivity {
     DatabaseReference dbRef;
     ListView listViewMedicines;
     List<Medicine> medicines;
+    DBHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medicine);
 
+        dbHelper = new DBHelper(this);
+
         medicines = new ArrayList<>();
 
-        dbRef = FirebaseDatabase.getInstance().getReference("medicine");
+        dbRef = FirebaseDatabase.getInstance().getReference(dbHelper.getUsername());
 
         listViewMedicines = findViewById(R.id.listViewMedicines);
 
