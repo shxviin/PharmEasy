@@ -70,7 +70,7 @@
         <item>Delivered</item>
     </string-array>
     <string-array name="user">
-        <item>Patient</item>
+<!--        <item>Patient</item>-->
         <item>Pharmacy</item>
         <item>Hospital</item>
     </string-array>
