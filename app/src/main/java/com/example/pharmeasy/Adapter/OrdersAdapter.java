@@ -64,20 +64,21 @@ public class OrdersAdapter extends ArrayAdapter<Orders> {
         buttonMoveOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Toast.makeText(v.getContext(), "The order has been moved to Delivery", Toast.LENGTH_SHORT).show();
+                Toast.makeText(v.getContext(), "The order has been moved to Delivery", Toast.LENGTH_SHORT).show();
 
 
                 String sql2 = "INSERT INTO delivery(cusName, prescription, address, phone) SELECT cusName, prescription, address, phone FROM orders WHERE id = ?";
-
+//
                 mDatabase.execSQL(sql2, new Integer[]{orders.getId()});
 
-                String sql3 = "UPDATE delivery \n" +
-                                "SET owner = ? \n" +
-                                "WHERE owner = 'Owner';\n";
+                updateDelivery();
+//                String sql3 = "UPDATE delivery \n" +
+//                                "SET owner = ? \n" +
+//                                "WHERE owner = 'Owner';\n";
+//
+//                mDatabase.execSQL(sql3, new String[]{dbHelper.getUsername()});
 
-                mDatabase.execSQL(sql3, new String[]{dbHelper.getUsername()});
-
-                Toast.makeText(v.getContext(), "updated owner Delivery", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(v.getContext(), "updated owner Delivery", Toast.LENGTH_SHORT).show();
 
                 String sql = "DELETE FROM orders WHERE id = ?";
                 mDatabase.execSQL(sql, new Integer[]{orders.getId()});
@@ -87,6 +88,14 @@ public class OrdersAdapter extends ArrayAdapter<Orders> {
         });
 
         return view;
+    }
+
+    private void updateDelivery(){
+        String sql3 = "UPDATE delivery \n" +
+                "SET owner = ? \n" +
+                "WHERE owner = 'Owner';\n";
+
+        mDatabase.execSQL(sql3, new String[]{dbHelper.getUsername()});
     }
 
     private void reloadOrdersFromDatabase() {
