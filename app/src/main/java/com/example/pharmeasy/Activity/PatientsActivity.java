@@ -3,6 +3,7 @@ package com.example.pharmeasy.Activity;
 import android.app.SearchManager;
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +16,8 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
+import com.example.pharmeasy.Database.UsersMaster.Prescriptions;
+
 
 import com.example.pharmeasy.Database.DBHelper;
 import com.example.pharmeasy.R;
@@ -26,8 +29,9 @@ public class PatientsActivity extends AppCompatActivity {
    private static final String TAG = "PatientsActivity";
     private ListView plist;
     DBHelper dbHelper;
+    SQLiteDatabase db;
     private Button add;
-//    private SearchView editsearch = findViewById(R.id.search_View);
+    private SearchView editsearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,21 +49,23 @@ public class PatientsActivity extends AppCompatActivity {
         });
 
         populateListView();
-//        SearchManager searchManager = (SearchManager) getSystemService(SEARCH_SERVICE);
-//
-//        editsearch.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-//        editsearch.setSubmitButtonEnabled(true);
-//        editsearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//            @Override
-//            public boolean onQueryTextSubmit(String query) {
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onQueryTextChange(String newText) {
-//                return false;
-//            }
-//        });
+        SearchManager searchManager = (SearchManager) getSystemService(SEARCH_SERVICE);
+        editsearch = findViewById(R.id.search_View);
+        editsearch.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        editsearch.setSubmitButtonEnabled(true);
+        editsearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                //Toast.makeText(getApplicationContext(),"Failed to Add",Toast.LENGTH_LONG).show();
+                searchPatients(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
 
 
     }
@@ -117,6 +123,22 @@ public class PatientsActivity extends AppCompatActivity {
             }
         });
 
+
+    }
+
+    private void searchPatients(String query){
+        ArrayList<String> lData = new ArrayList<>();
+        Cursor patient = dbHelper.searchPatient(query);
+
+        if(patient.moveToFirst()){
+            do{
+                lData.add(patient.getString(1));
+            }while (patient.moveToNext());
+        }
+        patient.close();
+        ListAdapter adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,lData);
+
+        plist.setAdapter(adapter);
 
     }
 }

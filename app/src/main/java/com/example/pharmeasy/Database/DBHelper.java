@@ -408,6 +408,14 @@ public class DBHelper extends SQLiteOpenHelper {
         return data;
     }
 
+    public Cursor searchPatient(String search){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT * FROM " +Prescriptions.TABLE_NAME+ " WHERE " +Prescriptions.COLUMN_NAME_PATIENTNAME +
+                " LIKE '%" + search + "%'";
+
+        Cursor data = db.rawQuery(query,null);
+        return data;
+    }
 
     public Cursor getPatientID(String name){
         SQLiteDatabase db = this.getWritableDatabase();
