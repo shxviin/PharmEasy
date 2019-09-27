@@ -18,6 +18,8 @@ import com.example.pharmeasy.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.util.Objects.isNull;
+
 public class OrdersActivity extends AppCompatActivity {
 
     public static final String DATABASE_NAME = "PharmEasyDB";
@@ -70,7 +72,6 @@ public class OrdersActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextSubmit(String query) {
-                Toast.makeText(getApplicationContext(),"Failed to Add",Toast.LENGTH_LONG).show();
                 searchOrders(query);
                 return false;
             }
@@ -116,7 +117,7 @@ public class OrdersActivity extends AppCompatActivity {
 
     //In this method we will retreive all the orders from the database
     private void showOrdersFromDatabase() {
-
+        List<Orders> ordersList = new ArrayList<>();
         //we used rawQuery(sql, selectionargs) for fetching all the orders
         Cursor cursorOrders = mDatabase.rawQuery("SELECT * FROM orders", null);
 
@@ -170,6 +171,7 @@ public class OrdersActivity extends AppCompatActivity {
         Cursor cursorOrders = mDatabase.rawQuery("SELECT * FROM orders WHERE prescription LIKE '" + search + "%' OR address LIKE '%" + search + "%'", null);
         //if the cursor has some data
         if (cursorOrders.moveToFirst()) {
+
             //looping through all the records
             do {
                 //pushing each record in the order list
@@ -183,7 +185,17 @@ public class OrdersActivity extends AppCompatActivity {
             } while (cursorOrders.moveToNext());
         }
         //closing the cursor
+
+        if (!(cursorOrders.moveToFirst()) || cursorOrders.getCount() == 0) {
+            Toast.makeText(getApplicationContext(), "No results found", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(getApplicationContext(),"Search results",Toast.LENGTH_LONG).show();
+        }
+
+
         cursorOrders.close();
+
+
 
         //creating the adapter object
         adapter = new OrdersAdapter(this, R.layout.orders_list_row, ordersList, mDatabase);

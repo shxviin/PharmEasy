@@ -74,10 +74,8 @@ public class DeliveryAdapter extends ArrayAdapter<Delivery> {
         btnRemove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(), "Removed from Delivery", Toast.LENGTH_SHORT).show();
 
-                String sql = "DELETE FROM delivery WHERE id = ?";
-                mDatabase.execSQL(sql, new Integer[]{delivery.getId()});
+                editDelivery(delivery);
 
                 reloadEmployeesFromDatabase();
             }
@@ -126,6 +124,21 @@ public class DeliveryAdapter extends ArrayAdapter<Delivery> {
                 dialog.dismiss();
             }
         });
+    }
+
+    public void editDelivery(final Delivery delivery){
+
+        String status = delivery.getStatus();
+
+        if (status.equals("Delivered")){
+            Toast.makeText(mCtx, "Removed from Delivery", Toast.LENGTH_SHORT).show();
+
+            String sql = "DELETE FROM delivery WHERE id = ?";
+            mDatabase.execSQL(sql, new Integer[]{delivery.getId()});
+        } else{
+            Toast.makeText(mCtx, "Cannot remove until it is delivered", Toast.LENGTH_SHORT).show();
+        }
+        reloadEmployeesFromDatabase();
     }
 
     private void reloadEmployeesFromDatabase() {
