@@ -15,6 +15,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.pharmeasy.Database.DBHelper;
 import com.example.pharmeasy.Model.Delivery;
 import com.example.pharmeasy.R;
 
@@ -27,6 +28,7 @@ public class DeliveryAdapter extends ArrayAdapter<Delivery> {
     List<Delivery> deliveryList;
     SQLiteDatabase mDatabase;
     Button btnEditDelivery, btnRemove;
+    DBHelper dbHelper = new DBHelper(getContext());
 
     public DeliveryAdapter(Context mCtx, int listLayoutRes, List<Delivery> deliveryList, SQLiteDatabase mDatabase) {
         super(mCtx, listLayoutRes, deliveryList);
@@ -74,12 +76,10 @@ public class DeliveryAdapter extends ArrayAdapter<Delivery> {
         btnRemove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(), "Removed from Delivery", Toast.LENGTH_SHORT).show();
 
-                String sql = "DELETE FROM delivery WHERE id = ?";
-                mDatabase.execSQL(sql, new Integer[]{delivery.getId()});
+                editDelivery(delivery);
 
-                reloadEmployeesFromDatabase();
+                reloadDeliveryFromDatabase();
             }
         });
 
@@ -114,7 +114,7 @@ public class DeliveryAdapter extends ArrayAdapter<Delivery> {
 
                 mDatabase.execSQL(sql, new String[]{ status, String.valueOf(delivery.getId())});
                 Toast.makeText(mCtx, "Delivery Status Updated", Toast.LENGTH_SHORT).show();
-                reloadEmployeesFromDatabase();
+                reloadDeliveryFromDatabase();
 
                 dialog.dismiss();
             }
@@ -128,8 +128,23 @@ public class DeliveryAdapter extends ArrayAdapter<Delivery> {
         });
     }
 
-    private void reloadEmployeesFromDatabase() {
-        Cursor cursorDelivery = mDatabase.rawQuery("SELECT * FROM delivery", null);
+    public void editDelivery(final Delivery delivery){
+
+        String status = delivery.getStatus();
+
+        if (status.equals("Delivered")){
+            Toast.makeText(mCtx, "Removed from Delivery", Toast.LENGTH_SHORT).show();
+
+            String sql = "DELETE FROM delivery WHERE id = ?";
+            mDatabase.execSQL(sql, new Integer[]{delivery.getId()});
+        } else{
+            Toast.makeText(mCtx, "Cannot remove until it is delivered", Toast.LENGTH_SHORT).show();
+        }
+        reloadDeliveryFromDatabase();
+    }
+
+    private void reloadDeliveryFromDatabase() {
+        Cursor cursorDelivery = mDatabase.rawQuery("SELECT * FROM delivery WHERE owner = '" + dbHelper.getUsername() + "'", null);
         if (cursorDelivery.moveToFirst()) {
             deliveryList.clear();
             do {
@@ -139,7 +154,8 @@ public class DeliveryAdapter extends ArrayAdapter<Delivery> {
                         cursorDelivery.getString(2),
                         cursorDelivery.getString(3),
                         cursorDelivery.getString(4),
-                        cursorDelivery.getString(5)
+                        cursorDelivery.getString(5),
+                        cursorDelivery.getString(6)
                 ));
             } while (cursorDelivery.moveToNext());
         }

@@ -68,10 +68,24 @@ public class DBHelper extends SQLiteOpenHelper {
                         Delivery.COLUMN_NAME_PRESCRIPTION + " TEXT," +
                         Delivery.COLUMN_NAME_ADDRESS + " TEXT,"+
                         Delivery.COLUMN_NAME_PHONE + " TEXT,"+
-                        Delivery.COLUMN_NAME_STATUS + " TEXT)";
+                        Delivery.COLUMN_NAME_STATUS + " TEXT," +
+                        Delivery.COLUMN_NAME_OWNER + " TEXT)";
 
 
         sqLiteDatabase.execSQL(SQL_CREATE_DELIVERY);
+
+
+
+        String SQL_CREATE_FEED =
+        "CREATE TABLE " +   UsersMaster.Feedback.TABLE_NAME + " ("+
+                        "id INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                UsersMaster.Feedback.COLUMN_NAME_NAME + " TEXT,"+
+                UsersMaster.Feedback.COLUMN_NAME_EMAIL + " TEXT," +
+                UsersMaster.Feedback.COLUMN_NAME_MESSAGE + " TEXT)";
+
+
+        sqLiteDatabase.execSQL(SQL_CREATE_FEED);
+
     }
 
     @Override
@@ -480,6 +494,23 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(query);
     }
 
+    public  void addfeed(String name,String email,String message){
+
+        SQLiteDatabase db = getWritableDatabase();
+
+
+        ContentValues values = new ContentValues();
+
+        values.put(UsersMaster.Feedback.COLUMN_NAME_NAME,name);
+        values.put(UsersMaster.Feedback.COLUMN_NAME_EMAIL,email);
+        values.put(UsersMaster.Feedback.COLUMN_NAME_MESSAGE,message);
+
+
+        long newRowId = db.insert(UsersMaster.Feedback.TABLE_NAME,null,values);
+
+
+
+    }
 
 
 }

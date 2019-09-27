@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.ListView;
 
 import com.example.pharmeasy.Adapter.DeliveryAdapter;
+import com.example.pharmeasy.Database.DBHelper;
 import com.example.pharmeasy.Model.Delivery;
 import com.example.pharmeasy.R;
 
@@ -20,11 +21,14 @@ public class DeliveryActivity extends AppCompatActivity {
     SQLiteDatabase mDatabase;
     ListView listViewDelivery;
     DeliveryAdapter adapter;
+    DBHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delivery);
+
+        dbHelper = new DBHelper(this);
 
         listViewDelivery = findViewById(R.id.listViewDelivery);
 
@@ -37,7 +41,7 @@ public class DeliveryActivity extends AppCompatActivity {
     private void showDeliveryFromDatabase() {
         List<Delivery> deliveryList = new ArrayList<>();
         //we used rawQuery(sql, selectionargs) for fetching all the orders
-        Cursor cursorDelivery = mDatabase.rawQuery("SELECT * FROM delivery", null);
+        Cursor cursorDelivery = mDatabase.rawQuery("SELECT * FROM delivery WHERE owner = '" + dbHelper.getUsername() + "'", null);
 
         //if the cursor has some data
         if (cursorDelivery.moveToFirst()) {
@@ -50,7 +54,8 @@ public class DeliveryActivity extends AppCompatActivity {
                         cursorDelivery.getString(2),
                         cursorDelivery.getString(3),
                         cursorDelivery.getString(4),
-                        cursorDelivery.getString(5)
+                        cursorDelivery.getString(5),
+                        cursorDelivery.getString(6)
                 ));
             } while (cursorDelivery.moveToNext());
         }

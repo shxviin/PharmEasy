@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".feedList"></activity>
         <activity
             android:name=".Activity.entryActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
@@ -18,22 +19,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".pharmFeedback">
+        <activity android:name=".Activity.pharmFeedback">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".Activity.PatientsActivity" android:exported="true"/>
+        <activity
+            android:name=".Activity.PatientsActivity"
+            android:exported="true" />
         <activity android:name=".Activity.DeliveryActivity" />
         <activity android:name=".Activity.MedicineActivity" />
         <activity android:name=".Activity.updatePasswordActivity" />
         <activity android:name=".Activity.editinfoActivity" />
         <activity android:name=".Activity.settingsActivity" />
-        <activity android:name=".Activity.OrdersActivity" android:exported="true"/>
+        <activity
+            android:name=".Activity.OrdersActivity"
+            android:exported="true" />
         <activity
             android:name=".Activity.RegisterActivity"
             android:exported="true"

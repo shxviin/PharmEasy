@@ -16,6 +16,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pharmeasy.Database.DBHelper;
@@ -25,7 +26,10 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private Button button;
+    TextView navheadertitle;
+    String x;
     DBHelper dbHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +56,7 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        View hView =  navigationView.getHeaderView(0);
 
         CardView cardOrders = findViewById(R.id.cardOrders);
         cardOrders.setOnClickListener(new View.OnClickListener() {
@@ -80,6 +85,19 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        CardView cardfeed = findViewById(R.id.cardFeedback);
+        cardfeed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent delivery_intent = new Intent( MainActivity.this, pharmFeedback.class);
+                startActivity(delivery_intent);
+            }
+        });
+
+        navheadertitle =  (TextView)  hView.findViewById(R.id.user_nav);
+        x = "Welcome "+ dbHelper.getUsername() + "!";
+        navheadertitle.setText(x);
+        Toast.makeText(getApplicationContext(),x,Toast.LENGTH_LONG);
 
     }
 

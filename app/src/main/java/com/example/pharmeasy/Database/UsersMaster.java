@@ -43,6 +43,16 @@ public class UsersMaster {
         public static final String COLUMN_NAME_ADDRESS="address";
         public static final String COLUMN_NAME_PHONE = "phone";
         public static final String COLUMN_NAME_STATUS = "status";
+        public static final String COLUMN_NAME_OWNER = "owner";
+
+    }
+
+
+    public static class Feedback implements BaseColumns{
+        public static final String TABLE_NAME = "feedback";
+        public static final String COLUMN_NAME_NAME = "name";
+        public static final String COLUMN_NAME_EMAIL="email";
+        public static final String COLUMN_NAME_MESSAGE="message";
 
     }
 }
