@@ -43,6 +43,7 @@ public class UsersMaster {
         public static final String COLUMN_NAME_ADDRESS="address";
         public static final String COLUMN_NAME_PHONE = "phone";
         public static final String COLUMN_NAME_STATUS = "status";
+        public static final String COLUMN_NAME_OWNER = "owner";
 
     }
 }

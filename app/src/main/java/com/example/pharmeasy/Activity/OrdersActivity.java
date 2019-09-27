@@ -18,8 +18,6 @@ import com.example.pharmeasy.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.util.Objects.isNull;
-
 public class OrdersActivity extends AppCompatActivity {
 
     public static final String DATABASE_NAME = "PharmEasyDB";
@@ -95,7 +93,8 @@ public class OrdersActivity extends AppCompatActivity {
                         "    prescription varchar(200) NOT NULL,\n" +
                         "    address varchar(200) NOT NULL,\n" +
                         "    phone varchar(20) NOT NULL,\n" +
-                        "    status varchar(20) DEFAULT 'To Be Dispatched'\n" +
+                        "    status varchar(20) DEFAULT 'To Be Dispatched',\n" +
+                        "    owner varchar(20) DEFAULT 'Owner'\n" +
                         ");"
         );
 //        mDatabase.execSQL("DROP TABLE delivery");

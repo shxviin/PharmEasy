@@ -68,7 +68,8 @@ public class DBHelper extends SQLiteOpenHelper {
                         Delivery.COLUMN_NAME_PRESCRIPTION + " TEXT," +
                         Delivery.COLUMN_NAME_ADDRESS + " TEXT,"+
                         Delivery.COLUMN_NAME_PHONE + " TEXT,"+
-                        Delivery.COLUMN_NAME_STATUS + " TEXT)";
+                        Delivery.COLUMN_NAME_STATUS + " TEXT," +
+                        Delivery.COLUMN_NAME_OWNER + " TEXT)";
 
 
         sqLiteDatabase.execSQL(SQL_CREATE_DELIVERY);
