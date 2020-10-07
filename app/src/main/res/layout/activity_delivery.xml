@@ -17,11 +17,17 @@
         android:textSize="24sp"
         android:textStyle="bold" />
 
+    <Button
+        android:id="@+id/btnDemo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Demo Delivery" />
+
     <ListView
         android:id="@+id/listViewDelivery"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingStart="15dp"
-        android:paddingEnd="10dp"/>
+        android:paddingEnd="10dp" />
 
 </LinearLayout>
